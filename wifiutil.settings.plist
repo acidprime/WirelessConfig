@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>debugEnabled</key>
+	<true/>
+	<key>networkRemoveList</key>
+	<array>
+		<string>wallcity.open</string>
+		<string>wallcity.wpa</string>
+	</array>
+	<key>networkAddList</key>
+	<array>
+		<dict>
+			<key>ssid</key>
+			<string>wallcity.802.1x</string>
+			<key>iath</key>
+			<string>MSCHAPv2</string>
+			<key>type</key>
+			<string>WPA2 Enterprise</string>
+			<key>sect</key>
+			<string>WPA2 Enterprise</string>
+			<key>tkey</key>
+			<string>WPA2E</string>
+			<key>puid</key>
+			<string>f8768ac0-e631-012e-4a33-482a1435a5b8</string>
+			<key>suid</key>
+			<string>537d12c0-e632-012e-4a35-482a1435a5b8</string>
+			<key>mdmh</key>
+			<string>com.apple.mdm.acidprime.wallcity.org</string>
+			<key>eapt</key>
+			<integer>25</integer>
+			<key>chan</key>
+			<integer>11</integer>
+			<key>scop</key>
+			<string>System</string>
+			<key>orgn</key>
+			<string>Wallcity</string>
+		</dict>
+	</array>
+</dict>
+</plist>

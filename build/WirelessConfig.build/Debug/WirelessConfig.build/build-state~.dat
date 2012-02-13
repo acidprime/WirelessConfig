@@ -1,0 +1,187 @@
+TWirelessConfig
+v7
+r0
+t350602845.288774
+cCheck dependencies
+cProcessInfoPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCpResource build/Debug/WirelessConfig.bundle/Contents/Resources/Wireless.icns Wireless.icns
+cCompileXIB /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
+cCompileC build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004CAA740B00000000000000EE
+t1286239243
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000004F1A6987000000000060F9D0
+t1327131015
+s6355408
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/English.lproj/InfoPlist.strings
+c000000004F358E650000000000000030
+t1328909925
+s48
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Wireless.icns
+c000000004F3589D40000000000022D97
+t1328908756
+s142743
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.h
+c000000004F358BE50000000000000204
+t1328909285
+s516
+i<Cocoa/Cocoa.h>
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m
+c000000004F358B0F0000000000000417
+t1328909071
+s1047
+i"WirelessConfig.h"
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
+c000000004F3583350000000000004824
+t1328907061
+s18468
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle
+t2
+s0
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Info.plist
+t1328910041
+s1217
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+t2
+s0
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings
+t1328910041
+s92
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/Wireless.icns
+t1328910041
+s142743
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/WirelessConfig.nib
+t1328910042
+s4087
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.LinkFileList
+c000000004F358ED900000000000000AB
+t1328910041
+s171
+
+N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o
+t1328910045
+s21732
+
+NInfo.plist
+c000000004F358ED70000000000000505
+t1328910039
+s1285
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies350602841#350602841#0(0"0(0#1#0"4523480384#0"0#
+
+CCompileC build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350602842.145403
+e350602845.196750
+r1
+xCompileC
+xbuild/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o
+x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350602842#350602845#0(0"0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m4523478672#1855"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o0#
+
+CCompileXIB /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
+s350602841.725963
+e350602842.145260
+r1
+xCompileXIB
+x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
+lSLF07#2@29"CompileXIB WirelessConfig.xib350602841#350602842#0(0"0(0#0#96"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib4523478672#475"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/WirelessConfig.nib /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib --sdk /Developer/SDKs/MacOSX10.6.sdk0#
+
+CCopyStringsFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s350602841.722700
+e350602841.809364
+r1
+xCopyStringsFile
+x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings350602841#350602841#0(0"0(0#0#109"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/English.lproj/InfoPlist.strings4523478672#453"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources/English.lproj0#
+
+CCpResource build/Debug/WirelessConfig.bundle/Contents/Resources/Wireless.icns Wireless.icns
+s350602841.724791
+e350602841.750448
+r1
+xCpResource
+xbuild/Debug/WirelessConfig.bundle/Contents/Resources/Wireless.icns
+xWireless.icns
+lSLF07#2@18"Copy Wireless.icns350602841#350602841#0(0"0(0#0#91"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Wireless.icns4523478672#470"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Wireless.icns /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Resources0#
+
+CLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal x86_64
+s350602845.196935
+e350602845.288649
+r0
+xLd
+x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+xnormal
+xx86_64
+oUndefined symbols:
+o  "_OBJC_CLASS_$_NSBundle", referenced from:
+o      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o
+o      objc-class-ref-to-NSBundle in WirelessConfig.o
+o  "_objc_setProperty", referenced from:
+o      -[WirelessConfig setViewWirelessConfig:] in WirelessConfig.o
+o  "__objc_empty_vtable", referenced from:
+o      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o
+o      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o
+o  "_objc_msgSend", referenced from:
+o      -[WirelessConfig view] in WirelessConfig.o
+o      -[WirelessConfig image] in WirelessConfig.o
+o      -[WirelessConfig url] in WirelessConfig.o
+o      -[WirelessConfig viewWillAppear] in WirelessConfig.o
+o     (maybe you meant: l_objc_msgSend_fixup_alloc)
+o  "_objc_msgSend_fixup", referenced from:
+o      l_objc_msgSend_fixup_alloc in WirelessConfig.o
+o     (maybe you meant: l_objc_msgSend_fixup_alloc)
+o  "__objc_empty_cache", referenced from:
+o      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o
+o      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o
+o  "_OBJC_METACLASS_$_NSBundle", referenced from:
+o      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o
+o  "_NSLog", referenced from:
+o      -[WirelessConfig viewWillAppear] in WirelessConfig.o
+o      -[WirelessConfig viewWillAppear] in WirelessConfig.o
+o  "_OBJC_CLASS_$_NSImage", referenced from:
+o      objc-class-ref-to-NSImage in WirelessConfig.o
+old: symbol(s) not found
+ocollect2: ld returned 1 exit status
+lSLF07#2@146"Link /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig350602845#350602845#0(1440"Undefined symbols:  "_OBJC_CLASS_$_NSBundle", referenced from:      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o      objc-class-ref-to-NSBundle in WirelessConfig.o  "_objc_setProperty", referenced from:      -[WirelessConfig setViewWirelessConfig:] in WirelessConfig.o  "__objc_empty_vtable", referenced from:      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o  "_objc_msgSend", referenced from:      -[WirelessConfig view] in WirelessConfig.o      -[WirelessConfig image] in WirelessConfig.o      -[WirelessConfig url] in WirelessConfig.o      -[WirelessConfig viewWillAppear] in WirelessConfig.o     (maybe you meant: l_objc_msgSend_fixup_alloc)  "_objc_msgSend_fixup", referenced from:      l_objc_msgSend_fixup_alloc in WirelessConfig.o     (maybe you meant: l_objc_msgSend_fixup_alloc)  "__objc_empty_cache", referenced from:      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o      _OBJC_CLASS_$_WirelessConfig in WirelessConfig.o  "_OBJC_METACLASS_$_NSBundle", referenced from:      _OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o  "_NSLog", referenced from:      -[WirelessConfig viewWillAppear] in WirelessConfig.o      -[WirelessConfig viewWillAppear] in WirelessConfig.o  "_OBJC_CLASS_$_NSImage", referenced from:      objc-class-ref-to-NSImage in WirelessConfig.old: symbol(s) not foundcollect2: ld returned 1 exit status29(4@42""_OBJC_CLASS_$_NSBundle", referenced from:350602845#19#45#0(6@0"350602845#0#0#0#0#0"0(13@48"_OBJC_CLASS_$_WirelessConfig in WirelessConfig.o350602845#64#55#0(6@0"350602845#0#0#0#0#0"0(13@46"Objc-class-ref-to-NSBundle in WirelessConfig.o350602845#119#53#0(6@0"350602845#0#0#0#0#0"0(4@37""_objc_setProperty", referenced from:350602845#172#40#0(6@0"350602845#0#0#0#0#0"0(13@60"-[WirelessConfig setViewWirelessConfig:] in WirelessConfig.o350602845#212#67#0(6@0"350602845#0#0#0#0#0"0(4@39""__objc_empty_vtable", referenced from:350602845#279#42#0(6@0"350602845#0#0#0#0#0"0(13@52"_OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o350602845#321#59#0(6@0"350602845#0#0#0#0#0"0(13@48"_OBJC_CLASS_$_WirelessConfig in WirelessConfig.o350602845#380#55#0(6@0"350602845#0#0#0#0#0"0(4@33""_objc_msgSend", referenced from:350602845#435#36#0(6@0"350602845#0#0#0#0#0"0(13@42"-[WirelessConfig view] in WirelessConfig.o350602845#471#49#0(6@0"350602845#0#0#0#0#0"0(13@43"-[WirelessConfig image] in WirelessConfig.o350602845#520#50#0(6@0"350602845#0#0#0#0#0"0(13@41"-[WirelessConfig url] in WirelessConfig.o350602845#570#48#0(6@0"350602845#0#0#0#0#0"0(13@52"-[WirelessConfig viewWillAppear] in WirelessConfig.o350602845#618#59#0(6@0"350602845#0#0#0#0#0"0(13@45"(maybe you meant: l_objc_msgSend_fixup_alloc)350602845#677#51#0(6@0"350602845#0#0#0#0#0"0(4@39""_objc_msgSend_fixup", referenced from:350602845#728#42#0(6@0"350602845#0#0#0#0#0"0(13@46"L_objc_msgSend_fixup_alloc in WirelessConfig.o350602845#770#53#0(6@0"350602845#0#0#0#0#0"0(13@45"(maybe you meant: l_objc_msgSend_fixup_alloc)350602845#823#51#0(6@0"350602845#0#0#0#0#0"0(4@38""__objc_empty_cache", referenced from:350602845#874#41#0(6@0"350602845#0#0#0#0#0"0(13@52"_OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o350602845#915#59#0(6@0"350602845#0#0#0#0#0"0(13@48"_OBJC_CLASS_$_WirelessConfig in WirelessConfig.o350602845#974#55#0(6@0"350602845#0#0#0#0#0"0(4@46""_OBJC_METACLASS_$_NSBundle", referenced from:350602845#1029#49#0(6@0"350602845#0#0#0#0#0"0(13@52"_OBJC_METACLASS_$_WirelessConfig in WirelessConfig.o350602845#1078#59#0(6@0"350602845#0#0#0#0#0"0(4@26""_NSLog", referenced from:350602845#1137#29#0(6@0"350602845#0#0#0#0#0"0(13@52"-[WirelessConfig viewWillAppear] in WirelessConfig.o350602845#1166#59#0(6@0"350602845#0#0#0#0#0"0(13@52"-[WirelessConfig viewWillAppear] in WirelessConfig.o350602845#1225#59#0(6@0"350602845#0#0#0#0#0"0(4@41""_OBJC_CLASS_$_NSImage", referenced from:350602845#1284#44#0(6@0"350602845#0#0#0#0#0"0(13@45"Objc-class-ref-to-NSImage in WirelessConfig.o350602845#1328#52#0(6@0"350602845#0#0#0#0#0"0(13@19"Symbol(s) not found350602845#1380#24#0(6@0"350602845#0#0#0#0#0"0(13@35"Collect2: ld returned 1 exit status350602845#1404#36#0(6@0"350602845#0#0#0#0#0"0(0#0#0"4523478672#792"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug -filelist /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Debug/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.LinkFileList -mmacosx-version-min=10.6 -framework CoreFoundation -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/MacOS/WirelessConfig1#
+
+CProcessInfoPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Info.plist Info.plist
+s350602841.717189
+e350602841.722578
+r1
+xProcessInfoPlistFile
+x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist350602841#350602841#0(0"0(0#0#88"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Info.plist4523478784#298"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle/Contents/Info.plist0#
+
+CTouch /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Debug/WirelessConfig.bundle
+r0
+
