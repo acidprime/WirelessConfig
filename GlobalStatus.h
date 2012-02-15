@@ -14,6 +14,12 @@
 	
 	//NSArrays
 	NSMutableArray *globalStatusArray;
+	
+	// Standard iVars
+	NSBundle *mainBundle;
+	NSDictionary *settings;
+	BOOL debugEnabled;
+	
 
 }
 

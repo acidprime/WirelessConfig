@@ -11,6 +11,7 @@ import shutil
 import subprocess
 import commands
 import re
+import time
 from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyListSerialization,NSDate
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
 
@@ -844,6 +845,7 @@ def connectToNewNetwork(port,networkDict={}):
     out, err = execute.communicate()
     print out
   if scanAvailableNetworks(networkDict['ssid']):
+    time.sleep(10)
     if osVersion['minor'] >= SNOW:
       if 'pass' in networkDict.keys():
         arguments = [networksetup,"-setairportnetwork",port,networkDict['ssid'],networkDict['pass']]
@@ -855,7 +857,8 @@ def connectToNewNetwork(port,networkDict={}):
       else:
         arguments = [networksetup,"-setairportnetwork",networkDict['ssid']]
     networksetupExecute(arguments)
-
+  else:
+    print 'Network %s not found' % networkDict['ssid']
 
 # Pull the current network from the airport command
 def checkCurrenNetwork(networkName):

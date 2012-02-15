@@ -14,6 +14,7 @@
 @implementation TableController
 
 # pragma mark Method Overrides
+# pragma mark -
 
 - (id)init
 {	
@@ -63,9 +64,22 @@
 	//[self.globalStatusArray release];
 	[super dealloc]; 
 }
+# pragma mark -
+# pragma mark Class Methods
+# pragma mark -
+
+- (void)readInSettings 
+{ 	
+	mainBundle = [NSBundle bundleForClass:[self class]];
+	NSString *settingsPath = [mainBundle pathForResource:SettingsFileResourceID
+												  ofType:@"plist"];
+	settings = [[NSDictionary alloc] initWithContentsOfFile:settingsPath];
+	
+	debugEnabled = [[settings objectForKey:@"debugEnabled"] boolValue];
+}
 
 # pragma mark -
-# pragma mark Notification Observered Methods
+# pragma mark Notification Observer Methods
 # pragma mark -
 
 // Need to update for panel close
@@ -94,7 +108,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	
 
 	if (![aBuffer count]) {
-		NSLog(@"DEBUG: (tableView) No entries, setting predicate to default");
+		if(debugEnabled)NSLog(@"DEBUG: (tableView) No entries, setting predicate to default");
 		statusPredicate = @"";
 		return nil;
 	}
@@ -187,10 +201,13 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	if ([aBuffer count] != 0) {
+		if(debugEnabled)NSLog(@"DEBUG: (numberOfRowsInTableView) Returning %d rows",[aBuffer count]);
+
 		return ([aBuffer count]);
 		
 	}
 	else {
+		if(debugEnabled)NSLog(@"DEBUG: (numberOfRowsInTableView) Returning %d rows",[aBuffer count] -1);
 		return ([aBuffer count] -1);
 	}
 }
@@ -200,21 +217,21 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 - (void) reloadTableBufferNow:(NSNotification *) notification
 {	
-	if(debugEnabled)NSLog(@"DEBUG:Configuration Tavble received ReceiveStatusUpdateNotification notification");
+	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBufferNow) Configuration Table received notification");
 	lastGlobalStatusUpdate = [notification userInfo];
 	[self reloadTableBuffer:lastGlobalStatusUpdate];
 }
 
 -(void)reloadTableBuffer:(NSDictionary *)globalStatusUpdate
 {
-	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) Recieved request to Reload Table Buffer...");
+	if(debugEnabled)NSLog(@"DEBUG:(reloadTableBuffer) Recieved request to Reload Table Buffer...");
 	if (aBuffer) {
 		if(debugEnabled)NSLog(@"DEBUG:(reloadTableBuffer) found existing buffer releasing");
 		[aBuffer release];
 	}
 	
 	globalStatusArray = [[NSMutableArray alloc] initWithArray:[globalStatusUpdate objectForKey:@"globalStatusArray"]];
-	if(debugEnabled)NSLog(@"DEBUG: Notification Array: %@",globalStatusArray);
+	if(debugEnabled)NSLog(@"DEBUG:(reloadTableBuffer) Notification Array: %@",globalStatusArray);
 
 	aBuffer = [[ NSMutableArray alloc] initWithArray:globalStatusArray];
 	
@@ -225,7 +242,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		[statusPredicate release];
 	}
 	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) aBuffer: %@",aBuffer);
-	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) Telling table to reload data on main thread");
+	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) Telling table to reload data");
 	
 	/*
 	[tableView performSelectorOnMainThread:@selector(reloadData)
@@ -234,19 +251,6 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	
 	[tableView reloadData];
 
-}
-# pragma mark -
-# pragma mark Class Methods
-# pragma mark -
-
-- (void)readInSettings 
-{ 	
-	mainBundle = [NSBundle bundleForClass:[self class]];
-	NSString *settingsPath = [mainBundle pathForResource:SettingsFileResourceID
-												  ofType:@"plist"];
-	settings = [[NSDictionary alloc] initWithContentsOfFile:settingsPath];
-	
-	debugEnabled = [[settings objectForKey:@"debugEnabled"] boolValue];
 }
 
 # pragma mark -

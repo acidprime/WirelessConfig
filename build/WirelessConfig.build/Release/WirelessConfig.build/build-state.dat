@@ -1,35 +1,35 @@
 TWirelessConfig
 v7
 r0
-t350798301.259580
+t350953327.227748
 cCheck dependencies
-cProcessInfoPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist Info.plist
-cCopyStringsFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileXIB /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
+cProcessInfoPlistFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib
 cCpResource build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.png WirelessConfig.png
 cCpResource build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.py wifiutil.py
-cCopyPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.settings.plist wifiutil.settings.plist
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal ppc objective-c com.apple.compilers.gcc.4_2
-cLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig normal i386
-cLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig normal x86_64
-cLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig normal ppc
-cCreateUniversalBinary /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"
-cGenerateDSYMFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
-cTouch /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
+cCopyPlistFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.settings.plist wifiutil.settings.plist
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig normal x86_64
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig normal i386
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig normal ppc
+cCreateUniversalBinary /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"
+cGenerateDSYMFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+cTouch /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
 
 N/Developer/SDKs/MacOSX10.5.sdk
 c000000004C238B9B00000000000000EE
@@ -62,9 +62,9 @@ t1086630504
 s485
 
 N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c000000004E938B0E000000000060E710
-t1318292238
-s6350608
+c000000004F399E90000000000060F9D0
+t1329176208
+s6355408
 
 N/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.h
 c000000004F36F6EE00000000000001A7
@@ -402,6 +402,229 @@ c000000004F35EDEF000000000000042D
 t1328934383
 s1069
 
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.h
+c000000004F36F6EE00000000000001A7
+t1329002222
+s423
+i<Cocoa/Cocoa.h>
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m
+c000000004F38CB210000000000001216
+t1329122081
+s4630
+i"ConfigIconCell.h"
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.h
+c000000004F365729000000000000022F
+t1328961321
+s559
+i<Cocoa/Cocoa.h>
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m
+c000000004F3656040000000000000292
+t1328961028
+s658
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/English.lproj/InfoPlist.strings
+c000000004F358E650000000000000030
+t1328909925
+s48
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.h
+c000000004F38B2D80000000000000207
+t1329115864
+s519
+i<Cocoa/Cocoa.h>
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m
+c000000004F3AE7DF0000000000000CF5
+t1329260511
+s3317
+i"GlobalStatus.h"
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/SSPluginProtocol.h
+c000000004F184C7D0000000000000698
+t1326992509
+s1688
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.h
+c000000004F36FAFF0000000000000407
+t1329003263
+s1031
+i<Cocoa/Cocoa.h>
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m
+c000000004F38B4B80000000000001DF2
+t1329116344
+s7666
+i"TableController.h"
+i"ConfigIconCell.h"
+i"Constants.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.h
+c000000004F36F9D70000000000000451
+t1329002967
+s1105
+i<Cocoa/Cocoa.h>
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m
+c000000004F36F3F90000000000001106
+t1329001465
+s4358
+i"Constants.h"
+i"WirelessConfig.h"
+i"SSPluginProtocol.h"
+i"GlobalStatus.h"
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.png
+c000000004F3596E70000000000002855
+t1328912103
+s10325
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib
+c000000004F36FAD6000000000001038E
+t1329003222
+s66446
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM
+t1329260527
+s102
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.nib
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.png
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.py
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.settings.plist
+t2
+s0
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o
+t1329260524
+s26328
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o
+t1329260524
+s6396
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o
+t1329260525
+s14264
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o
+t1329260525
+s36384
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig
+t1329260526
+s37536
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.LinkFileList
+c000000004F3AE7E800000000000002DE
+t1329260520
+s734
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o
+t1329260524
+s28728
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o
+t1329260526
+s27024
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o
+t1329260525
+s6472
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o
+t1329260526
+s14944
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o
+t1329260526
+s37532
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig
+t1329260527
+s36756
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.LinkFileList
+c000000004F3AE7E800000000000002D9
+t1329260520
+s729
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o
+t1329260526
+s29616
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o
+t1329260522
+s33808
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o
+t1329260522
+s7336
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o
+t1329260524
+s19420
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o
+t1329260522
+s47772
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig
+t1329260524
+s49376
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.LinkFileList
+c000000004F3AE7E800000000000002E8
+t1329260520
+s744
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o
+t1329260522
+s40008
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.py
+c000000004F35E8B7000000000000B06B
+t1328933047
+s45163
+
+N/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.settings.plist
+c000000004F35EDEF000000000000042D
+t1328934383
+s1069
+
 NInfo.plist
 c000000004F35904000000000000004F9
 t1328910400
@@ -409,7 +632,7 @@ s1273
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies350798300#350798300#0(0"0(0#1#0"4497859904#0"0#
+lSLF07#2@18"Check dependencies350953320#350953320#0(0"0(0#1#0"4574438720#0"0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s350798104.572805
@@ -424,6 +647,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m350798104#350798105#0(0"0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m4535885456#1848"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s350953322.973797
+e350953324.525270
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m350953322#350953324#0(0"0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m4574437008#1595"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ConfigIconCell.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s350798104.488502
 e350798105.280611
@@ -437,6 +673,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@97"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m350798104#350798105#0(0"0(0#0#89"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m4535885456#1838"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s350953322.812259
+e350953324.239454
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m350953322#350953324#0(0"0(0#0#66"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m4574437008#1585"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/Constants.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s350798105.367054
 e350798106.180843
@@ -449,6 +698,24 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@100"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m350798105#350798106#0(0"0(0#0#92"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m4535885456#1844"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o0#
+
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s350953324.452636
+e350953325.757601
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)
+lSLF07#2@77"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953324#350953325#0(600"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)2(22@51"'GlobalStatus' may not respond to '-readInSettings'350953325#107#135#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)350953325#242#129#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#0"0(0#0#69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m4574437008#1591"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/GlobalStatus.o0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/StatusIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/StatusIconCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -469,6 +736,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@103"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m350798300#350798301#0(0"0(0#0#95"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m4497858192#1850"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s350953324.239580
+e350953325.578089
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m350953324#350953325#0(0"0(0#0#72"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m4574437008#1597"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/TableController.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/ViewController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
 
@@ -487,6 +767,21 @@ o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/W
 o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350798104#350798105#0(338"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350798105#151#187#0(6@94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m4535885456#1848"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s350953322.794319
+e350953324.452516
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350953322#350953324#0(292"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350953324#128#164#0(6@71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m4574437008#1595"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/i386 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal ppc objective-c com.apple.compilers.gcc.4_2
 s350798106.181032
 e350798106.937217
@@ -499,6 +794,19 @@ xppc
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m350798106#350798106#0(0"0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m4535885456#1855"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o0#
+
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s350953325.578200
+e350953326.750478
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m350953325#350953326#0(0"0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m4574437008#1602"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ConfigIconCell.o0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal ppc objective-c com.apple.compilers.gcc.4_2
 s350798105.440862
@@ -513,6 +821,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@97"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m350798105#350798106#0(0"0(0#0#89"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m4535885456#1845"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s350953324.579927
+e350953325.889681
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m350953324#350953325#0(0"0(0#0#66"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m4574437008#1592"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/Constants.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal ppc objective-c com.apple.compilers.gcc.4_2
 s350798106.308433
 e350798106.967926
@@ -525,6 +846,24 @@ xppc
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@100"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m350798106#350798106#0(0"0(0#0#92"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m4535885456#1851"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o0#
+
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s350953326.125301
+e350953326.997138
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)
+lSLF07#2@77"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953326#350953326#0(600"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)2(22@51"'GlobalStatus' may not respond to '-readInSettings'350953326#107#135#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)350953326#242#129#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#0"0(0#0#69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m4574437008#1598"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/GlobalStatus.o0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/StatusIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/StatusIconCell.m normal ppc objective-c com.apple.compilers.gcc.4_2
 r0
@@ -545,6 +884,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@103"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m350798300#350798301#0(0"0(0#0#95"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m4497858192#1857"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s350953325.889983
+e350953326.960656
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m350953325#350953326#0(0"0(0#0#72"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m4574437008#1604"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/TableController.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/ViewController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ViewController.m normal ppc objective-c com.apple.compilers.gcc.4_2
 r0
 
@@ -563,6 +915,21 @@ o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/W
 o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350798105#350798106#0(338"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350798106#151#187#0(6@94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m4535885456#1855"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s350953324.525395
+e350953326.254765
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350953324#350953326#0(292"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350953325#128#164#0(6@71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m4574437008#1602"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mtune=G5 -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/ppc -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s350798103.121796
 e350798104.488389
@@ -575,6 +942,19 @@ xx86_64
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m350798103#350798104#0(0"0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m4535885456#1854"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o0#
+
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350953320.582248
+e350953322.812129
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m350953320#350953322#0(0"0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m4574437008#1601"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/ConfigIconCell.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ConfigIconCell.o0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s350798103.120922
@@ -589,6 +969,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@97"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m350798103#350798104#0(0"0(0#0#89"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m4535885456#1844"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350953320.581307
+e350953322.579118
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m350953320#350953322#0(0"0(0#0#66"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m4574437008#1591"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Constants.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/Constants.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s350798104.352992
 e350798105.167664
@@ -601,6 +994,24 @@ xx86_64
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@100"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m350798104#350798105#0(0"0(0#0#92"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m4535885456#1850"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o0#
+
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350953322.579285
+e350953324.147331
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)
+lSLF07#2@77"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953322#350953324#0(600"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m: In function '-[GlobalStatus init]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: 'GlobalStatus' may not respond to '-readInSettings'/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: (Messages without a matching method signature/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: will be assumed to return 'id' and accept/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m:35: warning: '...' as arguments.)2(22@51"'GlobalStatus' may not respond to '-readInSettings'350953323#107#135#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)350953323#242#129#0(6@69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m350953311#35#0#35#0#0"0(0#0#69"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m4574437008#1597"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/GlobalStatus.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/GlobalStatus.o0#
 
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/StatusIconCell.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/StatusIconCell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -621,6 +1032,19 @@ xobjective-c
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@103"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m350798300#350798301#0(0"0(0#0#95"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m4497858192#1856"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350953320.583211
+e350953322.973672
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m350953320#350953322#0(0"0(0#0#72"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m4574437008#1603"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/TableController.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/TableController.o0#
+
 CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/ViewController.o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/ViewController.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 r0
 
@@ -639,6 +1063,21 @@ o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/W
 o/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
 lSLF07#2@102"Compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350798103#350798104#0(338"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350798104#151#187#0(6@94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#94"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m4535885456#1854"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o0#
 
+CCompileC build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s350953320.580059
+e350953322.793960
+r1
+xCompileC
+xbuild/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':
+o/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol
+lSLF07#2@79"Compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350953320#350953322#0(292"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m: In function '-[WirelessConfig connectButtonClicked:]':/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m:122: warning: class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol1(22@77"Class 'WirelessConfig' does not implement the 'SSRootAccessDelegate' protocol350953322#128#164#0(6@71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m350694265#122#0#122#0#45"class '*' does not implement the '*' protocol0(0#0#71"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m4574437008#1601"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-generated-files.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-own-target-headers.hmap -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-all-target-headers.hmap -iquote /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/WirelessConfig-project-headers.hmap -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/include -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources/x86_64 -I/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/DerivedSources -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.m -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.o0#
+
 CCompileXIB /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
 s350798300.131010
 e350798300.376306
@@ -646,6 +1085,14 @@ r1
 xCompileXIB
 x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib
 lSLF07#2@29"CompileXIB WirelessConfig.xib350798300#350798300#0(0"0(0#0#96"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib4497858192#477"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.nib /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.xib --sdk /Developer/SDKs/MacOSX10.5.sdk0#
+
+CCompileXIB /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib
+s350953320.208794
+e350953320.579907
+r1
+xCompileXIB
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib
+lSLF07#2@29"CompileXIB WirelessConfig.xib350953320#350953320#0(0"0(0#0#73"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib4574437008#408"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.nib /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xib --sdk /Developer/SDKs/MacOSX10.5.sdk0#
 
 CCopyPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/com.github.acidprime.settings.plist com.github.acidprime.settings.plist
 s350651716.966697
@@ -668,6 +1115,15 @@ x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/b
 xwifiutil.settings.plist
 lSLF07#2@28"Copy wifiutil.settings.plist350798300#350798300#0(0"0(0#0#101"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil.settings.plist4497858192#342"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist wifiutil.settings.plist --outdir /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
 
+CCopyPlistFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.settings.plist wifiutil.settings.plist
+s350953320.211272
+e350953320.286264
+r1
+xCopyPlistFile
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.settings.plist
+xwifiutil.settings.plist
+lSLF07#2@28"Copy wifiutil.settings.plist350953320#350953320#0(0"0(0#0#78"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.settings.plist4574437008#296"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist wifiutil.settings.plist --outdir /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
+
 CCopyStringsFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
 s350798300.129213
 e350798300.220095
@@ -676,6 +1132,15 @@ xCopyStringsFile
 x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings
 xEnglish.lproj/InfoPlist.strings
 lSLF07#2@36"Copy English.lproj/InfoPlist.strings350798300#350798300#0(0"0(0#0#109"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/English.lproj/InfoPlist.strings4497858192#455"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj0#
+
+CCopyStringsFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s350953320.208018
+e350953320.301276
+r1
+xCopyStringsFile
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings350953320#350953320#0(0"0(0#0#86"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/English.lproj/InfoPlist.strings4574437008#409"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources/English.lproj0#
 
 CCpResource build/Release/WirelessConfig.bundle/Contents/Resources/Wireless.icns Wireless.icns
 s350603262.825894
@@ -687,13 +1152,13 @@ xWireless.icns
 lSLF07#2@18"Copy Wireless.icns350603262#350603262#0(0"0(0#0#91"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Wireless.icns4466224784#493"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Wireless.icns /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
 
 CCpResource build/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.png WirelessConfig.png
-s350798300.131688
-e350798300.143255
+s350953320.209470
+e350953320.226230
 r1
 xCpResource
 xbuild/Release/WirelessConfig.bundle/Contents/Resources/WirelessConfig.png
 xWirelessConfig.png
-lSLF07#2@23"Copy WirelessConfig.png350798300#350798300#0(0"0(0#0#96"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.png4497858192#498"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/WirelessConfig.png /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
+lSLF07#2@23"Copy WirelessConfig.png350953320#350953320#0(0"0(0#0#73"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.png4574437008#429"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.png /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
 
 CCpResource build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil wifiutil
 s350623655.825316
@@ -705,13 +1170,13 @@ xwifiutil
 lSLF07#2@13"Copy wifiutil350623655#350623655#0(0"0(0#0#86"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil4531191440#488"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
 
 CCpResource build/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.py wifiutil.py
-s350798300.132332
-e350798300.147064
+s350953320.210121
+e350953320.227795
 r1
 xCpResource
 xbuild/Release/WirelessConfig.bundle/Contents/Resources/wifiutil.py
 xwifiutil.py
-lSLF07#2@16"Copy wifiutil.py350798300#350798300#0(0"0(0#0#89"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil.py4497858192#491"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil.py /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
+lSLF07#2@16"Copy wifiutil.py350953320#350953320#0(0"0(0#0#66"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.py4574437008#422"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -strip-debug-symbols -resolve-src-symlinks /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.py /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Resources0#
 
 CCreateUniversalBinary /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"
 s350798301.229215
@@ -723,6 +1188,16 @@ xnormal
 xx86_64 i386 ppc
 lSLF07#2@112"CreateUniversalBinary build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"350798301#350798301#0(0"0(0#0#93"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/x86_64 i386 ppc4497858192#771"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /usr/bin/lipo -create /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig -output /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig0#
 
+CCreateUniversalBinary /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"
+s350953327.143868
+e350953327.150773
+r1
+xCreateUniversalBinary
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+xnormal
+xx86_64 i386 ppc
+lSLF07#2@112"CreateUniversalBinary build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig normal "x86_64 i386 ppc"350953327#350953327#0(0"0(0#0#70"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/x86_64 i386 ppc4574437008#656"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /usr/bin/lipo -create /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig -output /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig0#
+
 CGenerateDSYMFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
 s350798301.232371
 e350798301.257020
@@ -731,6 +1206,15 @@ xGenerateDSYMFile
 x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM
 x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
 lSLF07#2@123"GenerateDSYMFile build/Release/WirelessConfig.bundle.dSYM build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig350798301#350798301#0(0"0(0#0#143"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig4497858192#383"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /Developer/usr/bin/dsymutil /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM0#
+
+CGenerateDSYMFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+s350953327.150889
+e350953327.204873
+r1
+xGenerateDSYMFile
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig
+lSLF07#2@123"GenerateDSYMFile build/Release/WirelessConfig.bundle.dSYM build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig350953327#350953327#0(0"0(0#0#120"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig4574437008#314"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /Developer/usr/bin/dsymutil /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/MacOS/WirelessConfig -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle.dSYM0#
 
 CLd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig normal i386
 s350798301.171955
@@ -762,6 +1246,36 @@ xnormal
 xx86_64
 lSLF07#2@175"Link /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig350798301#350798301#0(0"0(0#0#0"4497858192#844"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/gcc-4.2 -arch x86_64 -bundle -isysroot /Developer/SDKs/MacOSX10.5.sdk -L/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -F/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release -filelist /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.LinkFileList -mmacosx-version-min=10.5 -framework CoreFoundation -framework Cocoa -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig0#
 
+CLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig normal i386
+s350953325.770815
+e350953326.125174
+r1
+xLd
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig
+xnormal
+xi386
+lSLF07#2@150"Link /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig350953325#350953326#0(0"0(0#0#0"4574437008#723"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/gcc-4.2 -arch i386 -bundle -isysroot /Developer/SDKs/MacOSX10.5.sdk -L/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -filelist /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig.LinkFileList -mmacosx-version-min=10.5 -framework CoreFoundation -framework Cocoa -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/i386/WirelessConfig0#
+
+CLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig normal ppc
+s350953326.997236
+e350953327.143756
+r1
+xLd
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig
+xnormal
+xppc
+lSLF07#2@149"Link /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig350953326#350953327#0(0"0(0#0#0"4574437008#720"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/gcc-4.2 -arch ppc -bundle -isysroot /Developer/SDKs/MacOSX10.5.sdk -L/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -filelist /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig.LinkFileList -mmacosx-version-min=10.5 -framework CoreFoundation -framework Cocoa -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/ppc/WirelessConfig0#
+
+CLd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig normal x86_64
+s350953324.147489
+e350953324.579646
+r1
+xLd
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig
+xnormal
+xx86_64
+lSLF07#2@152"Link /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig350953324#350953324#0(0"0(0#0#0"4574437008#729"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    setenv MACOSX_DEPLOYMENT_TARGET 10.5    /Developer/usr/bin/gcc-4.2 -arch x86_64 -bundle -isysroot /Developer/SDKs/MacOSX10.5.sdk -L/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -F/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release -filelist /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig.LinkFileList -mmacosx-version-min=10.5 -framework CoreFoundation -framework Cocoa -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/WirelessConfig.build/Release/WirelessConfig.build/Objects-normal/x86_64/WirelessConfig0#
+
 CProcessInfoPlistFile /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist Info.plist
 s350798300.118231
 e350798300.124664
@@ -771,6 +1285,15 @@ x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/b
 xInfo.plist
 lSLF07#2@18"Process Info.plist350798300#350798300#0(0"0(0#0#88"/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/Info.plist4497858304#300"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist0#
 
+CProcessInfoPlistFile /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist Info.plist
+s350953320.205120
+e350953320.207948
+r1
+xProcessInfoPlistFile
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist350953320#350953320#0(0"0(0#0#65"/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/Info.plist4574437120#254"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle/Contents/Info.plist0#
+
 CTouch /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
 s350798301.257113
 e350798301.259528
@@ -778,4 +1301,12 @@ r1
 xTouch
 x/Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
 lSLF07#2@119"Touch /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle350798301#350798301#0(0"0(0#0#0"4497858192#221"    cd /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig    /usr/bin/touch -c /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle0#
+
+CTouch /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
+s350953327.215432
+e350953327.227698
+r1
+xTouch
+x/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle
+lSLF07#2@96"Touch /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle350953327#350953327#0(0"0(0#0#0"4574437008#175"    cd /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig    /usr/bin/touch -c /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/build/Release/WirelessConfig.bundle0#
 

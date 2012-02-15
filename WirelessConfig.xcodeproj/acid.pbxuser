@@ -15,7 +15,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					679,
+					826,
 					20,
 					48,
 					43,
@@ -32,29 +32,22 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 350797220;
-			PBXWorkspaceStateSaveDate = 350797220;
+			PBXPerProjectTemplateStateSaveDate = 351041502;
+			PBXWorkspaceStateSaveDate = 351041502;
 		};
 		perUserProjectItems = {
+			E114D5FA14EB1F750010A612 /* PBXTextBookmark */ = E114D5FA14EB1F750010A612 /* PBXTextBookmark */;
+			E114D5FB14EB1F750010A612 /* PBXTextBookmark */ = E114D5FB14EB1F750010A612 /* PBXTextBookmark */;
+			E114D62714EB2A0C0010A612 /* PBXTextBookmark */ = E114D62714EB2A0C0010A612 /* PBXTextBookmark */;
 			E1AEE0BC14E5C8FA0040FB64 /* PlistBookmark */ = E1AEE0BC14E5C8FA0040FB64 /* PlistBookmark */;
 			E1AEE2B814E5F4820040FB64 /* PBXTextBookmark */ = E1AEE2B814E5F4820040FB64 /* PBXTextBookmark */;
-			E1AEE36B14E622E70040FB64 /* PBXTextBookmark */ = E1AEE36B14E622E70040FB64 /* PBXTextBookmark */;
 			E1AEE37714E626A70040FB64 /* PBXBookmark */ = E1AEE37714E626A70040FB64 /* PBXBookmark */;
-			E1AEE4CB14E682160040FB64 /* PBXTextBookmark */ = E1AEE4CB14E682160040FB64 /* PBXTextBookmark */;
-			E1AEE58D14E68F240040FB64 /* PBXTextBookmark */ = E1AEE58D14E68F240040FB64 /* PBXTextBookmark */;
-			E1AEE59114E68F240040FB64 /* PBXTextBookmark */ = E1AEE59114E68F240040FB64 /* PBXTextBookmark */;
 			E1AEE59214E68F240040FB64 /* PBXTextBookmark */ = E1AEE59214E68F240040FB64 /* PBXTextBookmark */;
-			E1AEE6C914E73DEC0040FB64 /* PBXTextBookmark */ = E1AEE6C914E73DEC0040FB64 /* PBXTextBookmark */;
 			E1C5C7F914E8BF9300FCF505 /* PBXTextBookmark */ = E1C5C7F914E8BF9300FCF505 /* PBXTextBookmark */;
-			E1C5C7FA14E8BF9300FCF505 /* PlistBookmark */ = E1C5C7FA14E8BF9300FCF505 /* PlistBookmark */;
-			E1C5C7FB14E8BF9300FCF505 /* PBXTextBookmark */ = E1C5C7FB14E8BF9300FCF505 /* PBXTextBookmark */;
-			E1C5C7FD14E8BF9300FCF505 /* PBXTextBookmark */ = E1C5C7FD14E8BF9300FCF505 /* PBXTextBookmark */;
 			E1C5C81214E8C11E00FCF505 /* PBXTextBookmark */ = E1C5C81214E8C11E00FCF505 /* PBXTextBookmark */;
-			E1C5C81314E8C11E00FCF505 /* PBXTextBookmark */ = E1C5C81314E8C11E00FCF505 /* PBXTextBookmark */;
-			E1C5C81414E8C11E00FCF505 /* PBXTextBookmark */ = E1C5C81414E8C11E00FCF505 /* PBXTextBookmark */;
-			E1C5C81914E8C1A700FCF505 /* PBXTextBookmark */ = E1C5C81914E8C1A700FCF505 /* PBXTextBookmark */;
-			E1C5C82B14E8C25300FCF505 /* PBXTextBookmark */ = E1C5C82B14E8C25300FCF505 /* PBXTextBookmark */;
-			E1C5C82C14E8C25300FCF505 /* PBXTextBookmark */ = E1C5C82C14E8C25300FCF505 /* PBXTextBookmark */;
+			E1F58ABA14EC6C5D005B03D5 /* PlistBookmark */ = E1F58ABA14EC6C5D005B03D5 /* PlistBookmark */;
+			E1F58B0114EC77ED005B03D5 /* PBXTextBookmark */ = E1F58B0114EC77ED005B03D5 /* PBXTextBookmark */;
+			E1F58B0214EC77ED005B03D5 /* PBXTextBookmark */ = E1F58B0214EC77ED005B03D5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = E1AEE05514E5C5F50040FB64 /* Source Control */;
 		userBuildSettings = {
@@ -62,6 +55,36 @@
 	};
 	8D57630D048677EA00EA77CD /* WirelessConfig */ = {
 		activeExec = 0;
+	};
+	E114D5FA14EB1F750010A612 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E1AEE44C14E64DBE0040FB64 /* ConfigIconCell.m */;
+		name = "ConfigIconCell.m: 39";
+		rLen = 0;
+		rLoc = 701;
+		rType = 0;
+		vrLen = 955;
+		vrLoc = 743;
+	};
+	E114D5FB14EB1F750010A612 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E1AEE46014E64FCE0040FB64 /* TableController.m */;
+		name = "TableController.m: 234";
+		rLen = 0;
+		rLoc = 6623;
+		rType = 0;
+		vrLen = 1156;
+		vrLoc = 277;
+	};
+	E114D62714EB2A0C0010A612 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E1AEE53714E688740040FB64 /* GlobalStatus.m */;
+		name = "GlobalStatus.m: 104";
+		rLen = 0;
+		rLoc = 3287;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 2163;
 	};
 	E1AEE05514E5C5F50040FB64 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -135,9 +158,9 @@
 	};
 	E1AEE2C814E60F5E0040FB64 /* wifiutil.py */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {843, 16016}}";
-			sepNavSelRange = "{1044, 0}";
-			sepNavVisRange = "{6234, 928}";
+			sepNavIntBoundsRect = "{{0, 0}, {989, 15951}}";
+			sepNavSelRange = "{45256, 0}";
+			sepNavVisRange = "{8647, 774}";
 		};
 	};
 	E1AEE2CA14E60FB10040FB64 /* wifiutil.settings.plist */ = {
@@ -161,16 +184,6 @@
 			sepNavWindowFrame = "{{15, 55}, {964, 691}}";
 		};
 	};
-	E1AEE36B14E622E70040FB64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE2C814E60F5E0040FB64 /* wifiutil.py */;
-		name = "wifiutil.py: 35";
-		rLen = 0;
-		rLoc = 1044;
-		rType = 0;
-		vrLen = 928;
-		vrLoc = 6234;
-	};
 	E1AEE37714E626A70040FB64 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = E1AEE0AA14E5C8B60040FB64 /* WirelessConfig.png */;
@@ -184,9 +197,9 @@
 	};
 	E1AEE44C14E64DBE0040FB64 /* ConfigIconCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 1846}}";
+			sepNavIntBoundsRect = "{{0, 0}, {989, 2015}}";
 			sepNavSelRange = "{701, 0}";
-			sepNavVisRange = "{2622, 1274}";
+			sepNavVisRange = "{743, 955}";
 			sepNavWindowFrame = "{{15, 50}, {964, 691}}";
 		};
 	};
@@ -199,21 +212,11 @@
 	};
 	E1AEE46014E64FCE0040FB64 /* TableController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 3510}}";
+			sepNavIntBoundsRect = "{{0, 0}, {989, 3523}}";
 			sepNavSelRange = "{6623, 0}";
-			sepNavVisRange = "{6081, 630}";
+			sepNavVisRange = "{277, 1156}";
 			sepNavWindowFrame = "{{15, 50}, {964, 691}}";
 		};
-	};
-	E1AEE4CB14E682160040FB64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE2C314E5F5680040FB64 /* SSPluginProtocol.h */;
-		name = "SSPluginProtocol.h: 1";
-		rLen = 18;
-		rLoc = 4;
-		rType = 0;
-		vrLen = 795;
-		vrLoc = 0;
 	};
 	E1AEE53614E688740040FB64 /* GlobalStatus.h */ = {
 		uiCtxt = {
@@ -224,30 +227,10 @@
 	};
 	E1AEE53714E688740040FB64 /* GlobalStatus.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {842, 1222}}";
-			sepNavSelRange = "{1040, 55}";
-			sepNavVisRange = "{0, 1156}";
+			sepNavIntBoundsRect = "{{0, 0}, {989, 1430}}";
+			sepNavSelRange = "{3287, 0}";
+			sepNavVisRange = "{2163, 1154}";
 		};
-	};
-	E1AEE58D14E68F240040FB64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE53614E688740040FB64 /* GlobalStatus.h */;
-		name = "GlobalStatus.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 428;
-		vrLoc = 0;
-	};
-	E1AEE59114E68F240040FB64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE2D914E611650040FB64 /* Constants.m */;
-		name = "Constants.m: 27";
-		rLen = 0;
-		rLoc = 651;
-		rType = 0;
-		vrLen = 658;
-		vrLoc = 0;
 	};
 	E1AEE59214E68F240040FB64 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -257,16 +240,6 @@
 		rLoc = 514;
 		rType = 0;
 		vrLen = 559;
-		vrLoc = 0;
-	};
-	E1AEE6C914E73DEC0040FB64 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE2D914E611650040FB64 /* Constants.m */;
-		name = "Constants.m: 27";
-		rLen = 0;
-		rLoc = 651;
-		rType = 0;
-		vrLen = 658;
 		vrLoc = 0;
 	};
 	E1C5C7F914E8BF9300FCF505 /* PBXTextBookmark */ = {
@@ -279,38 +252,6 @@
 		vrLen = 405;
 		vrLoc = 0;
 	};
-	E1C5C7FA14E8BF9300FCF505 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = E1AEE2CA14E60FB10040FB64 /* wifiutil.settings.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			debugEnabled,
-		);
-		name = /Users/acid/Documents/Genentech/PasswordUtility/WirelessConfig/WirelessConfig/wifiutil.settings.plist;
-		rLen = 0;
-		rLoc = 9223372036854775807;
-	};
-	E1C5C7FB14E8BF9300FCF505 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE05814E5C5FA0040FB64 /* WirelessConfig.m */;
-		name = "WirelessConfig.m: 136";
-		rLen = 0;
-		rLoc = 3069;
-		rType = 0;
-		vrLen = 836;
-		vrLoc = 2980;
-	};
-	E1C5C7FD14E8BF9300FCF505 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE44B14E64DBE0040FB64 /* ConfigIconCell.h */;
-		name = "ConfigIconCell.h: 12";
-		rLen = 0;
-		rLoc = 206;
-		rType = 0;
-		vrLen = 423;
-		vrLoc = 0;
-	};
 	E1C5C81214E8C11E00FCF505 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E1AEE45F14E64FCE0040FB64 /* TableController.h */;
@@ -321,54 +262,36 @@
 		vrLen = 740;
 		vrLoc = 0;
 	};
-	E1C5C81314E8C11E00FCF505 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE53714E688740040FB64 /* GlobalStatus.m */;
-		name = "GlobalStatus.m: 34";
-		rLen = 55;
-		rLoc = 1040;
-		rType = 0;
-		vrLen = 1156;
-		vrLoc = 0;
-	};
-	E1C5C81414E8C11E00FCF505 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE44C14E64DBE0040FB64 /* ConfigIconCell.m */;
-		name = "ConfigIconCell.m: 39";
+	E1F58ABA14EC6C5D005B03D5 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = E1AEE2CA14E60FB10040FB64 /* wifiutil.settings.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			debugEnabled,
+		);
+		name = /Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/wifiutil.settings.plist;
 		rLen = 0;
-		rLoc = 701;
-		rType = 0;
-		vrLen = 1274;
-		vrLoc = 2622;
+		rLoc = 9223372036854775808;
 	};
-	E1C5C81914E8C1A700FCF505 /* PBXTextBookmark */ = {
+	E1F58B0114EC77ED005B03D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E1AEE46014E64FCE0040FB64 /* TableController.m */;
-		name = "TableController.m: 102";
+		fRef = E1AEE2C814E60F5E0040FB64 /* wifiutil.py */;
+		name = "wifiutil.py: 253";
 		rLen = 0;
-		rLoc = 2518;
+		rLoc = 8963;
 		rType = 0;
-		vrLen = 527;
-		vrLoc = 2143;
+		vrLen = 774;
+		vrLoc = 8635;
 	};
-	E1C5C82B14E8C25300FCF505 /* PBXTextBookmark */ = {
+	E1F58B0214EC77ED005B03D5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = E1AEE46014E64FCE0040FB64 /* TableController.m */;
-		name = "TableController.m: 235";
+		fRef = E1AEE2C814E60F5E0040FB64 /* wifiutil.py */;
+		name = "wifiutil.py: 1232";
 		rLen = 0;
-		rLoc = 6623;
+		rLoc = 45256;
 		rType = 0;
-		vrLen = 630;
-		vrLoc = 6081;
-	};
-	E1C5C82C14E8C25300FCF505 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = E1AEE2D914E611650040FB64 /* Constants.m */;
-		name = "Constants.m: 27";
-		rLen = 0;
-		rLoc = 651;
-		rType = 0;
-		vrLen = 658;
-		vrLoc = 0;
+		vrLen = 774;
+		vrLoc = 8647;
 	};
 }

@@ -21,7 +21,9 @@
 	[super init];
 	[self readInSettings];
 	if(debugEnabled)NSLog(@"(init) OK Status Icon Cell Controller Initialized");
-	return self;
+	// And Return
+	if (!self) return nil;
+    return self;
 }
 
 
@@ -53,10 +55,14 @@
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
+	
+	if(debugEnabled)NSLog(@"(drawWithFrame) Composing image and text...");
+
 	[self setTextColor:[NSColor blackColor]];
 		
 	NSDictionary* data = [self objectValue];
 	if (!data) {
+		if(debugEnabled)NSLog(@"(drawWithFrame) No data object");
 		return;
 
 	}
@@ -68,9 +74,12 @@
 
 	NSString* primaryText;
 	if ([data objectForKey:@"title"] !=nil) {
+		if(debugEnabled)NSLog(@"(drawWithFrame) Found title: %@",[data objectForKey:@"title"]);
+
 		primaryText = [data objectForKey:@"title"];
 	}
 	else {
+		if(debugEnabled)NSLog(@"(drawWithFrame) No title setting to default");
 		primaryText   = @"Unknown";
 	}
 	
@@ -83,9 +92,12 @@
 	
 	NSString* secondaryText;
 	if ([data objectForKey:@"reason"] !=nil) {
+		if(debugEnabled)NSLog(@"DEBUG: (drawWithFrame) Found reason: %@",[data objectForKey:@"reason"]);
+
 		secondaryText = [data objectForKey:@"reason"];
 	}
 	else {
+		if(debugEnabled)NSLog(@"DEBUG: (drawWithFrame) No reason setting to default");
 		secondaryText   = @"Unknown";
 	}
 
@@ -110,13 +122,18 @@
 	// Grab the Icon at the specified Path
 	NSString* iconPath;
 	if ([data objectForKey:@"image"] !=nil) {
+		if(debugEnabled)NSLog(@"DEBUG: (drawWithFrame) Found image: %@",[data objectForKey:@"image"]);
+		
 		iconPath = [data objectForKey:@"image"];
 	}
 	else {
+		if(debugEnabled)NSLog(@"DEBUG: (drawWithFrame) No Found image setting to default");
+		
 		iconPath   = @"WirelessConfig";
 	}
 
-	NSImage *icon = [[NSImage alloc] initWithContentsOfFile: [ mainBundle pathForResource:iconPath ofType:@"png"]];
+	NSImage *icon = [[NSImage alloc] initWithContentsOfFile: [ mainBundle pathForResource:iconPath
+																				   ofType:@"png"]];
 	
 	NSImageInterpolation interpolation = [[NSGraphicsContext currentContext] imageInterpolation];
 	[[NSGraphicsContext currentContext] setImageInterpolation: NSImageInterpolationHigh];	
