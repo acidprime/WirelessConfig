@@ -23,6 +23,9 @@
 
 }
 
+// Standard Methods
+- (void)readInSettings;
+
 - (void) notifRequestStatusUpdateNotification:(NSNotification *) notification;
 - (void) notifStatusUpdateNotification:(NSNotification *) notification;
 @end

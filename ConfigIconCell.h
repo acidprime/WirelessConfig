@@ -1,6 +1,6 @@
 //
 //  ConfigIconCell.h
-//  PasswordUtility
+//  WirelessConfig
 //
 //  Created by Zack Smith on 8/19/11.
 //  Copyright 2011 318. All rights reserved.

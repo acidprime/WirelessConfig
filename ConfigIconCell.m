@@ -1,6 +1,6 @@
 //
 //  ConfigIconCell.m
-//  PasswordUtility
+//  WirelessConfig
 //
 //  Created by Zack Smith on 8/19/11.
 //  Copyright 2011 318. All rights reserved.
@@ -20,7 +20,7 @@
 {	
 	[super init];
 	[self readInSettings];
-	if(debugEnabled)NSLog(@"(init) OK Status Icon Cell Controller Initialized");
+	if(debugEnabled)NSLog(@"DEBUG: (init) OK Status Icon Cell Controller Initialized");
 	// And Return
 	if (!self) return nil;
     return self;

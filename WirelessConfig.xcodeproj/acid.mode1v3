@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,13 +275,11 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
-									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {294, 578}}</string>
+							<string>{{0, 0}, {294, 581}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -295,14 +291,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {311, 596}}</string>
+						<string>{{0, 0}, {311, 599}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>294</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>698 109 1366 637 0 0 1366 746 </string>
+						<string>0 105 1366 640 0 0 1366 746 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -318,7 +314,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>wifiutil.py</string>
+								<string>GlobalStatus.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,24 +322,28 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>wifiutil.py</string>
+										<string>GlobalStatus.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E1F58B0214EC77ED005B03D5</string>
+										<string>E11A330E150ABB4E006031D5</string>
 										<key>history</key>
 										<array>
 											<string>E1AEE0BC14E5C8FA0040FB64</string>
 											<string>E1AEE2B814E5F4820040FB64</string>
-											<string>E1AEE37714E626A70040FB64</string>
-											<string>E1AEE59214E68F240040FB64</string>
-											<string>E1C5C7F914E8BF9300FCF505</string>
-											<string>E1C5C81214E8C11E00FCF505</string>
-											<string>E114D5FA14EB1F750010A612</string>
-											<string>E114D5FB14EB1F750010A612</string>
-											<string>E114D62714EB2A0C0010A612</string>
-											<string>E1F58ABA14EC6C5D005B03D5</string>
-											<string>E1F58B0114EC77ED005B03D5</string>
+											<string>E1890CE914F4A7FE00E304B4</string>
+											<string>E1890D3514F4A99100E304B4</string>
+											<string>E1890D5514F4AD0900E304B4</string>
+											<string>E1890D5614F4AD0900E304B4</string>
+											<string>E1890D7814F5568300E304B4</string>
+											<string>E13D8496150A7B4D00E52BCC</string>
+											<string>E1577214150AA6FB00A15D40</string>
+											<string>E15772B4150AB52A00A15D40</string>
+											<string>E11A330A150ABB4E006031D5</string>
+											<string>E11A330B150ABB4E006031D5</string>
+											<string>E11A330C150ABB4E006031D5</string>
+											<string>E11A330D150ABB4E006031D5</string>
+											<string>E1890CEB14F4A7FE00E304B4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -355,16 +355,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1050, 296}}</string>
+								<string>{{0, 0}, {1050, 441}}</string>
 								<key>RubberWindowFrame</key>
-								<string>698 109 1366 637 0 0 1366 746 </string>
+								<string>0 105 1366 640 0 0 1366 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>296pt</string>
+							<string>441pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -375,14 +377,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 301}, {1050, 295}}</string>
+								<string>{{0, 446}, {1050, 153}}</string>
 								<key>RubberWindowFrame</key>
-								<string>698 109 1366 637 0 0 1366 746 </string>
+								<string>0 105 1366 640 0 0 1366 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>295pt</string>
+							<string>153pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -401,9 +403,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E1F58AFD14EC77E1005B03D5</string>
+				<string>E11A32CC150AB7B1006031D5</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E1F58AFE14EC77E1005B03D5</string>
+				<string>E11A32CD150AB7B1006031D5</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -545,7 +547,7 @@
 		<string>/Users/acid/Dropbox/code/WirelessConfig/WirelessConfig/WirelessConfig.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>698 109 1366 637 0 0 1366 746 </string>
+	<string>0 105 1366 640 0 0 1366 746 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -575,7 +577,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1120, 270}}</string>
 								<key>RubberWindowFrame</key>
-								<string>246 279 1120 467 0 0 1366 746 </string>
+								<string>129 279 1120 467 0 0 1366 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -599,7 +601,7 @@
 								<key>Frame</key>
 								<string>{{0, 275}, {1120, 151}}</string>
 								<key>RubberWindowFrame</key>
-								<string>246 279 1120 467 0 0 1366 746 </string>
+								<string>129 279 1120 467 0 0 1366 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -622,7 +624,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E1AEE06314E5C6620040FB64</string>
-				<string>E1F58AFF14EC77E1005B03D5</string>
+				<string>E11A32CE150AB7B1006031D5</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -631,7 +633,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>246 279 1120 467 0 0 1366 746 </string>
+			<string>129 279 1120 467 0 0 1366 746 </string>
 			<key>WindowToolGUID</key>
 			<string>E1AEE06314E5C6620040FB64</string>
 			<key>WindowToolIsVisible</key>

@@ -13,6 +13,7 @@
 
 @implementation TableController
 
+# pragma mark -
 # pragma mark Method Overrides
 # pragma mark -
 
@@ -42,10 +43,10 @@
 	 postNotificationName:RequestStatusUpdateNotification
 	 object:self];
 
-	// Hide the Dock
-	ConfigIconCell *statusIconCell = [[ConfigIconCell alloc] init];
+	// Setout our special col to our class
+	configIconCell = [[ConfigIconCell alloc] init];
 	
-	[discriptionCol setDataCell:statusIconCell];
+	[configIconCellCol setDataCell:configIconCell];
 	
 	// Set the button title to blank
 	[toggleSummaryPredicateButton setTitle:@""];
@@ -92,28 +93,31 @@
 }
 
 
-# pragma mark -
-# pragma mark NSTableView Methods
-# pragma mark -
-
 - (NSMutableArray*)aBuffer
 {
 	return aBuffer;
 }
 
 
+# pragma mark -
+# pragma mark NSTableView Datasource protocol
+# pragma mark -
+
+
 - (id)tableView:(NSTableView *)tableView 
 objectValueForTableColumn:(NSTableColumn *)tableColumn 
-			row:(NSInteger)row{
-	
+			row:(NSInteger)row
+{
+	if(debugEnabled)NSLog(@"DEBUG: (tableView) Begining Method implementation");
 
+	// Sanity checks
 	if (![aBuffer count]) {
 		if(debugEnabled)NSLog(@"DEBUG: (tableView) No entries, setting predicate to default");
-		statusPredicate = @"";
+		statusPredicate = @"False";
 		return nil;
 	}
 	else {
-		NSLog(@"DEBUG: (tableView)setting predicate to nil");
+		NSLog(@"DEBUG: (tableView) setting predicate to nil");
 		statusPredicate = nil;
 	}
 	if (row > [aBuffer count] -1) {
@@ -121,16 +125,9 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		return nil;
 	}
 	if(debugEnabled)NSLog(@"DEBUG: (tableView) Processing row: %d of %d",row,[aBuffer count] -1);
-
-
-	if (statusCol == tableColumn) {
-		NSString *status = [[aBuffer objectAtIndex:row] objectForKey:@"status"];
-			NSImage *image = [[NSImage alloc] initWithContentsOfFile: [ mainBundle
-																		   pathForResource:status ofType:@"png"]];
-			if (row != -1) return image;
-	}
 	
-	if (discriptionCol == tableColumn) {
+	if (configIconCellCol == tableColumn) {
+		if(debugEnabled)NSLog(@"Processing config icon Col");
 		NSMutableDictionary *displayDictionary = [[NSMutableDictionary alloc] init];
 		if ([aBuffer objectAtIndex:row]) {
 			return [aBuffer objectAtIndex:row];
@@ -147,7 +144,16 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		
 	}
 	
+	if (statusIconCol == tableColumn) {
+		if(debugEnabled)NSLog(@"Processing Status Icon Col");
+		NSString *status = [[aBuffer objectAtIndex:row] objectForKey:@"status"];
+		NSImage *image = [[NSImage alloc] initWithContentsOfFile: [ mainBundle
+																   pathForResource:status ofType:@"png"]];
+		if (row != -1) return image;
+	}
+	
 	if (statusTxtCol == tableColumn) {
+		if(debugEnabled)NSLog(@"Processing Status text Col");
 		if ([aBuffer objectAtIndex:row] !=nil) {
 			NSString * discription = @"";
 			NSString * status = @"";
@@ -197,7 +203,6 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 
 // Table View Protocol
 
-# pragma mark Table View Protocol
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
 	if ([aBuffer count] != 0) {
@@ -207,11 +212,12 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		
 	}
 	else {
-		if(debugEnabled)NSLog(@"DEBUG: (numberOfRowsInTableView) Returning %d rows",[aBuffer count] -1);
+		if(debugEnabled)NSLog(@"DEBUG: (numberOfRowsInTableView) Returning %d rows (-1)",[aBuffer count] -1);
 		return ([aBuffer count] -1);
 	}
 }
 
+# pragma mark -
 # pragma mark Notification Handlers
 # pragma mark -
 
@@ -231,7 +237,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	}
 	
 	globalStatusArray = [[NSMutableArray alloc] initWithArray:[globalStatusUpdate objectForKey:@"globalStatusArray"]];
-	if(debugEnabled)NSLog(@"DEBUG:(reloadTableBuffer) Notification Array: %@",globalStatusArray);
+	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) Notification Array: %@",globalStatusArray);
 
 	aBuffer = [[ NSMutableArray alloc] initWithArray:globalStatusArray];
 	
@@ -243,7 +249,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 	}
 	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) aBuffer: %@",aBuffer);
 	if(debugEnabled)NSLog(@"DEBUG: (reloadTableBuffer) Telling table to reload data");
-	
+	// Removing as I don't think needs to be on the main thread
 	/*
 	[tableView performSelectorOnMainThread:@selector(reloadData)
 								withObject:nil

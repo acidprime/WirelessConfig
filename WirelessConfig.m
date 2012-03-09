@@ -16,6 +16,7 @@
 
 @synthesize userName;
 @synthesize passWord;
+@synthesize scriptRunning;
 
 #pragma mark Init Methods
 
@@ -30,11 +31,11 @@
 
 - (id) initWithBundle:(NSBundle *)bundle{
 	if(self = [super init]){
-		NSLog(@"DEBUG: Setting Title");
+		if(debugEnabled)NSLog(@"DEBUG: Setting Title");
 		
 		[self setTitle:@"GenenAir2"];
 		
-		NSLog(@"DEBUG: Loading Nib");
+		if(debugEnabled)NSLog(@"DEBUG: Loading Nib");
         [self initWithNibName:@"WirelessConfig" bundle:bundle];
 		
 		// Read in our settings
@@ -52,6 +53,20 @@
 	return self;
 }
 
+#pragma mark Delegate Methods
+
+- (void)controlTextDidChange:(NSNotification *)nd
+{
+	if(debugEnabled)NSLog(@"DEBUG: User edited content");
+	if(debugEnabled)NSLog(@"DEBUG: userNameField %d",[[userNameField stringValue] length]);
+	if(debugEnabled)NSLog(@"DEBUG: passWordField %d",[[passWordField stringValue] length]);
+	if ([[userNameField stringValue] length] > 0 && [[passWordField stringValue] length] > 0){
+		[mainButton setEnabled:YES];
+	}
+}
+
+#pragma mark Instance Methods
+
 -(NSImage *) image{
 	NSImage *logo = [[NSImage alloc] initWithContentsOfFile: [[NSBundle bundleForClass:[self class]]
 	 pathForResource:@"WirelessConfig" ofType:@"png"]];
@@ -65,7 +80,7 @@
 
 -(void)rootAccessObject:object;
 {
-	NSLog(@"DEBUG: Recieved root access");
+	if(debugEnabled)NSLog(@"DEBUG: Recieved root access");
 	rootObject = object;
 }
 
@@ -75,29 +90,49 @@
 	return url;
 }
 -(NSString *) pluginID{
-	NSString *pluginID = @"org.wallcity.foo";
+	NSString *pluginID = @"org.wallcity.wirelessconfig";
 	return pluginID;
 }
 -(void) viewWillAppear{
-	NSLog(@"DEBUG: View will Appear...");
+	if(debugEnabled)NSLog(@"DEBUG: View will Appear...");
 }
 
 -(void) viewDidAppear{
-	NSLog(@"DEBUG: View did Appear...");
+	if(debugEnabled)NSLog(@"DEBUG: View did Appear...");
 	[self loadView];
 	
-	NSLog(@"DEBUG: Updating Tableview");
-	[self updateTable];
+	if(debugEnabled)NSLog(@"DEBUG: Updating Tableview");
+	//[self updateTable];
+
+
 
 }
 
 
 - (IBAction)connectButtonClicked:(id)sender
+{	
+	if (self.scriptRunning) {
+		NSLog(@"Script already running");
+	}
+	else {
+		
+		[NSThread detachNewThreadSelector:@selector(runScript:)
+								 toTarget:self
+							   withObject:sender];
+	}
+}
+
+- (void)runScript:(id)sender
 {
+
 	NSMutableArray *arguments = [[NSMutableArray alloc] init];
 	
 	NSString *settingsPath = [mainBundle pathForResource:SettingsFileResourceID
 												  ofType:@"plist"];
+	
+	[mainProgressIndicator setUsesThreadedAnimation:YES];
+	
+	self.scriptRunning = YES;
 	
 	[ arguments addObject:[NSString stringWithFormat:@"--plist=%@",settingsPath]];
 	[ arguments addObject:[NSString stringWithFormat:@"--username=%@",self.userName]];
@@ -107,7 +142,7 @@
 	
 	if ([[settings objectForKey:@"debugEnabled"] boolValue]) {
 		[ arguments addObject:[NSString stringWithFormat:@"-d"]];
-
+		
 	}
 	
 	NSString *utility = [mainBundle pathForResource:UtilityScriptName
@@ -116,11 +151,48 @@
 	NSLog(@"Utility path: %@",utility);
 	NSLog(@"Script Arguments: %@",arguments);
 	
-	
+	// Run using the rootObject from Self Service
 	[rootObject runTask:utility
 		  withArguments:arguments
 		   withDelegate:self]; 
+	
+	// Display the NSAlert
+	[self displaySetupComplete:sender];
+	
+	self.scriptRunning = NO;
+}
 
+- (void)displaySetupComplete:(id)sender
+{
+	// Activate Our Application
+	[NSApp arrangeInFront:self];
+	[NSApp activateIgnoringOtherApps:YES];
+	// Display a standard alert
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert addButtonWithTitle:@"OK"];
+	[alert setMessageText:@"GenenAir2 Setup Complete"];
+	[alert setInformativeText:@"GenenAir2 has been configured on your system"];
+	[alert setAlertStyle:NSWarningAlertStyle];
+	//[alert runModal];
+	[alert beginSheetModalForWindow:[sender window]
+					  modalDelegate:self
+					 didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:)
+						contextInfo:nil];
+	
+	[alert release];
+
+}
+
+- (void)alertDidEnd:(NSAlert *)alert
+		 returnCode:(NSInteger)returnCode
+		contextInfo:(void *)contextInfo
+{
+    if (returnCode == NSAlertFirstButtonReturn) {
+		// For the casper policy reporting
+		NSLog(@"--------------------------------------------------------------------------------");
+		NSLog(@"------------------------>User clicked ok<-----------------------------------");
+		NSLog(@"--------------------------------------------------------------------------------");
+	}
 }
 
 - (void) receivedStdout:(NSString *)text
@@ -158,7 +230,7 @@
 	
 	
 	[ globalStatusUpdate setValue:globalStatusArray forKey:@"globalStatusArray"];
-	NSLog(@"DEBUG: Sending Global Status Update: %@",globalStatusUpdate);
+	if(debugEnabled)NSLog(@"DEBUG: Sending Global Status Update: %@",globalStatusUpdate);
 	
 	// Pass the mutated Data to our NSTable
 	[[NSNotificationCenter defaultCenter]

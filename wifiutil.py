@@ -12,12 +12,19 @@ import subprocess
 import commands
 import re
 import time
+
 from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyListSerialization,NSDate
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
 
 # Commands used by this script
 airport = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Contents/Resources/eapolclient'
+if not os.path.exists(eapolclient):
+  # Leopard Location, used by security command for ACL
+  eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Resources/eapolclient'
+
+runDirectory = os.path.dirname(os.path.abspath(__file__))
+
 networksetup = '/usr/sbin/networksetup'
 profiles = '/usr/bin/profiles'
 plutil = '/usr/bin/plutil'
@@ -26,6 +33,8 @@ security = '/usr/bin/security'
 sudo = '/usr/bin/sudo'
 system_profiler = '/usr/sbin/system_profiler'
 who = '/usr/bin/who'
+# Added for 10.5 support
+kcutil = '%s/%s' % (runDirectory,'kcutil')
 
 def showUsage():
   print '''
@@ -77,19 +86,27 @@ def createEAPProfile(path,uid,gid,networkDict):
   EAPClientConfiguration['TLSVerifyServerCertificate'] = False
   EAPClientConfiguration['TTLSInnerAuthentication'] = networkDict['iath']
   EAPClientConfiguration['UserName'] = networkDict['user'] 
-  EAPClientConfiguration['UserPasswordKeychainItemID'] = networkDict['keyc'] 
+  EAPClientConfiguration['UserPasswordKeychainItemID'] = networkDict['keyc']
+  
+  if not osVersion['minor'] == LEOP:
+    EAPClientConfiguration['Wireless Security'] = networkDict['type'] 
 
   # Top Level item keys
   _Profiles['EAPClientConfiguration'] = EAPClientConfiguration
   _Profiles['UniqueIdentifier'] = networkDict['keyc'] 
-  _Profiles['UserDefinedName'] = 'WPA: %s' % networkDict['ssid'] 
-  _Profiles['Wireless Security'] = networkDict['type'] 
+  _Profiles['UserDefinedName'] = 'WPA: %s' % networkDict['ssid']
+  
+  if not osVersion['minor'] == LEOP: 
+    _Profiles['Wireless Security'] = networkDict['type'] 
 
   # Merge the data with current plist
   plist['Profiles'].append(_Profiles)
   exportFile = path
-  plist.writeToFile_atomically_(exportFile,True) 
-  os.chown(path,uid,gid)
+  plist.writeToFile_atomically_(exportFile,True)
+  try: 
+    os.chown(path,uid,gid)
+  except:
+    print 'Path not found %s' % path
 
 def getAirportMac():
   # Script Created Entry
@@ -115,7 +132,10 @@ def createEAPBinding(path,uid,gid,networkDict):
   plist[macAddress].append(_item)
   exportFile = path
   plist.writeToFile_atomically_(exportFile,True)
-  os.chown(path,uid,gid)
+  try:
+    os.chown(path,uid,gid)
+  except:
+    print 'Path not found %s' % path
 
 def createRecentNetwork(networkDict):
   path = '/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist'
@@ -141,11 +161,14 @@ def createRecentNetwork(networkDict):
   plist[port]['RecentNetworks'].append(_RecentNetworks)
   exportFile = path
   plist.writeToFile_atomically_(exportFile,True)
-  os.chown(path,uid,gid)
- 
+  try:
+    os.chown(path,uid,gid)
+  except:
+     print 'Path not found %s' % path
 
 def createKnownNetwork(networkDict):
-    # There were some MacBook Airs that shipped with 10.5
+  print 'Creating KnownNetworks entry'
+  # There were some MacBook Airs that shipped with 10.5
   path = '/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist'
   # Set to root as the owner for good measure
   uid = 0 
@@ -161,13 +184,16 @@ def createKnownNetwork(networkDict):
   plist['KnownNetworks'][guid]['Remembered channels'] = [networkDict['chan'],]
   plist['KnownNetworks'][guid]['SecurityType'] = networkDict['sect'] 
   # If we are adding a non WPA2 Enterprise network add the keychain item
-  if not networkDict['type'] == 'WPA2 Enterprise':
+  if networkDict['type'] == 'WPA2':
     plist['KnownNetworks'][guid]['Unique Password ID'] = networkDict['keyc']
   plist['KnownNetworks'][guid]['_timeStamp'] = NSDate.date()
   exportFile = path
   plist.writeToFile_atomically_(exportFile,True)
-  os.chown(path,uid,gid)
-
+  try:
+    os.chown(path,uid,gid)
+  except:
+    print 'Path not found %s' % path
+	
 def addKeychainPassword(arguments):
   # Script Created Entry
   print 'Adding password to keychain'
@@ -175,6 +201,58 @@ def addKeychainPassword(arguments):
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
   out, err = execute.communicate()
   print out
+  
+def createLeopEAPkeychainEntry(networkDict):
+  users = '/var/db/dslocal/nodes/Default/users'
+  listing = os.listdir(users)
+  for plist in listing:
+    # Hardware test for Air
+    excluded = re.compile("^((?!^_|root|daemon|nobody|com.apple.*).)*$")
+    if excluded.match(plist):
+      plistPath = '%s/%s' % (users,plist)
+      print 'Processing: %s' % plistPath
+      user = NSDictionary.dictionaryWithContentsOfFile_(plistPath)
+      try:
+        uid = int(user['uid'][0])
+        gid = int(user['gid'][0])
+        for home in user['home']:
+          keychain = home + '/Library/Keychains/login.keychain'
+          print 'Processing keychain: %s' % keychain
+          if os.path.exists(keychain):
+            if user['name'][0] == getConsoleUser():
+              arguments = [security,
+                   "add-generic-password",
+                   '-a',
+                   networkDict['ssid'],
+                   '-l',
+                   '%s-%s' % (networkDict['ssid'],networkDict['user']),
+                   '-D',
+                   'Internet Connect',
+                   '-s',
+                    networkDict['keyc'],
+                   '-w',
+                   networkDict['pass'],
+                   '-T',
+                   'group://Aiport',
+                   '-T',
+                   '/System/Library/CoreServices/SystemUIServer.app',
+                   '-T',
+                   '/Applications/System Preferences.app',
+                   '-T',
+                   '/usr/libexec/airportd',
+                   '-T',
+                   eapolclient,
+                   keychain]
+            
+              addKeychainPassword(arguments)
+              try:
+                os.chown(keychain,uid,gid)
+              except:
+                print 'Path not found %s' % keychain
+            else:
+              print 'User will not be modified: %s' % user['name'][0] 
+      except:
+        print 'Key Missing, Skipping'
 
 def createSnowEAPkeychainEntry(networkDict):
   users = '/var/db/dslocal/nodes/Default/users'
@@ -193,29 +271,33 @@ def createSnowEAPkeychainEntry(networkDict):
           keychain = home + '/Library/Keychains/login.keychain'
           print 'Processing keychain: %s' % keychain
           if os.path.exists(keychain):
-            arguments = [security,
-               "add-generic-password",
-               '-a',
-               networkDict['user'],
-               '-l',
-               'WPA: %s' % networkDict['ssid'],
-               '-D',
-               '802.1X Password',
-               '-s',
-                networkDict['keyc'],
-               '-w',
-               networkDict['pass'],
-              '-T',
-               'group://Aiport',
-               '-T',
-               '/System/Library/CoreServices/SystemUIServer.app',
-               '-T',
-               '/Applications/System Preferences.app',
-               '-T',
-               eapolclient,
-               keychain]
-            addKeychainPassword(arguments)
-            os.chown(keychain,uid,gid)
+            if user['name'][0] == getConsoleUser():
+              arguments = [security,
+                 "add-generic-password",
+                 '-a',
+                 networkDict['user'],
+                 '-l',
+                 'WPA: %s' % networkDict['ssid'],
+                 '-D',
+                 '802.1X Password',
+                 '-s',
+                  networkDict['keyc'],
+                 '-w',
+                 networkDict['pass'],
+                '-T',
+                 'group://Aiport',
+                 '-T',
+                 '/System/Library/CoreServices/SystemUIServer.app',
+                 '-T',
+                 '/Applications/System Preferences.app',
+                 '-T',
+                 eapolclient,
+                 keychain]
+              addKeychainPassword(arguments)
+              try:
+                os.chown(keychain,uid,gid)
+              except:
+                  print 'Path not found %s' % keychain
       except:
         print 'Key Missing, Skipping'
 
@@ -237,10 +319,8 @@ def createLionEAPkeychainEntry(networkDict):
           print 'Processing keychain: %s' % keychain
           if os.path.exists(keychain):
             # Clear old value
-            arguments = [sudo,
-                          "-u",
-                          user['name'][0],
-                          security,
+            if user['name'][0] == getConsoleUser():
+              arguments = [security,
                           "delete-generic-password",
                           '-D',
                           '802.1X Password',
@@ -249,31 +329,34 @@ def createLionEAPkeychainEntry(networkDict):
                           '-a',
                           networkDict['user'],
                           keychain]
-            deleteKeychainPassword(arguments)
-            # Add New Value
-            arguments = [security,
-               "add-generic-password",
-               '-a',
-               networkDict['user'],
-               '-l',
-               networkDict['ssid'],
-               '-D',
-               '802.1X Password',
-               '-s',
-                'com.apple.network.eap.user.item.wlan.ssid.%s' % networkDict['ssid'],
-               '-w',
-               networkDict['pass'],
-               '-T',
-               'group://Aiport',
-               '-T',
-               '/System/Library/CoreServices/SystemUIServer.app',
-               '-T',
-               '/Applications/System Preferences.app',
-               '-T',
-               eapolclient,
-               keychain]
-            addKeychainPassword(arguments)
-            os.chown(keychain,uid,gid)
+              deleteKeychainPassword(arguments)
+              # Add New Value
+              arguments = [security,
+                 "add-generic-password",
+                 '-a',
+                 networkDict['user'],
+                 '-l',
+                 networkDict['ssid'],
+                 '-D',
+                 '802.1X Password',
+                 '-s',
+                  'com.apple.network.eap.user.item.wlan.ssid.%s' % networkDict['ssid'],
+                 '-w',
+                 networkDict['pass'],
+                 '-T',
+                 'group://Aiport',
+                 '-T',
+                 '/System/Library/CoreServices/SystemUIServer.app',
+                 '-T',
+                 '/Applications/System Preferences.app',
+                 '-T',
+                 eapolclient,
+                 keychain]
+              addKeychainPassword(arguments)
+              try:
+                os.chown(keychain,uid,gid)
+              except:
+                 print 'Path not found %s' % keychain
       except:
         print 'Key Missing, Skipping'
 
@@ -394,8 +477,8 @@ def addPreferredNetwork(networkDict):
       _PreferredNetworks['SSID_STR'] = networkDict['ssid']
       _PreferredNetworks['SecurityType'] = networkDict['sect']
       _PreferredNetworks['Unique Network ID'] = networkDict['guid'] 
-      # Add keychain item reference if not 802.1x
-      if not networkDict['type'] == 'WPA2 Enterprise':
+      # Add keychain item reference if not 802.1x or Open
+      if networkDict['type'] == 'WPA2':
         _PreferredNetworks['Unique Password ID'] = networkDict['keyc']
 
       plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort']['PreferredNetworks'].append(_PreferredNetworks)
@@ -430,6 +513,7 @@ def leopardAddWireless(networkDict={}):
   # 10.5 Style
   # Grab UUID if already in network list 
   found = False
+  print 'Checking for existing Keychain GUID in KnownNetworks'
   try:
     for key in copy['KnownNetworks'].keys():
       if copy['KnownNetworks'][key]['SSID_STR'] == networkDict['ssid']:
@@ -439,31 +523,33 @@ def leopardAddWireless(networkDict={}):
   except:
     print 'Key KnownNetworks not found'
   # If this not an OPEN network then add keychain
-  if 'pass' in networkDict.keys():
-    print 'Network has password generating keychain arguments...'
-    keychain = '/Library/Keychains/System.keychain'
-    arguments = [security,
-                 "add-generic-password",
-                 '-a',
-                 networkDict['ssid'],
-                 '-l',
-                 networkDict['ssid'],
-                 '-D',
-                 'Airport network password',
-                 '-s',
-                  networkDict['guid'],
-                 '-w',
-                 networkDict['pass'],
-                 '-T',
-                 'group://Aiport',
-                 '-T',
-                 '/System/Library/CoreServices/SystemUIServer.app',
-                 '-T',
-                 '/Applications/System Preferences.app',
-                 '-T',
-                 '/usr/libexec/airportd',
-                 keychain]
-    addKeychainPassword(arguments)
+  # Updated to not add blank keychain entry for Open networks
+  if 'pass' in networkDict.keys() and not networkDict['type'] == "OPEN":
+    """ Removing Keychain entries for system due to bug in 10.5 """
+    #print 'Network has password generating keychain arguments...'
+    #keychain = '/Library/Keychains/System.keychain'
+    #arguments = [security,
+    #             "add-generic-password",
+    #             '-a',
+    #             networkDict['ssid'],
+    #             '-l',
+    #             networkDict['ssid'],
+    #             '-D',
+    #             'AirPort network password',
+    #             '-s',
+    #              networkDict['guid'],
+    #             '-w',
+    #             networkDict['pass'],
+    #             '-T',
+    #             'group://Aiport',
+    #             '-T',
+    #             '/System/Library/CoreServices/SystemUIServer.app',
+    #             '-T',
+    #             '/Applications/System Preferences.app',
+    #             '-T',
+    #             '/usr/libexec/airportd',
+    #             keychain]
+    #addKeychainPassword(arguments)
     users = '/var/db/dslocal/nodes/Default/users'
     listing = os.listdir(users)
     for plist in listing:
@@ -481,14 +567,15 @@ def leopardAddWireless(networkDict={}):
               print 'Processing keychain: %s' % keychain
               if os.path.exists(keychain):
                 # -U causing segmentation fault, removed sudo
-                arguments = [security,
+                if user['name'][0] == getConsoleUser():
+                  arguments = [security,
                             "add-generic-password",
                             '-a',
                             networkDict['ssid'],
                             '-l',
                             networkDict['ssid'],
                             '-D',
-                            'Airport network password',
+                            'AirPort network password',
                             '-s',
                             'AirPort Network',
                             '-w',
@@ -500,22 +587,35 @@ def leopardAddWireless(networkDict={}):
                             '-T',
                             '/Applications/System Preferences.app',
                             keychain]
-                addKeychainPassword(arguments)
-                os.chown(keychain,uid,gid)
-              else:
-                print 'Keychain file: %s does not exist' % keychain
+                  addKeychainPassword(arguments)
+                  arguments = [kcutil,
+                               user['home'][0],
+                               user['name'][0],
+                               networkDict['pass'],
+                               configFile]
+                  addKeychainPassword(arguments)
+                  try:
+                    os.chown(keychain,uid,gid)
+                  except:
+                    print 'Path not found: %s' % keychain
+                else:
+                  print 'Keychain file: %s does not exist' % keychain
           except:
             print 'User plist %s does not have a home key' % plistPath
   else:
     print 'No password is specified, skipping keychain actions'
   port = 'Airport'
-  if not networkDict['type'] == 'WPA2 Enterprise':
+  if networkDict['type'] == 'WPA2 Enterprise':
     createKnownNetwork(networkDict)
     createRecentNetwork(networkDict)
-    createSnowEAPkeychainEntry(networkDict)
+    addUsersEAPProfile(networkDict)
+    createLeopEAPkeychainEntry(networkDict)
     addPreferredNetwork(networkDict)
-
+  else:
+    # We can automatically connect to WPA PSK type networks
+    leopardRemoveWireless(networkDict['ssid'])
     connectToNewNetwork(port,networkDict)
+
 
 def leopardRemoveWireless(networkName):
   plistPath = '/Library/Preferences/SystemConfiguration/preferences.plist'
@@ -528,7 +628,8 @@ def leopardRemoveWireless(networkName):
       sys.exit(1)
   else:
     print 'File does not exist at path: %s' % plistPath
-    sys.exit(1) 
+    sys.exit(1)
+  print 'Processing preference file: %s' % plistPath
   # Create a copy of the dictionary due to emuration
   copy = NSMutableDictionary.dictionaryWithContentsOfFile_(plistPath)
   # Iterate through network sets
@@ -556,9 +657,11 @@ def leopardRemoveWireless(networkName):
               print 'Processing enX: %s' % enX
               print 'Processing key: %s' % key
               try:
+                print 'Attempting delete of Set: %s for Interface:%s Named:%s Index:%d' % (Set,enX,key,index) 
                 del pl['Sets'][Set]['Network']['Interface'][enX][key]['PreferredNetworks'][index]
+                print 'Deleted set: %s' % Set
               except IndexError:
-                print 'Out of bounds %d' % index
+                print 'Unable to remove Received Out of bounds error for index %d' % index
             index += 1
         except KeyError:
            print 'Skipping interface without PreferredNetworks'
@@ -707,9 +810,9 @@ def removeKnownNetwork(networkName):
   # 10.5 Style
   # Clean up KnownNetworks key
   try:
-    for key in copy['KnownNetworks'].keys():
-      if copy['KnownNetworks'][key]['SSID_STR'] == networkName:
-        del pl['KnownNetworks'][key] 
+    for guid in copy['KnownNetworks'].keys():
+      if copy['KnownNetworks'][guid]['SSID_STR'] == networkName:
+        del pl['KnownNetworks'][guid]
   except:
     print 'Key KnownNetworks not found'
   # Clean up top level key
@@ -720,9 +823,9 @@ def removeKnownNetwork(networkName):
     if port in copy.keys():
       index = 0
       try:
-        for key in copy['en1']['RecentNetworks']:
+        for key in copy[port]['RecentNetworks']:
           if key['SSID_STR'] == networkName:
-            del pl['en1']['RecentNetworks'][index]
+            del pl[port]['RecentNetworks'][index]
           index += 1
       except:
          print 'No key RecentNetworks'
@@ -813,7 +916,7 @@ def scanAvailableNetworks(networkName):
   except:
     # Might need to switch to Cocoa here
     print 'Unable to parse airport command output'
-    print 'Interface may be offline, or starting up too slow'
+    print 'This error is not critical and can be ignored'
     return False 
 
   print 'Search found following acess points available'
@@ -832,7 +935,6 @@ def printCommand(arguments):
 def connectToNewNetwork(port,networkDict={}):
   toggleAirportPower('on')
   # If network is in range connect to it
- # Manual way
   if osVersion['minor'] == LEOP:
     wireless = "-A%s" % networkDict['ssid']
     if 'pass' in networkDict.keys():
@@ -845,6 +947,7 @@ def connectToNewNetwork(port,networkDict={}):
     out, err = execute.communicate()
     print out
   if scanAvailableNetworks(networkDict['ssid']):
+    print "Waiting for interface to come up..."
     time.sleep(10)
     if osVersion['minor'] >= SNOW:
       if 'pass' in networkDict.keys():
@@ -880,11 +983,13 @@ def getPlatformPortName():
     return 'en1'
 
 def getConsoleUser():
-  # Hardware test for Air
+  arguments = [who]
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+  parse = out.split()
   console = re.compile(".*console.*")
-  whoCmd = commands.getoutput(who).split(' ')
-  if console.match(whoCmd):
-    return whoCmd[0]
+  if console.match(out):
+    return parse[0]
   else:
     return None
 
@@ -921,11 +1026,9 @@ def deleteUsersKeychainPassword(networkName):
             keychain = home + '/Library/Keychains/login.keychain'
             print 'Processing keychain: %s' % keychain
             if os.path.exists(keychain):
-              # Snow Type 1
-              arguments = [sudo,
-                          "-u",
-                          user['name'][0],
-                          security,
+              if user['name'][0] == getConsoleUser():
+                # Snow Type 1
+                arguments = [security,
                           "delete-generic-password",
                           '-D',
                           'AirPort network password',
@@ -934,12 +1037,9 @@ def deleteUsersKeychainPassword(networkName):
                           '-l',
                           networkName,
                           keychain]
-              deleteKeychainPassword(arguments)
-              # Snow Type 2
-              arguments = [sudo,
-                          "-u",
-                          user['name'][0],
-                          security,
+                deleteKeychainPassword(arguments)
+                # Snow Type 2
+                arguments = [security,
                           "delete-generic-password",
                           '-D',
                           'AirPort network password',
@@ -948,35 +1048,32 @@ def deleteUsersKeychainPassword(networkName):
                           '-l',
                           networkName,
                           keychain]
-              deleteKeychainPassword(arguments)
-              # Snow 802.1X type 1
-              # Updated to remove account type as local user name may mismatch
-              arguments = [sudo,
-                          "-u",
-                          user['name'][0],
-                          security,
+                deleteKeychainPassword(arguments)
+                # Snow 802.1X type 1
+                # Updated to remove account type as local user name may mismatch
+                arguments = [security,
                           "delete-generic-password",
                           '-D',
                           '802.1X Password',
                           '-l',
                           'WPA: %s' % networkName,
                           keychain]
-              deleteKeychainPassword(arguments)
-              # Lion
-              arguments = [sudo,
-                          "-u",
-                          user['name'][0],
-                          security,
+                deleteKeychainPassword(arguments)
+                # Lion
+                arguments = [security,
                           "delete-generic-password",
                           '-D',
                           '802.1X Password',
                           '-l',
                           networkName,
                           keychain]
-              deleteKeychainPassword(arguments)
-              os.chown(keychain,uid,gid)
-            else:
-              print 'Keychain file: %s does not exist' % keychain
+                deleteKeychainPassword(arguments)
+                try:
+                  os.chown(keychain,uid,gid)
+                except:
+                  print 'Path not found %s' % keychain
+              else:
+                print 'Keychain file: %s does not exist' % keychain
         except KeyError:
           print 'User plist %s does not have a home key' % plistPath
 
@@ -1015,7 +1112,10 @@ def deleteUsersEAPProfile(networkName):
                       # Delete the entry and update the file
                       del profileByHostFile[mac][index]
                       writePlist(profileByHostFile,profileByHost)
-                      os.chown(profileByHost,uid,gid)
+                      try:
+                        os.chown(profileByHost,uid,gid)
+                      except:
+                        print 'Path not found: %s' % profileByHost
                       profileFileCopy = NSDictionary.dictionaryWithDictionary_(profileFile)
                       profileIndex = 0
                       print '-' * 80
@@ -1060,6 +1160,7 @@ def addUsersEAPProfile(networkDict):
 
 # Handle the system keychain as root
 def deleteSystemKeychainPassword(networkName):
+  keychain = '/Library/Keychains/System.keychain'
   arguments = [security,
               "delete-generic-password",
               '-D',
@@ -1067,7 +1168,8 @@ def deleteSystemKeychainPassword(networkName):
               '-a',
               'Airport',
               '-l',
-              networkName]
+              networkName,
+              keychain]
   deleteKeychainPassword(arguments)
   arguments = [security,
               "delete-generic-password",
@@ -1076,15 +1178,19 @@ def deleteSystemKeychainPassword(networkName):
               '-a',
               networkName,
               '-l',
-              networkName]
+              networkName,
+              keychain]
   deleteKeychainPassword(arguments) 
 
 def addKeychainPassword(arguments):
   # Script Created Entry
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
-  print out
+  try:
+    execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+    out, err = execute.communicate()
+    print out
+  except:
+    print 'The command did not exit 0'
 
 def deleteKeychainPassword(arguments):
   # Script Created Entry
@@ -1173,6 +1279,9 @@ def main():
     print '--> Not enough options given' 
     return 1
 
+  # Check the current directory
+  if os.path.exists('wifiutil.settings.plist'):
+    plistPath = 'wifiutil.settings.plist'
   try:
     plistPath
   except UnboundLocalError:
@@ -1185,7 +1294,8 @@ def main():
   else:
     print 'File does not exist: %s' % plistPath
     return 1
-
+  global configFile
+  configFile = plistPath
   # Get OS Version
   global osVersion
   osVersion = getSystemVersion()
@@ -1217,9 +1327,11 @@ def main():
       if networkDict['type'] == 'OPEN':
         del networkDict['pass']
 
-      # Generate our wireless & keychain entry guids
-      networkDict['guid'] = str(uuid.uuid1()).upper()
-      networkDict['keyc'] = str(uuid.uuid1()).upper()
+        # Generate our wireless & keychain entry guids, not recommended
+	if not 'guid' in networkDict.keys():
+          networkDict['guid'] = str(uuid.uuid1()).upper()
+	if not 'keyc' in networkDict.keys():
+          networkDict['keyc'] = str(uuid.uuid1()).upper()
       # Process os specific directives 
       addWireless(osVersion,networkDict)
   else:

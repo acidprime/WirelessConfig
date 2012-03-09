@@ -20,8 +20,8 @@
 
 
 	//NSTableColumns
-	IBOutlet NSTableColumn *statusCol;
-	IBOutlet NSTableColumn *discriptionCol;
+	IBOutlet NSTableColumn *statusIconCol;
+	IBOutlet NSTableColumn *configIconCellCol;
 	IBOutlet NSTableColumn *statusTxtCol;
 	
 	//NSArrays
@@ -38,7 +38,7 @@
 	NSString *statusPredicate;
 	
 	NSDictionary *lastGlobalStatusUpdate;
-
+	ConfigIconCell *configIconCell;
 
 }
 // IBActions

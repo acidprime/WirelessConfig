@@ -7,11 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SSPluginProtocol.h"
 
 @class GlobalStatus;
 
 
-@interface WirelessConfig : NSViewController {
+@interface WirelessConfig : NSViewController <SSRootAccessProtocol> {
+	// IBOutlets
+	IBOutlet NSTextField *userNameField;
+	IBOutlet NSSecureTextField *passWordField;
+	IBOutlet NSButton *mainButton;
+	IBOutlet NSProgressIndicator *mainProgressIndicator;
+	
 	NSDictionary *settings;
 	NSBundle *mainBundle;
 
@@ -20,11 +27,7 @@
 	NSString *passWord;
 	
 	id rootObject;
-	
-	// IBOutlets
-	IBOutlet NSTextField *userNameField;
-	IBOutlet NSSecureTextField *passWordField;
-	
+
 	// Custom Class instance variables
 	GlobalStatus  *globalStatusController;
 
@@ -32,6 +35,7 @@
 	NSMutableArray *globalStatusArray;
 	
 	BOOL debugEnabled;
+	BOOL scriptRunning;
 }
 
 
@@ -50,7 +54,10 @@
 -(void) receivedStdout:(NSString *)text;
 -(void) receivedStderr:(NSString *)text;
 
+- (void)runScript:(id)sender;
+
 -(void)updateTable;
+- (void)displaySetupComplete:(id)sender;
 
 // IBActions
 -(IBAction)connectButtonClicked:(id)sender;
@@ -58,6 +65,8 @@
 // Fields
 @property (retain) NSString* userName;
 @property (retain) NSString* passWord;
+@property BOOL scriptRunning;
+
 
 @end
 

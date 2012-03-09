@@ -2,18 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>debugEnabled</key>
-	<true/>
+	<key>orgName</key>
+	<string>Genentech</string>
 	<key>networkRemoveList</key>
 	<array>
-		<string>wallcity.open</string>
-		<string>wallcity.wpa</string>
+		<string>guestwlan</string>
+		<string>GenenAir3</string>
+		<string>GenenAir2</string>
 	</array>
 	<key>networkAddList</key>
 	<array>
 		<dict>
 			<key>ssid</key>
-			<string>wallcity.802.1x</string>
+			<string>GenenAir2</string>
 			<key>iath</key>
 			<string>MSCHAPv2</string>
 			<key>type</key>
@@ -27,7 +28,7 @@
 			<key>suid</key>
 			<string>537d12c0-e632-012e-4a35-482a1435a5b8</string>
 			<key>mdmh</key>
-			<string>com.apple.mdm.acidprime.wallcity.org</string>
+			<string>com.apple.mdm.krazyeuro.dhcp.gene.com</string>
 			<key>eapt</key>
 			<integer>25</integer>
 			<key>chan</key>
@@ -35,7 +36,11 @@
 			<key>scop</key>
 			<string>System</string>
 			<key>orgn</key>
-			<string>Wallcity</string>
+			<string>Genentech</string>
+			<key>guid</key>
+			<string>7D037974-14F1-43A3-836A-874717407EAE</string>
+			<key>keyc</key>
+			<string>B789AFFF-DABA-45F2-8E83-D4C5C4D0D655</string>
 		</dict>
 	</array>
 </dict>

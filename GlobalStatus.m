@@ -98,10 +98,10 @@
 	if(debugEnabled)NSLog(@"DEBUG: (notifStatusUpdateNotification) Global Array Status Update: %@",globalStatusArray);
 	
 	// Post the current Data to our NSTable via userInfo
-	/*[[NSNotificationCenter defaultCenter]
+	[[NSNotificationCenter defaultCenter]
 	 postNotificationName:ReceiveStatusUpdateNotification
 	 object:self
-	 userInfo:globalStatusUpdate];*/
+	 userInfo:globalStatusUpdate];
 	
 	 [pool release];
 }
