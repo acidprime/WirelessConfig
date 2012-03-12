@@ -40,6 +40,15 @@ parameters ,including multiple authentication options.
 * Need to get the protocol declaration right so Xcode stops complaining
 
 * networksetup may prompt for password on 10.7, some rootObject auth deal
+
+* Figure out why I am having to rely so heavly on bindings and properties for ui changes:
+
+http://stackoverflow.com/questions/9238178/stringvalue-not-working-on-nstextfield-when-linked-via-files-owner-implemented
+
+http://stackoverflow.com/questions/9639370/counting-the-length-of-two-nstextfields-not-working
+
+Both issues are already worked around but I'm curious why this is this way
+
 Beta Notes:
 
 Please Make sure to modify your wifiutil.settings.plist with new guids, here is an example of how to generate them
