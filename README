@@ -49,6 +49,8 @@ http://stackoverflow.com/questions/9639370/counting-the-length-of-two-nstextfiel
 
 Both issues are already worked around but I'm curious why this is this way
 
+* Modify the code to pass the ENV vars to the command as parameters is not as secure.
+
 Beta Notes:
 
 Please Make sure to modify your wifiutil.settings.plist with new guids, here is an example of how to generate them
