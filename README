@@ -28,14 +28,20 @@ Two arrays, to add and remove networks
 Note this is excluded from the build process, check the downloads section for examples
 
 To Do:
-Currently the script requires trusted Certificates be configured through
+* Currently the script requires trusted Certificates be configured through
 some other process. This will eventually be embeded in a future release.
 
-This is currently PEAP centric (plist key 25) but needs further testing with other 
+* This is currently PEAP centric (plist key 25) but needs further testing with other 
 parameters ,including multiple authentication options.
+
+* Need to get the protocol declaration right so Xcode stops complaining
+
+* networksetup may prompt for password on 10.7, some rootObject auth deal
+Beta Notes:
 
 Please Make sure to modify your wifiutil.settings.plist with new guids, here is an example of how to generate them
 
+```
 sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
 36afb32f-ee45-46e1-9aa8-8a58d013acad
 sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
@@ -44,5 +50,14 @@ sand-bender:~ acid$ uuidgen
 8A1E81A7-170B-466C-B2B2-BF8209AFF994
 sand-bender:~ acid$ uuidgen
 84E74439-A169-423B-A509-59EC1A0A2679
-
+```
 These are used for the profile thats created and the keychain items so they should be unique.
+
+Please look through ALL the keys, I will upload a key value guide in the future, but for the moment
+
+please just find and replace SSID and org name, other keys are written directly to plist so modify
+
+with caution. Example is setup for PEAP (key 25) and a ssid called "newNetwork"
+
+Note that newNetwork is listed in the remove and the add, so that password changes can happen
+
