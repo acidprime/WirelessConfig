@@ -77,7 +77,7 @@
 }
 
 -(NSString *) subtitle{
-	NSString *title = [self.settings objectForKey:@"subtitleText"];
+	NSString *title = [self.settings objectForKey:@"subTitleText"];
 	return title;
 }
 

@@ -26,6 +26,9 @@ A keychain binary because 10.5 is stupid and I hate it, please upgrade.
 wifiutil.settings.plist:
 Two arrays, to add and remove networks
 Note this is excluded from the build process, check the downloads section for examples
+This file MUST BE EDITED for your env settings. Its in the .bundle, so right click
+and "Show Package Contents" from there its ./Contents/Resources/wifiutil.settings.plist
+
 
 To Do:
 * Currently the script requires trusted Certificates be configured through
