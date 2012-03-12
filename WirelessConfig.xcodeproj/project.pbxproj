@@ -19,6 +19,7 @@
 		E1AEE44D14E64DBE0040FB64 /* ConfigIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AEE44C14E64DBE0040FB64 /* ConfigIconCell.m */; };
 		E1AEE46114E64FCE0040FB64 /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AEE46014E64FCE0040FB64 /* TableController.m */; };
 		E1AEE53814E688740040FB64 /* GlobalStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AEE53714E688740040FB64 /* GlobalStatus.m */; };
+		E1B72505150E588000BFD642 /* kcutil in Resources */ = {isa = PBXBuildFile; fileRef = E1B72504150E588000BFD642 /* kcutil */; };
 		E1C83F66150A79D200741D79 /* companyLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C83F65150A79D200741D79 /* companyLogo.gif */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		E1AEE46014E64FCE0040FB64 /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
 		E1AEE53614E688740040FB64 /* GlobalStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatus.h; sourceTree = "<group>"; };
 		E1AEE53714E688740040FB64 /* GlobalStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatus.m; sourceTree = "<group>"; };
+		E1B72504150E588000BFD642 /* kcutil */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kcutil; sourceTree = "<group>"; };
 		E1C83F65150A79D200741D79 /* companyLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = companyLogo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E1B72504150E588000BFD642 /* kcutil */,
 				E1AEE2C814E60F5E0040FB64 /* wifiutil.py */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
@@ -207,6 +210,7 @@
 				E1AEE2C914E60F5E0040FB64 /* wifiutil.py in Resources */,
 				E1C83F66150A79D200741D79 /* companyLogo.gif in Resources */,
 				E13D8489150A7B2A00E52BCC /* wifiutil.settings.plist in Resources */,
+				E1B72505150E588000BFD642 /* kcutil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

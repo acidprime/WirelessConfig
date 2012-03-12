@@ -33,7 +33,7 @@
 	if(self = [super init]){
 		if(debugEnabled)NSLog(@"DEBUG: Setting Title");
 		
-		[self setTitle:@"GenenAir2"];
+		[self setTitle:@"Setup GenenAir2"];
 		
 		if(debugEnabled)NSLog(@"DEBUG: Loading Nib");
         [self initWithNibName:@"WirelessConfig" bundle:bundle];
@@ -60,6 +60,7 @@
 	if(debugEnabled)NSLog(@"DEBUG: User edited content");
 	if(debugEnabled)NSLog(@"DEBUG: userNameField %d",[[userNameField stringValue] length]);
 	if(debugEnabled)NSLog(@"DEBUG: passWordField %d",[[passWordField stringValue] length]);
+	if(debugEnabled)NSLog(@"mainButton: %@",mainButton);
 	if ([[userNameField stringValue] length] > 0 && [[passWordField stringValue] length] > 0){
 		[mainButton setEnabled:YES];
 	}
@@ -74,7 +75,7 @@
 }
 
 -(NSString *) subtitle{
-	NSString *title = @"Connect to GenenAir2!";
+	NSString *title = @"";
 	return title;
 }
 
