@@ -6,9 +6,12 @@ wifiutil.py
 Is a 10.5,10.6,10.7 Wireless configuration command line tool
 
 example usage:
-wifiutil --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist'
+sudo ./wifiutil.py --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist'
 or debug:
-wifiutil --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist' -d
+sudo ./wifiutil.py --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist' -d
+
+This script has support for removal and addtion of WPA2E networks.
+Technically it has support for WPA too but this only works really well on 10.6+
 
 WirelessConfig.bundle:
 A Casper self service plugin, see this document for scoped installation:
@@ -17,9 +20,16 @@ https://jamfnation.jamfsoftware.com/article.html?id=177
 
 Otherwise you can upload through the JSS portal but not recommended while this in Beta.
 
+kcutil:
+A keychain binary because 10.5 is stupid and I hate it, please upgrade.
+
+wifiutil.settings.plist:
+Two arrays, to add and remove networks
+Note this is excluded from the build process, check the downloads section for examples
+
 To Do:
 Currently the script requires trusted Certificates be configured through
-some other process. This will eventually be embdeded in a furture release.
+some other process. This will eventually be embeded in a future release.
 
 This is currently PEAP centric (plist key 25) but needs further testing with other 
 parameters ,including multiple authentication options.
