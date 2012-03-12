@@ -1,9 +1,9 @@
 //
 //  GlobalStatus.m
-//  PasswordUtility
+//  WirelessConfig
 //
 //  Created by Zack Smith on 11/29/11.
-//  Copyright 2011 318 All rights reserved.
+//  Copyright 2011 wallcity.org All rights reserved.
 //
 
 #import "GlobalStatus.h"
