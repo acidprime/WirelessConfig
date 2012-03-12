@@ -20,7 +20,6 @@
 		E1AEE46114E64FCE0040FB64 /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AEE46014E64FCE0040FB64 /* TableController.m */; };
 		E1AEE53814E688740040FB64 /* GlobalStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AEE53714E688740040FB64 /* GlobalStatus.m */; };
 		E1B72505150E588000BFD642 /* kcutil in Resources */ = {isa = PBXBuildFile; fileRef = E1B72504150E588000BFD642 /* kcutil */; };
-		E1C83F66150A79D200741D79 /* companyLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C83F65150A79D200741D79 /* companyLogo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		E1AEE53614E688740040FB64 /* GlobalStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalStatus.h; sourceTree = "<group>"; };
 		E1AEE53714E688740040FB64 /* GlobalStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalStatus.m; sourceTree = "<group>"; };
 		E1B72504150E588000BFD642 /* kcutil */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kcutil; sourceTree = "<group>"; };
-		E1C83F65150A79D200741D79 /* companyLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = companyLogo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				E13D8488150A7B2A00E52BCC /* wifiutil.settings.plist */,
-				E1C83F65150A79D200741D79 /* companyLogo.gif */,
 				E1AEE2D814E611650040FB64 /* Constants.h */,
 				E1AEE2D914E611650040FB64 /* Constants.m */,
 				E1AEE45514E64F3B0040FB64 /* WirelessConfig */,
@@ -208,7 +205,6 @@
 				E1AEE05B14E5C6100040FB64 /* WirelessConfig.xib in Resources */,
 				E1AEE0AB14E5C8B60040FB64 /* WirelessConfig.png in Resources */,
 				E1AEE2C914E60F5E0040FB64 /* wifiutil.py in Resources */,
-				E1C83F66150A79D200741D79 /* companyLogo.gif in Resources */,
 				E13D8489150A7B2A00E52BCC /* wifiutil.settings.plist in Resources */,
 				E1B72505150E588000BFD642 /* kcutil in Resources */,
 			);

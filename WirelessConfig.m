@@ -17,7 +17,7 @@
 @synthesize userName;
 @synthesize passWord;
 @synthesize scriptRunning;
-
+@synthesize settings;
 #pragma mark Init Methods
 
 - (void)readInSettings 
@@ -25,21 +25,23 @@
 	mainBundle = [NSBundle bundleForClass:[self class]];
 	NSString *settingsPath = [mainBundle pathForResource:SettingsFileResourceID
 												  ofType:@"plist"];
-	settings = [[NSDictionary alloc] initWithContentsOfFile:settingsPath];
-	debugEnabled = [[settings objectForKey:@"debugEnabled"] boolValue];
+	self.settings = [[NSDictionary alloc] initWithContentsOfFile:settingsPath];
+	debugEnabled = [[self.settings objectForKey:@"debugEnabled"] boolValue];
 }
 
 - (id) initWithBundle:(NSBundle *)bundle{
 	if(self = [super init]){
-		if(debugEnabled)NSLog(@"DEBUG: Setting Title");
-		
-		[self setTitle:@"Setup GenenAir2"];
-		
-		if(debugEnabled)NSLog(@"DEBUG: Loading Nib");
-        [self initWithNibName:@"WirelessConfig" bundle:bundle];
 		
 		// Read in our settings
 		[self readInSettings];
+		
+		if(debugEnabled)NSLog(@"DEBUG: Setting Title");
+		
+		[self setTitle:[self.settings objectForKey:@"titleText"]];
+		
+		if(debugEnabled)NSLog(@"DEBUG: Loading Nib");
+        [self initWithNibName:@"WirelessConfig" bundle:bundle];
+
 		
 		// Init our status controller
 		if (!globalStatusController) {
@@ -75,7 +77,7 @@
 }
 
 -(NSString *) subtitle{
-	NSString *title = @"";
+	NSString *title = [self.settings objectForKey:@"subtitleText"];
 	return title;
 }
 
@@ -141,7 +143,7 @@
 	
 	// Add debug to the script if told do so in settins.plist
 	
-	if ([[settings objectForKey:@"debugEnabled"] boolValue]) {
+	if ([[self.settings objectForKey:@"debugEnabled"] boolValue]) {
 		[ arguments addObject:[NSString stringWithFormat:@"-d"]];
 		
 	}
@@ -171,8 +173,8 @@
 	// Display a standard alert
 	NSAlert *alert = [[NSAlert alloc] init];
 	[alert addButtonWithTitle:@"OK"];
-	[alert setMessageText:@"GenenAir2 Setup Complete"];
-	[alert setInformativeText:@"GenenAir2 has been configured on your system"];
+	[alert setMessageText:[self.settings objectForKey:@"completeTitleText"]];
+	[alert setInformativeText:[self.settings objectForKey:@"completeSubTitleText"]];
 	[alert setAlertStyle:NSWarningAlertStyle];
 	//[alert runModal];
 	[alert beginSheetModalForWindow:[sender window]

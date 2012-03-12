@@ -19,6 +19,10 @@
 	IBOutlet NSButton *mainButton;
 	IBOutlet NSProgressIndicator *mainProgressIndicator;
 	
+	
+	IBOutlet NSTextField *mainTitle;
+	IBOutlet NSTextField *mainSubTitle;
+	
 	NSDictionary *settings;
 	NSBundle *mainBundle;
 
@@ -64,6 +68,8 @@
 
 // Fields
 @property (retain) NSString* userName;
+@property (retain) NSDictionary* settings;
+
 @property (retain) NSString* passWord;
 @property BOOL scriptRunning;
 
