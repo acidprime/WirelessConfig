@@ -1,6 +1,6 @@
 #!/usr/bin/python
 __author__ = 'Zack Smith (@acidprime)'
-__version__ = '1.0'
+__version__ = '1.1'
 
 import os
 import getopt
@@ -481,7 +481,12 @@ def addPreferredNetwork(networkDict):
       if networkDict['type'] == 'WPA2':
         _PreferredNetworks['Unique Password ID'] = networkDict['keyc']
 
-      plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort']['PreferredNetworks'].append(_PreferredNetworks)
+      # Fix for https://github.com/acidprime/WirelessConfig/issues/2
+      if 'PreferredNetworks' in plist['Sets'][_Sets]['Network']['Interface'][Interface].keys():
+        plist['Sets'][_Sets]['Network']['Interface'][Interface]['PreferredNetworks'].append(_PreferredNetworks)
+      else:
+        plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort']['PreferredNetworks'].append(_PreferredNetworks)
+
     plist.writeToFile_atomically_(path,True)
 
 def getSystemVersion():
