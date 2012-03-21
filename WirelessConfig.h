@@ -18,7 +18,7 @@
 	IBOutlet NSSecureTextField *passWordField;
 	IBOutlet NSButton *mainButton;
 	IBOutlet NSProgressIndicator *mainProgressIndicator;
-	
+	IBOutlet NSBox *credentialsBox;
 	
 	IBOutlet NSTextField *mainTitle;
 	IBOutlet NSTextField *mainSubTitle;
@@ -40,6 +40,7 @@
 	
 	BOOL debugEnabled;
 	BOOL scriptRunning;
+	BOOL hideCredentialsFields;
 }
 
 
@@ -48,19 +49,20 @@
 
 
 //Protocol Methods
--(NSImage *) image;
--(NSString *) subtitle;
--(NSURL *) url;
--(NSString *) pluginID;
--(id) initWithBundle:(NSBundle *)bundle;
--(void) viewWillAppear;
--(void) viewDidAppear;
--(void) receivedStdout:(NSString *)text;
--(void) receivedStderr:(NSString *)text;
+- (NSImage *) image;
+- (NSString *) subtitle;
+- (NSURL *) url;
+- (NSString *) pluginID;
+- (id) initWithBundle:(NSBundle *)bundle;
+- (void)viewWillAppear;
+- (void)viewDidAppear;
+- (void)receivedStdout:(NSString *)text;
+- (void)receivedStderr:(NSString *)text;
+- (void)determineRunMode;
 
 - (void)runScript:(id)sender;
 
--(void)updateTable;
+- (void)updateTable;
 - (void)displaySetupComplete:(id)sender;
 
 // IBActions
@@ -73,6 +75,7 @@
 @property (retain) NSString* passWord;
 @property BOOL scriptRunning;
 
+@property BOOL hideCredentialsFields;
 
 @end
 

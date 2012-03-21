@@ -17,7 +17,9 @@
 @synthesize userName;
 @synthesize passWord;
 @synthesize scriptRunning;
+@synthesize hideCredentialsFields;
 @synthesize settings;
+
 #pragma mark Init Methods
 
 - (void)readInSettings 
@@ -34,6 +36,8 @@
 		
 		// Read in our settings
 		[self readInSettings];
+		// Not implemented yet
+		//[self determineRunMode];
 		
 		if(debugEnabled)NSLog(@"DEBUG: Setting Title");
 		
@@ -93,9 +97,11 @@
 	return url;
 }
 -(NSString *) pluginID{
-	NSString *pluginID = @"org.wallcity.wirelessconfig";
+	NSString *pluginID =[settings objectForKey:@"identifier"];
+	if(debugEnabled)NSLog(@"DEBUG:Found plugin ID %@",pluginID);
 	return pluginID;
 }
+
 -(void) viewWillAppear{
 	if(debugEnabled)NSLog(@"DEBUG: View will Appear...");
 }
@@ -125,6 +131,33 @@
 	}
 }
 
+- (void)determineRunMode
+{
+	
+	// This overides the Cocoa bindings for NSisNotNil
+	self.userName = @"";
+	self.passWord = @"";
+	// Hide the password fields
+	for (NSDictionary *network in [self.settings objectForKey:@"networkAddList"])
+	{
+		NSString *typeKey = [network objectForKey:@"tkey"];
+		NSLog(@"Found type key: %@",typeKey);
+		if ([typeKey isEqualToString:@"WPA2E"]) {
+			self.hideCredentialsFields = NO;
+			self.userName = nil;
+			self.passWord = nil;
+			// If we have any network that requires cred then show the password fields
+			break;
+		}
+		else {
+			self.hideCredentialsFields = YES;
+			self.userName = @"";
+			self.passWord = @"";
+		}
+
+	}
+}
+
 - (void)runScript:(id)sender
 {
 
@@ -138,10 +171,17 @@
 	self.scriptRunning = YES;
 	
 	[ arguments addObject:[NSString stringWithFormat:@"--plist=%@",settingsPath]];
-	[ arguments addObject:[NSString stringWithFormat:@"--username=%@",self.userName]];
-	[ arguments addObject:[NSString stringWithFormat:@"--password=%@",self.passWord]];
 	
-	// Add debug to the script if told do so in settins.plist
+	// Update for WPA2 Network only mode
+	if (self.hideCredentialsFields) {
+		NSLog(@"No credentials field data avaiable not passing to script");
+	}
+	else {
+		[ arguments addObject:[NSString stringWithFormat:@"--username=%@",self.userName]];
+		[ arguments addObject:[NSString stringWithFormat:@"--password=%@",self.passWord]];
+	}
+	
+	// Add debug to the script if told do so in settings.plist
 	
 	if ([[self.settings objectForKey:@"debugEnabled"] boolValue]) {
 		[ arguments addObject:[NSString stringWithFormat:@"-d"]];
