@@ -1032,6 +1032,26 @@ def deleteUsersKeychainPassword(networkName):
             print 'Processing keychain: %s' % keychain
             if os.path.exists(keychain):
               if user['name'][0] == getConsoleUser():
+                # Lion
+                arguments = [security,
+                          "delete-generic-password",
+                          '-D',
+                          'AirPort network password',
+                          '-s',
+                          'com.apple.network.wlan.ssid.%s' % networkName,
+                          '-l',
+                          networkName,
+                          keychain]
+                deleteKeychainPassword(arguments)
+                # Lion generic
+                arguments = [security,
+                          "delete-generic-password",
+                          '-D',
+                          'AirPort network password',
+                          '-l',
+                          networkName,
+                          keychain]
+                deleteKeychainPassword(arguments)
                 # Snow Type 1
                 arguments = [security,
                           "delete-generic-password",
