@@ -16,6 +16,7 @@ import time
 from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyListSerialization,NSDate
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
 
+
 # Commands used by this script
 airport     = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Contents/Resources/eapolclient'
@@ -24,16 +25,28 @@ if not os.path.exists(eapolclient):
   eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Resources/eapolclient'
 
 runDirectory = os.path.dirname(os.path.abspath(__file__))
-
+awk             = '/usr/bin/awk'
+cat             = '/bin/cat'
 curl            = '/usr/bin/curl'
+dscl            = '/usr/bin/dscl'
+defaults        = '/usr/bin/defaults'
+grep            = '/usr/bin/grep'
+hexdump         = '/usr/bin/hexdump'
+kinit           = '/usr/bin/kinit'
 networksetup    = '/usr/sbin/networksetup'
+openssl         = '/usr/bin/openssl'
 profiles        = '/usr/bin/profiles'
 plutil          = '/usr/bin/plutil'
 sysctl          = '/usr/sbin/sysctl'
 security        = '/usr/bin/security'
 sudo            = '/usr/bin/sudo'
 system_profiler = '/usr/sbin/system_profiler'
+uuidgen         = '/usr/bin/uuidgen'
 who             = '/usr/bin/who'
+xxd             = '/usr/bin/xxd'
+
+# Constants
+UUID            = os.system(uuidgen)
 
 # Added for 10.5 support
 kcutil = '%s/%s' % (runDirectory,'kcutil')
@@ -67,13 +80,73 @@ if not os.geteuid() == 0:
   sys.exit(1)
 
 
+# Generate csr with openssl for a machine
+def generateMachineCSR():
+  key = ''
+
+  csr = ''
+
+  machine_name = ''
+  arguments = [ openssl,
+      'eq',
+      '-new',
+      '-batch',
+      '-newkey',
+      'rsa:2048',
+      '-nodes',
+      '-keyout "%s"' % key,
+      'out "%s"' % csr,
+      '-subj "/CN=%s$"' % machine_name,
+  ]
+
+# Generate csr with openssl for a user
+def generateUserCSR():
+  key = ''
+
+  csr = ''
+
+  my_tgt_name = ''
+  arguments = [ openssl,
+      'eq',
+      '-new',
+      '-batch',
+      '-newkey',
+      'rsa:2048',
+      '-nodes',
+      '-keyout "%s"' % key,
+      'out "%s"' % csr,
+      '-subj "/CN=%s$"' % my_tgt_name ,
+  ]
+
+
 def curlCsr():
 
-  encoded_csr = ''
-
+  csr = ''
   cert_type   = ''
-
   ca_url      = ''
+
+  arguments = [ cat,
+    csr,
+    '|',
+    hexdump,
+    '-v',
+    '-e',
+    '1/1 "%02x\t"',
+    '-e',
+    '1/1',
+    "%_c\n",
+    '|',
+    'LANG=C',
+    awk,
+    '$1 == "20"                   { printf("%s",      "+");   next    } \
+     $2 ~  /^[a-zA-Z0-9.*()\/-]$/ { printf("%s",      $2);    next    } \
+                                  { printf("%%%s",    $1)             }',
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  encoded_csr = out
 
   arguments = [ curl,
       '--negotiate',
@@ -89,7 +162,222 @@ def curlCsr():
       'Mode=newreq',
       '-d',
       "CertAttrib=CertificateTemplate:%s %s/certfnsh.asp" % cert_type,ca_url,
-      ]
+      sed,
+      '-e',
+      '/.*location="certnew.cer?ReqID=/ !d',
+      '-e',
+      's/.*ID=//',
+      '-e',
+      's/&.*//',
+  ]
+  print 'Attempting to get Request ID...'
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+  req_id   = out
+  print 'REQ_ID: %s' % req_id
+
+
+## Get TGT via kinit - If 2k3, use password method if 2k8
+def getTGTkinit():
+  machine_name = ''
+  arguments = [ kinit,
+      '-k',
+      '%s$' % machine_name,
+  ]
+
+def getTGTpassword():
+  arguments [ defaults,
+      'read',
+      '/Library/Preferences/DirectoryService/ActiveDirectory',
+      'AD Computer Password',
+      '|',
+      xxd,
+      '-r',
+      '-p',
+  ]
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  ad_pass = out
+
+  # Need expect script
+
+def curlCert():
+  pem     = ''
+  ca_url  = ''
+  req_id  = ''
+  print "CRT is %s, CA_URL is %s" % crt,ca_url
+
+  arguments = [ curl,
+    '-k',
+    '-o',
+    pem,
+    '--negotiate',
+    '-u',
+    ':',
+    "%s/certnew.cer?ReqID=%s&Enc=b64" % ca_url,req_id ,
+  ]
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+
+def dsclMachineCert():
+  der = ''
+  arguments = [ dscl,
+    'localhost',
+    'read',
+    '/Search/Computers/${MACHINE_NAME}$',
+    'userCertificate',
+    '|',
+    sed,
+    '-e',
+    's/dsAttrTypeNative:userCertificate://',
+    '|',
+    xxd,
+    '-r',
+    '-p',
+    '>',
+    der,
+  ]
+
+
+def dsclUserCert():
+  der = ''
+  arguments = [ dscl,
+    'localhost',
+    'read',
+    '/Active Directory/All Domains/Users/`whoami`',
+    'userCertificate',
+    '|',
+    'sed',
+    '-e',
+    's/dsAttrTypeNative:userCertificate://'
+    '|',
+    'head',
+    '-n',
+    '2',
+    '|',
+    xxd,
+    '-r',
+    '-p',
+    '>',
+    der
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+def curlTrustedCert(pem,ca_cert,keychain_path):
+  arguments = [ openssl,
+    'x509',
+    '-in',
+    pem,
+    '-text',
+    '|',
+    grep,
+    'CA Issuers - URI:http://',
+    '|',
+    awk,
+    '{ print $4 }'
+    '|',
+    sed,
+    's/URI://',
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  ca_url = out
+
+  arguments = [ curl,
+    '-o',
+    ca_cert,
+    ca_url,
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  arguments = [ security,
+    'add-trusted-cert',
+    '-k',
+    keychain_path,
+    ca_cert,
+  ]
+
+# Not currently Used
+def evalCert():
+  pem           = ''
+  keychain_path = ''
+  ca_crt        = ''
+
+  arguments = [ security,
+     'verify-cert',
+     '-c',
+     pem,
+     '|',
+     grep,
+     'successful',
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  # Find out if cert is trusted
+  try:
+    exit_code = subprocess.check_call(execute)
+    curlTrustedCert(pem,ca_cert,keychain_path)
+  except subprocess.CalledProcessError as e:
+    print "Certificate verification failed ...", e.returncode
+
+
+## Pack the cert up and import it ito the keychain
+def packAndImport():
+
+  pem            = ''
+  key            = ''
+  pk12           = ''
+  machine_name   = ''
+  uuid           = UUID
+  keychain_path  = ''
+  secure_import  = True
+
+  ## Build the cert and private key into a PKCS12
+  arguments = [ openssl,
+      'pkcs12',
+      '-export',
+      '-in',
+      pem,
+      '-inkey',
+      key,
+      '-out',
+      pk12,
+      '-name',
+      machine_name,
+      '-passout',
+      'pass:%s' % uuid,
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+  arguments = [ security,
+      'import',
+      pk12,
+      '-k',
+      keychain_path,
+      '-f',
+      'pkcs12',
+      '-P',
+      uuid,
+  ]
+
+  if secure_import :
+    arguments.append('-x',arguments[1])
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
 
 def createEAPProfile(path,uid,gid,networkDict):
   if os.path.exists(path):
