@@ -43,6 +43,7 @@ sudo            = '/usr/bin/sudo'
 system_profiler = '/usr/sbin/system_profiler'
 uuidgen         = '/usr/bin/uuidgen'
 who             = '/usr/bin/who'
+whoami          = '/usr/bin/whoami'
 xxd             = '/usr/bin/xxd'
 
 # Constants
@@ -81,12 +82,8 @@ if not os.geteuid() == 0:
 
 
 # Generate csr with openssl for a machine
-def generateMachineCSR():
-  key = ''
+def generateMachineCSR(key,csr,machine_name):
 
-  csr = ''
-
-  machine_name = ''
   arguments = [ openssl,
       'eq',
       '-new',
@@ -98,14 +95,13 @@ def generateMachineCSR():
       'out "%s"' % csr,
       '-subj "/CN=%s$"' % machine_name,
   ]
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
 
 # Generate csr with openssl for a user
-def generateUserCSR():
-  key = ''
+def generateUserCSR(key,csr,my_tgt_name):
 
-  csr = ''
-
-  my_tgt_name = ''
   arguments = [ openssl,
       'eq',
       '-new',
@@ -118,12 +114,10 @@ def generateUserCSR():
       '-subj "/CN=%s$"' % my_tgt_name ,
   ]
 
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
 
-def curlCsr():
-
-  csr = ''
-  cert_type   = ''
-  ca_url      = ''
+def curlCsr(csr,cert_type,ca_url):
 
   arguments = [ cat,
     csr,
@@ -161,7 +155,7 @@ def curlCsr():
       '-d',
       'Mode=newreq',
       '-d',
-      "CertAttrib=CertificateTemplate:%s %s/certfnsh.asp" % cert_type,ca_url,
+      "CertAttrib=CertificateTemplate:%s %s/certfnsh.asp" % (cert_type,ca_url),
       sed,
       '-e',
       '/.*location="certnew.cer?ReqID=/ !d',
@@ -203,10 +197,8 @@ def getTGTpassword():
 
   # Need expect script
 
-def curlCert():
-  pem     = ''
-  ca_url  = ''
-  req_id  = ''
+## curl the csr up
+def curlCert(pem,ca_url,req_id):
   print "CRT is %s, CA_URL is %s" % crt,ca_url
 
   arguments = [ curl,
@@ -216,18 +208,18 @@ def curlCert():
     '--negotiate',
     '-u',
     ':',
-    "%s/certnew.cer?ReqID=%s&Enc=b64" % ca_url,req_id ,
+    "%s/certnew.cer?ReqID=%s&Enc=b64" % (ca_url,req_id) ,
   ]
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
   out, err = execute.communicate()
 
 
-def dsclMachineCert():
-  der = ''
+## Pick up the cert via dscl if it's a 2k8 domain and convert it into PEM format
+def dsclMachineCert(der,pem,machine_name):
   arguments = [ dscl,
     'localhost',
     'read',
-    '/Search/Computers/${MACHINE_NAME}$',
+    '/Search/Computers/%s$' % machine_name,
     'userCertificate',
     '|',
     sed,
@@ -241,16 +233,34 @@ def dsclMachineCert():
     der,
   ]
 
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
 
-def dsclUserCert():
+
+  arguments = [ openssl,
+    'x509',
+    '-inform',
+    'DER',
+    '-in',
+    der,
+    '-outform',
+    'PEM',
+    '-out',
+    pem,
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
+def dsclUserCert(der,pem):
   der = ''
   arguments = [ dscl,
     'localhost',
     'read',
-    '/Active Directory/All Domains/Users/`whoami`',
+    '/Active\ Directory/All\ Domains/Users/`%s`' % whoami,
     'userCertificate',
     '|',
-    'sed',
+    sed,
     '-e',
     's/dsAttrTypeNative:userCertificate://'
     '|',
@@ -267,6 +277,22 @@ def dsclUserCert():
 
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
   out, err = execute.communicate()
+
+  arguments = [ openssl,
+    'x509',
+    '-inform',
+    'DER',
+    '-in',
+    der,
+    '-outform',
+    'PEM',
+    '-out',
+    pem,
+  ]
+
+  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  out, err = execute.communicate()
+
 
 def curlTrustedCert(pem,ca_cert,keychain_path):
   arguments = [ openssl,
@@ -306,12 +332,8 @@ def curlTrustedCert(pem,ca_cert,keychain_path):
     ca_cert,
   ]
 
-# Not currently Used
-def evalCert():
-  pem           = ''
-  keychain_path = ''
-  ca_crt        = ''
-
+# Not currently Implemented
+def evalCert(pem,keychain_path,ca_crt):
   arguments = [ security,
      'verify-cert',
      '-c',
@@ -333,14 +355,9 @@ def evalCert():
 
 
 ## Pack the cert up and import it ito the keychain
-def packAndImport():
+def packAndImport(pem,key,pk12,machine_name,keychain_path):
 
-  pem            = ''
-  key            = ''
-  pk12           = ''
-  machine_name   = ''
   uuid           = UUID
-  keychain_path  = ''
   secure_import  = True
 
   ## Build the cert and private key into a PKCS12
