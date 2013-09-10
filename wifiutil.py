@@ -492,10 +492,11 @@ def addPreferredNetwork(networkDict):
 
 def getSystemVersion():
   # Our Operating System Constants
-  global LEOP,SNOW,LION
+  global LEOP,SNOW,LION,MLIN
   LEOP = 5
   SNOW = 6
   LION = 7
+  MLIN = 9
   systemVersionPath = '/System/Library/CoreServices/SystemVersion.plist'
   try:
     systemVersion = plistlib.Plist.fromFile(systemVersionPath)
