@@ -25,6 +25,7 @@ if not os.path.exists(eapolclient):
 
 runDirectory = os.path.dirname(os.path.abspath(__file__))
 
+curl            = '/usr/bin/curl'
 networksetup    = '/usr/sbin/networksetup'
 profiles        = '/usr/bin/profiles'
 plutil          = '/usr/bin/plutil'
@@ -64,6 +65,31 @@ if not os.geteuid() == 0:
   showUsage()
   print '--> This script requires root access!'
   sys.exit(1)
+
+
+def curlCsr():
+
+  encoded_csr = ''
+
+  cert_type   = ''
+
+  ca_url      = ''
+
+  arguments = [ curl,
+      '--negotiate',
+      '-A',
+      'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5',
+      '-u',
+      ':',
+      '-d',
+      "CertRequest=%s" % encoded_csr,
+      '-d',
+      'SaveCert=yes',
+      '-d',
+      'Mode=newreq',
+      '-d',
+      "CertAttrib=CertificateTemplate:%s %s/certfnsh.asp" % cert_type,ca_url,
+      ]
 
 def createEAPProfile(path,uid,gid,networkDict):
   if os.path.exists(path):
