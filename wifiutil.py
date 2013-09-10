@@ -17,7 +17,7 @@ from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyLis
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
 
 # Commands used by this script
-airport = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+airport     = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Contents/Resources/eapolclient'
 if not os.path.exists(eapolclient):
   # Leopard Location, used by security command for ACL
@@ -25,35 +25,36 @@ if not os.path.exists(eapolclient):
 
 runDirectory = os.path.dirname(os.path.abspath(__file__))
 
-networksetup = '/usr/sbin/networksetup'
-profiles = '/usr/bin/profiles'
-plutil = '/usr/bin/plutil'
-sysctl = '/usr/sbin/sysctl'
-security = '/usr/bin/security'
-sudo = '/usr/bin/sudo'
+networksetup    = '/usr/sbin/networksetup'
+profiles        = '/usr/bin/profiles'
+plutil          = '/usr/bin/plutil'
+sysctl          = '/usr/sbin/sysctl'
+security        = '/usr/bin/security'
+sudo            = '/usr/bin/sudo'
 system_profiler = '/usr/sbin/system_profiler'
-who = '/usr/bin/who'
+who             = '/usr/bin/who'
+
 # Added for 10.5 support
 kcutil = '%s/%s' % (runDirectory,'kcutil')
 
 def showUsage():
   print '''
 wifutil: A multi OS version wireless configuration tool
-   
+
 Syntax:
-  ## 802.1X PEAP Example (Username & Password are Required for non WPA2) 
+  ## 802.1X PEAP Example (Username & Password are Required for non WPA2)
   wifiutil --username="zsmith" --password='d0gc4t' --plist="settings.plist"
 
   ## WPA2 Example
   wifiutil --plist="/Library/Preferences/com.318.wifi.plist"
-  
-Options: 
+
+Options:
   -f | --plist=     ## Path to a plist to read configuration information from
                     This will override any other provided options!
-                    
-  -u | --username=  ## The username used to access the wireless 
 
-  -p | --password=  ## The password used to access the wireless 
+  -u | --username=  ## The username used to access the wireless
+
+  -p | --password=  ## The password used to access the wireless
   -d | --debug      ## Echo commands (and passwords!) in clear text
 
    '''
@@ -64,18 +65,18 @@ if not os.geteuid() == 0:
   print '--> This script requires root access!'
   sys.exit(1)
 
-def createEAPProfile(path,uid,gid,networkDict): 
+def createEAPProfile(path,uid,gid,networkDict):
   if os.path.exists(path):
     plist = NSMutableDictionary.dictionaryWithContentsOfFile_(path)
   else:
     plist = NSMutableDictionary.alloc().init()
-  plist['Profiles'] = [] 
+  plist['Profiles'] = []
   # item entry
   _Profiles = {}
   # EAPClientConfiguration
   EAPClientConfiguration = {}
   AcceptEAPTypes = []
-  _AcceptEAPTypes = networkDict['eapt'] 
+  _AcceptEAPTypes = networkDict['eapt']
   AcceptEAPTypes = [_AcceptEAPTypes]
 
   # Top Level EAPClientConfiguration keys
@@ -85,25 +86,25 @@ def createEAPProfile(path,uid,gid,networkDict):
   EAPClientConfiguration['EAPFASTUsePAC'] = True
   EAPClientConfiguration['TLSVerifyServerCertificate'] = False
   EAPClientConfiguration['TTLSInnerAuthentication'] = networkDict['iath']
-  EAPClientConfiguration['UserName'] = networkDict['user'] 
+  EAPClientConfiguration['UserName'] = networkDict['user']
   EAPClientConfiguration['UserPasswordKeychainItemID'] = networkDict['keyc']
-  
+
   if not osVersion['minor'] == LEOP:
-    EAPClientConfiguration['Wireless Security'] = networkDict['type'] 
+    EAPClientConfiguration['Wireless Security'] = networkDict['type']
 
   # Top Level item keys
   _Profiles['EAPClientConfiguration'] = EAPClientConfiguration
-  _Profiles['UniqueIdentifier'] = networkDict['keyc'] 
+  _Profiles['UniqueIdentifier'] = networkDict['keyc']
   _Profiles['UserDefinedName'] = 'WPA: %s' % networkDict['ssid']
-  
-  if not osVersion['minor'] == LEOP: 
-    _Profiles['Wireless Security'] = networkDict['type'] 
+
+  if not osVersion['minor'] == LEOP:
+    _Profiles['Wireless Security'] = networkDict['type']
 
   # Merge the data with current plist
   plist['Profiles'].append(_Profiles)
   exportFile = path
   plist.writeToFile_atomically_(exportFile,True)
-  try: 
+  try:
     os.chown(path,uid,gid)
   except:
     print 'Path not found %s' % path
@@ -128,7 +129,7 @@ def createEAPBinding(path,uid,gid,networkDict):
   plist[macAddress] = []
   _item = {}
   _item['UniqueIdentifier'] = networkDict['keyc']
-  _item['Wireless Network'] = networkDict['ssid'] 
+  _item['Wireless Network'] = networkDict['ssid']
   plist[macAddress].append(_item)
   exportFile = path
   plist.writeToFile_atomically_(exportFile,True)
@@ -152,7 +153,7 @@ def createRecentNetwork(networkDict):
     plist[port] = {}
   # Make sure the Array is there
   if not 'RecentNetworks' in plist[port].keys():
-    plist[port]['RecentNetworks'] = []  
+    plist[port]['RecentNetworks'] = []
   _RecentNetworks = {}
   _RecentNetworks['SSID_STR'] = networkDict['ssid']
   _RecentNetworks['SecurityType'] = networkDict['sect']
@@ -171,18 +172,18 @@ def createKnownNetwork(networkDict):
   # There were some MacBook Airs that shipped with 10.5
   path = '/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist'
   # Set to root as the owner for good measure
-  uid = 0 
+  uid = 0
   gid = 80
   if os.path.exists(path):
     plist = NSMutableDictionary.dictionaryWithContentsOfFile_(path)
   else:
     plist = NSMutableDictionary.alloc().init()
-  plist['KnownNetworks'] = {} 
+  plist['KnownNetworks'] = {}
   guid = networkDict['guid']
   plist['KnownNetworks'][guid] = {}
-  plist['KnownNetworks'][guid]['SSID_STR'] = networkDict['ssid'] 
+  plist['KnownNetworks'][guid]['SSID_STR'] = networkDict['ssid']
   plist['KnownNetworks'][guid]['Remembered channels'] = [networkDict['chan'],]
-  plist['KnownNetworks'][guid]['SecurityType'] = networkDict['sect'] 
+  plist['KnownNetworks'][guid]['SecurityType'] = networkDict['sect']
   # If we are adding a non WPA2 Enterprise network add the keychain item
   if networkDict['type'] == 'WPA2':
     plist['KnownNetworks'][guid]['Unique Password ID'] = networkDict['keyc']
@@ -193,7 +194,7 @@ def createKnownNetwork(networkDict):
     os.chown(path,uid,gid)
   except:
     print 'Path not found %s' % path
-	
+
 def addKeychainPassword(arguments):
   # Script Created Entry
   print 'Adding password to keychain'
@@ -201,7 +202,7 @@ def addKeychainPassword(arguments):
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
   out, err = execute.communicate()
   print out
-  
+
 def createLeopEAPkeychainEntry(networkDict):
   users = '/var/db/dslocal/nodes/Default/users'
   listing = os.listdir(users)
@@ -243,14 +244,14 @@ def createLeopEAPkeychainEntry(networkDict):
                    '-T',
                    eapolclient,
                    keychain]
-            
+
               addKeychainPassword(arguments)
               try:
                 os.chown(keychain,uid,gid)
               except:
                 print 'Path not found %s' % keychain
             else:
-              print 'User will not be modified: %s' % user['name'][0] 
+              print 'User will not be modified: %s' % user['name'][0]
       except:
         print 'Key Missing, Skipping'
 
@@ -366,17 +367,17 @@ def genLionProfile(networkDict={}):
 
   # EAPClientConfiguration
   AcceptEAPTypes = []
-  _AcceptEAPTypes = networkDict['eapt'] 
-  AcceptEAPTypes = [_AcceptEAPTypes] 
+  _AcceptEAPTypes = networkDict['eapt']
+  AcceptEAPTypes = [_AcceptEAPTypes]
 
   tlsTrustedServerNames = []
 
   EAPClientConfiguration = {}
   EAPClientConfiguration['AcceptEAPTypes'] = AcceptEAPTypes
   EAPClientConfiguration['TTLSInnerAuthentication'] = networkDict['iath']
-  EAPClientConfiguration['UserName'] = networkDict['user'] 
+  EAPClientConfiguration['UserName'] = networkDict['user']
   EAPClientConfiguration['UserPassword'] = networkDict['pass']
-  EAPClientConfiguration['tlsTrustedServerNames'] = tlsTrustedServerNames 
+  EAPClientConfiguration['tlsTrustedServerNames'] = tlsTrustedServerNames
 
   # PayloadContent
   PayloadContent = []
@@ -386,31 +387,31 @@ def genLionProfile(networkDict={}):
   _PayloadContent['EncryptionType'] = 'WPA'
   _PayloadContent['HIDDEN_NETWORK'] = False
   _PayloadContent['Interface'] = 'BuiltInWireless'
-  _PayloadContent['PayloadDisplayName'] = '%s-%s' % (networkDict['ssid'],networkDict['user']) 
+  _PayloadContent['PayloadDisplayName'] = '%s-%s' % (networkDict['ssid'],networkDict['user'])
   _PayloadContent['PayloadEnabled'] = True
   _PayloadContent['PayloadIdentifier'] = '%s.%s.alacarte.interfaces.%s' % (networkDict['mdmh'],networkDict['puid'],networkDict['suid'])
   _PayloadContent['PayloadType'] = 'com.apple.wifi.managed'
-  _PayloadContent['PayloadUUID'] = networkDict['suid'] 
+  _PayloadContent['PayloadUUID'] = networkDict['suid']
   _PayloadContent['PayloadVersion'] = 1
-  _PayloadContent['SSID_STR'] = networkDict['ssid'] 
+  _PayloadContent['SSID_STR'] = networkDict['ssid']
   PayloadContent = [_PayloadContent]
 
   plist['PayloadContent'] = PayloadContent
-  plist['PayloadDisplayName'] = networkDict['orgn'] 
+  plist['PayloadDisplayName'] = networkDict['orgn']
   plist['PayloadIdentifier'] = '%s.%s.alacarte' % (networkDict['mdmh'],networkDict['puid'])
-  plist['PayloadOrganization'] = networkDict['orgn'] 
+  plist['PayloadOrganization'] = networkDict['orgn']
   plist['PayloadRemovalDisallowed'] = False
-  plist['PayloadScope'] = networkDict['scop']  
+  plist['PayloadScope'] = networkDict['scop']
   plist['PayloadType'] = 'Configuration'
-  plist['PayloadUUID'] = networkDict['puid'] 
+  plist['PayloadUUID'] = networkDict['puid']
   plist['PayloadVersion'] = 1
-  
+
   # Show the plist on debug
   if(debugEnabled):print plist
   exportFile = '/tmp/.%s-%s.mobileconfig' % (networkDict['user'],networkDict['ssid'])
   plist.writeToFile_atomically_(exportFile,True)
-  return exportFile        
-        
+  return exportFile
+
 def networksetupExecute(arguments):
   if(debugEnabled):printCommand(arguments)
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
@@ -428,22 +429,22 @@ def profilesExecute(arguments):
 def genSnowProfile(networkDict):
   # EAPClientConfiguration
   AcceptEAPTypes = []
-  _AcceptEAPTypes = networkDict['eapt'] 
-  AcceptEAPTypes = [_AcceptEAPTypes] 
+  _AcceptEAPTypes = networkDict['eapt']
+  AcceptEAPTypes = [_AcceptEAPTypes]
 
   EAPClientConfiguration = {}
   EAPClientConfiguration['AcceptEAPTypes'] = AcceptEAPTypes
-  EAPClientConfiguration['UserName'] = networkDict['user'] 
-  EAPClientConfiguration['UserPasswordKeychainItemID'] = networkDict['keyc'] 
+  EAPClientConfiguration['UserName'] = networkDict['user']
+  EAPClientConfiguration['UserPasswordKeychainItemID'] = networkDict['keyc']
 
   # UserProfiles
   UserProfiles = []
   _UserProfiles = {}
   _UserProfiles['ConnectByDefault'] = True
   _UserProfiles['EAPClientConfiguration'] = EAPClientConfiguration
-  _UserProfiles['UniqueIdentifier'] = networkDict['keyc'] 
+  _UserProfiles['UniqueIdentifier'] = networkDict['keyc']
   _UserProfiles['UserDefinedName'] = '%s-%s' % (networkDict['ssid'],networkDict['user'])
-  _UserProfiles['Wireless Network'] = networkDict['ssid'] 
+  _UserProfiles['Wireless Network'] = networkDict['ssid']
   UserProfiles = [_UserProfiles]
 
   # 8021X
@@ -471,12 +472,12 @@ def addPreferredNetwork(networkDict):
   for _Sets in plist['Sets'].keys():
     for Interface in plist['Sets'][_Sets]['Network']['Interface'].keys():
       if 'AirPort' in plist['Sets'][_Sets]['Network']['Interface'][Interface].keys():
-        if not 'PreferredNetworks' in plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort'].keys(): 
+        if not 'PreferredNetworks' in plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort'].keys():
           plist['Sets'][_Sets]['Network']['Interface'][Interface]['AirPort']['PreferredNetworks'] = []
-      _PreferredNetworks = {} 
+      _PreferredNetworks = {}
       _PreferredNetworks['SSID_STR'] = networkDict['ssid']
       _PreferredNetworks['SecurityType'] = networkDict['sect']
-      _PreferredNetworks['Unique Network ID'] = networkDict['guid'] 
+      _PreferredNetworks['Unique Network ID'] = networkDict['guid']
       # Add keychain item reference if not 802.1x or Open
       if networkDict['type'] == 'WPA2':
         _PreferredNetworks['Unique Password ID'] = networkDict['keyc']
@@ -516,7 +517,7 @@ def leopardAddWireless(networkDict={}):
   # Copy the dictionary for mutation during enumeration
   copy = NSMutableDictionary.dictionaryWithContentsOfFile_(plistPath)
   # 10.5 Style
-  # Grab UUID if already in network list 
+  # Grab UUID if already in network list
   found = False
   print 'Checking for existing Keychain GUID in KnownNetworks'
   try:
@@ -662,7 +663,7 @@ def leopardRemoveWireless(networkName):
               print 'Processing enX: %s' % enX
               print 'Processing key: %s' % key
               try:
-                print 'Attempting delete of Set: %s for Interface:%s Named:%s Index:%d' % (Set,enX,key,index) 
+                print 'Attempting delete of Set: %s for Interface:%s Named:%s Index:%d' % (Set,enX,key,index)
                 del pl['Sets'][Set]['Network']['Interface'][enX][key]['PreferredNetworks'][index]
                 print 'Deleted set: %s' % Set
               except IndexError:
@@ -871,7 +872,7 @@ def getAirportInfo():
 
 # Generic system_profiler parser
 def systemReport():
-  spx = {} 
+  spx = {}
   # This is our key value schema
   SPHardwareDataType = {
     'platform_UUID': 'platform_UUID',
@@ -905,7 +906,7 @@ def systemReport():
 def getPlatformUUID():
   spx = systemReport()
   try:
-    return spx['platform_UUID'] 
+    return spx['platform_UUID']
   except KeyError:
     return None
 
@@ -922,7 +923,7 @@ def scanAvailableNetworks(networkName):
     # Might need to switch to Cocoa here
     print 'Unable to parse airport command output'
     print 'This error is not critical and can be ignored'
-    return False 
+    return False
 
   print 'Search found following acess points available'
   found = False
@@ -977,7 +978,7 @@ def checkCurrenNetwork(networkName):
   except KeyError:
     print 'No current wireless network detected'
 
-# Hardware Test for MacbookAir,* 
+# Hardware Test for MacbookAir,*
 def getPlatformPortName():
   # Hardware test for Air
   airTest = re.compile(".*(a|A)ir.*")
@@ -1000,7 +1001,7 @@ def getConsoleUser():
 
 def toggleAirportPower(value):
   # Returns the bsd style name of the port
-  if osVersion['minor'] == LION:  
+  if osVersion['minor'] == LION:
     port = getPlatformPortName()
   else:
     port = 'Airport'
@@ -1124,7 +1125,7 @@ def deleteUsersEAPProfile(networkName):
               profileByHost = home + '/Library/Preferences/ByHost/com.apple.eap.bindings.%s.plist' % getPlatformUUID()
               if os.path.exists(profileByHost):
                 print 'Updating File: %s' % profileByHost
-                profileByHostFile = NSMutableDictionary.dictionaryWithContentsOfFile_(profileByHost) 
+                profileByHostFile = NSMutableDictionary.dictionaryWithContentsOfFile_(profileByHost)
                 # Make a copy for enumeration
                 copy = NSDictionary.dictionaryWithDictionary_(profileByHostFile)
                 # Multiple MAC Addresses may exist
@@ -1150,9 +1151,9 @@ def deleteUsersEAPProfile(networkName):
                           # Delete the entry and update the file
                           del profileFile['Profiles'][index]
                           writePlist(profileFile,profile)
-                          os.chown(profile,uid,gid)  
+                          os.chown(profile,uid,gid)
                       profileIndex += 1
-                    index += 1   
+                    index += 1
               else:
                 print 'File not found: %s' % profileByHost
             else:
@@ -1181,7 +1182,7 @@ def addUsersEAPProfile(networkDict):
             profileByHost = home + '/Library/Preferences/ByHost/com.apple.eap.bindings.%s.plist' % getPlatformUUID()
             createEAPBinding(profileByHost,uid,gid,networkDict)
         except KeyError:
-          print 'User plist %s does not have a home key' % plistPath	
+          print 'User plist %s does not have a home key' % plistPath
 
 # Handle the system keychain as root
 def deleteSystemKeychainPassword(networkName):
@@ -1205,7 +1206,7 @@ def deleteSystemKeychainPassword(networkName):
               '-l',
               networkName,
               keychain]
-  deleteKeychainPassword(arguments) 
+  deleteKeychainPassword(arguments)
 
 def addKeychainPassword(arguments):
   # Script Created Entry
@@ -1234,7 +1235,7 @@ def removeWireless(osVersion,network):
   print '-' * 80
   # Leopard Code
   if osVersion['minor'] == LEOP:
-    leopardRemoveWireless(network)  
+    leopardRemoveWireless(network)
   # Snow Leopard Code
   if osVersion['minor'] == SNOW:
     snowLeopardRemoveWireless(network)
@@ -1266,7 +1267,7 @@ def addWireless(osVersion,networkDict={}):
 def main():
   global debugEnabled
   debugEnabled = False
-  # Check for envrionmental variables 
+  # Check for envrionmental variables
   try:
     userName = os.environ['USER_NAME']
   except KeyError:
@@ -1290,7 +1291,7 @@ def main():
 
   for opt, arg in options:
     if opt in ('-u', '--username'):
-      userName = arg 
+      userName = arg
     elif opt in ('-p', '--password'):
       userPass = arg
     elif opt in ('-f', '--plist'):
@@ -1301,7 +1302,7 @@ def main():
   # Sanity Checks
   if len(options) < 1:
     showUsage()
-    print '--> Not enough options given' 
+    print '--> Not enough options given'
     return 1
 
   # Check the current directory
@@ -1333,7 +1334,7 @@ def main():
     networkRemoveList = plist['networkRemoveList']
     # Loop through our remove list
     for network in networkRemoveList:
-      # Process os specific directives 
+      # Process os specific directives
       removeWireless(osVersion,network)
   else:
     print 'No networks specified to remove'
@@ -1345,7 +1346,7 @@ def main():
     for networkDict in networkAddList:
       # Add our username and password to the config
       if 'user' not in networkDict.keys():
-        networkDict['user'] = userName 
+        networkDict['user'] = userName
       if 'pass' not in networkDict.keys():
         networkDict['pass'] = userPass
       # Remove the password for OPEN network
@@ -1357,7 +1358,7 @@ def main():
           networkDict['guid'] = str(uuid.uuid1()).upper()
 	if not 'keyc' in networkDict.keys():
           networkDict['keyc'] = str(uuid.uuid1()).upper()
-      # Process os specific directives 
+      # Process os specific directives
       addWireless(osVersion,networkDict)
   else:
     print 'No networks specified to add'
@@ -1365,4 +1366,4 @@ def main():
   toggleAirportPower('on')
 
 if __name__ == "__main__":
-  sys.exit(main()) 
+  sys.exit(main())
