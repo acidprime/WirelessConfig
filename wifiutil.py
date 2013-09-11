@@ -124,8 +124,10 @@ def generateUserCSR(key,csr,my_tgt_name):
   execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
   out, err = execute.communicate()
 
+## curl the csr up
 def curlCsr(csr,cert_type,ca_url):
-
+# First we do some really really ugly-looking awk work to url-encode the csr
+# Later versions of curl do this for us... but we don't have that luxury.
   arguments = [ cat,
     csr,
     '|',
