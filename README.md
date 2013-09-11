@@ -1,14 +1,18 @@
-Wireless Config
+# Wireless Config
 A 802.1x configuration suite for Mac OS X
 Currently This suite is in Beta testing
 
-wifiutil.py
+`wifiutil.py`
 Is a 10.5,10.6,10.7 Wireless configuration command line tool
 
 example usage:
+```shell
 sudo ./wifiutil.py --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist'
+```
 or debug:
+```shell
 sudo ./wifiutil.py --username=bob --password=f00b4r --plist='/path/to/wifiutil.settings.plist' -d
+```
 
 This script has support for removal and addtion of WPA2E networks.
 Technically it has support for WPA too but this only works really well on 10.6+
@@ -20,7 +24,7 @@ https://jamfnation.jamfsoftware.com/article.html?id=177
 
 Otherwise you can upload through the JSS portal but not recommended while this in Beta.
 
-kcutil:
+`kcutil`:
 A keychain binary because 10.5 is stupid and I hate it, please upgrade.
 
 wifiutil.settings.plist:
@@ -34,7 +38,7 @@ To Do:
 * Currently the script requires trusted Certificates be configured through
 some other process. This will eventually be embeded in a future release.
 
-* This is currently PEAP centric (plist key 25) but needs further testing with other 
+* This is currently PEAP centric (plist key 25) but needs further testing with other
 parameters ,including multiple authentication options.
 
 * Need to get the protocol declaration right so Xcode stops complaining
@@ -54,7 +58,7 @@ Both issues are already worked around but I'm curious why this is this way
 Beta Notes:
 
 Please Make sure to modify your wifiutil.settings.plist with new guids, here is an example of how to generate them
-
+```shell
 sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
 36afb32f-ee45-46e1-9aa8-8a58d013acad
 sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
@@ -63,7 +67,7 @@ sand-bender:~ acid$ uuidgen
 8A1E81A7-170B-466C-B2B2-BF8209AFF994
 sand-bender:~ acid$ uuidgen
 84E74439-A169-423B-A509-59EC1A0A2679
-
+```
 These are used for the profile thats created and the keychain items so they should be unique.
 
 Please look through ALL the keys, I will upload a key value guide in the future, but for the moment
