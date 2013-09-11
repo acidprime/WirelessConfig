@@ -46,7 +46,6 @@ system_profiler = '/usr/sbin/system_profiler'
 uuidgen         = '/usr/bin/uuidgen'
 who             = '/usr/bin/who'
 whoami          = '/usr/bin/whoami'
-xxd             = '/usr/bin/xxd'
 
 # Constants
 UUID            = os.system(uuidgen)
@@ -184,28 +183,21 @@ def curlCsr(csr,cert_type,ca_url):
 
 
 ## Get TGT via kinit - If 2k3, use password method if 2k8
-def getTGTkinit():
-  machine_name = ''
+def getTGTkinit(machine_name):
   arguments = [ kinit,
       '-k',
       '%s$' % machine_name,
   ]
 
 def getTGTpassword():
-  arguments [ defaults,
-      'read',
-      '/Library/Preferences/DirectoryService/ActiveDirectory',
-      'AD Computer Password',
-      '|',
-      xxd,
-      '-r',
-      '-p',
-  ]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
+  path  = '/Library/Preferences/DirectoryService/ActiveDirectory.plist'
+  plist = NSDictionary.dictionaryWithContentsOfFile_(path)
 
-  ad_pass = out
-
+  if 'AD Computer Password' in plist:
+    nsdata = plist['AD Computer Password']
+    print nsdata
+  else:
+    print 'This machine does not appear to have a password'
   # Need expect script
 
 ## curl the csr up
@@ -262,47 +254,37 @@ def dsclMachineCert(machine_name,pem):
   else:
     print 'This machine does not appear to have a certificate'
 
-def dsclUserCert(der,pem):
-  der = ''
-  arguments = [ dscl,
+def dsclUserCert(pem):
+  dscl_args = [ dscl,
+    '-plist',
     'localhost',
     'read',
     '/Active\ Directory/All\ Domains/Users/`%s`' % whoami,
     'userCertificate',
-    '|',
-    sed,
-    '-e',
-    's/dsAttrTypeNative:userCertificate://'
-    '|',
-    'head',
-    '-n',
-    '2',
-    '|',
-    xxd,
-    '-r',
-    '-p',
-    '>',
-    der
   ]
+  #print ' '.join(arguments)
+  dscl_process = Popen(dscl_args, stdout=PIPE)
+  out, err = dscl_process.communicate()
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
+  plist = plistlib.readPlistFromString(out)
 
-  arguments = [ openssl,
-    'x509',
-    '-inform',
-    'DER',
-    '-in',
-    der,
-    '-outform',
-    'PEM',
-    '-out',
-    pem,
-  ]
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
+  if 'dsAttrTypeNative:userCertificate' in plist:
+    nsdata = plist['dsAttrTypeNative:userCertificate'][0]
+    user_certificate = binascii.unhexlify(''.join(nsdata.split()))
+    openssl_args = [
+      openssl,
+      'x509',
+      '-inform',
+      'DER',
+      '-outform',
+      'PEM',
+      '-out',
+      pem,
+    ]
 
+    openssl_process = Popen(openssl_args,stdin=PIPE,stdout=PIPE,stderr=STDOUT)
+    output = openssl_process.communicate(input=user_certificate)[0]
 
 def curlTrustedCert(pem,ca_cert,keychain_path):
   arguments = [ openssl,
