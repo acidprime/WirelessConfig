@@ -64,13 +64,20 @@ Syntax:
   wifiutil --plist="/Library/Preferences/com.318.wifi.plist"
 
 Options:
-  -f | --plist=     ## Path to a plist to read configuration information from
-                    This will override any other provided options!
+  -f | --plist=             ## Path to a plist to read configuration information from
+                            This will override any other provided options!
 
-  -u | --username=  ## The username used to access the wireless
+  -u | --username=          ## The username used to access the wireless
 
-  -p | --password=  ## The password used to access the wireless
-  -d | --debug      ## Echo commands (and passwords!) in clear text
+  -p | --password=          ## The password used to access the wireless
+
+  -c | --ca_server          ## The Microsoft IIS Certificate portal server
+
+  -t | --cert_type          ## The certificate type (name of the Template)
+
+  -d | --debug              ## Echo commands (and passwords!) in clear text
+
+  -s | --secure_import      ## Securely import the pkcs12 into the keychain
 
    '''
 
@@ -1612,11 +1619,16 @@ def main():
   # Process Arguments
   if(debugEnabled): print 'Processing Arguments: ', sys.argv[1:]
   try:
-    options, remainder = getopt.getopt(sys.argv[1:], 'u:p:f:d', ['username=',
-                                                         'password=',
-                                                         'plist=',
-                                                         'debug'
-                                                         ])
+    options, remainder = getopt.getopt(sys.argv[1:], 'c:u:t:p:f:ds', [
+      'ca_server=',
+      'cert_type=',
+      'username=',
+      'password=',
+      'plist=',
+      'debug',
+      'secure_import',
+      ])
+
   except getopt.GetoptError:
     print "Syntax Error!"
     return 1
@@ -1630,6 +1642,13 @@ def main():
       plistPath = arg
     elif opt in ('-d', '--debug'):
       debugEnabled = True
+    elif opt in ('-c', '--ca_server'):
+      ca_server = arg
+      ca_url    = "http://%s/certsrv" % ca_server
+    elif opt in ('-t', '--cert_type'):
+      cert_type = arg
+    elif opt in ('-s', '--secure_import'):
+      secure_import = True
 
   # Sanity Checks
   if len(options) < 1:
