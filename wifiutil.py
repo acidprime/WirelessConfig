@@ -12,10 +12,11 @@ import subprocess
 import commands
 import re
 import time
+import binascii
 
 from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyListSerialization,NSDate
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
-
+from subprocess import Popen, PIPE, STDOUT
 
 # Commands used by this script
 airport     = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
@@ -225,42 +226,41 @@ def curlCert(pem,ca_url,req_id):
 
 
 ## Pick up the cert via dscl if it's a 2k8 domain and convert it into PEM format
-def dsclMachineCert(der,pem,machine_name):
-  arguments = [ dscl,
+# dsclMachineCert('WIN-7PO3B92M2FP','/tmp/userCertificate.pem')
+def dsclMachineCert(machine_name,pem):
+  dscl_args = [ dscl,
+    '-plist',
     'localhost',
     'read',
     '/Search/Computers/%s$' % machine_name,
     'userCertificate',
-    '|',
-    sed,
-    '-e',
-    's/dsAttrTypeNative:userCertificate://',
-    '|',
-    xxd,
-    '-r',
-    '-p',
-    '>',
-    der,
   ]
+  #print ' '.join(arguments)
+  dscl_process = Popen(dscl_args, stdout=PIPE)
+  out, err = dscl_process.communicate()
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
+  plist = plistlib.readPlistFromString(out)
 
 
-  arguments = [ openssl,
-    'x509',
-    '-inform',
-    'DER',
-    '-in',
-    der,
-    '-outform',
-    'PEM',
-    '-out',
-    pem,
-  ]
+  if 'dsAttrTypeNative:userCertificate' in plist:
+    nsdata = plist['dsAttrTypeNative:userCertificate'][0]
+    user_certificate = binascii.unhexlify(''.join(nsdata.split()))
+    openssl_args = [
+      openssl,
+      'x509',
+      '-inform',
+      'DER',
+      '-outform',
+      'PEM',
+      '-out',
+      pem,
+    ]
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
+    openssl_process = Popen(openssl_args,stdin=PIPE,stdout=PIPE,stderr=STDOUT)
+    output = openssl_process.communicate(input=user_certificate)[0]
+
+  else:
+    print 'This machine does not appear to have a certificate'
 
 def dsclUserCert(der,pem):
   der = ''
