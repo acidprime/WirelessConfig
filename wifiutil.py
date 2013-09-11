@@ -13,6 +13,8 @@ import commands
 import re
 import time
 import binascii
+import urllib
+
 
 from Cocoa import NSData,NSString,NSDictionary,NSMutableDictionary,NSPropertyListSerialization,NSDate
 from Cocoa import NSUTF8StringEncoding,NSPropertyListImmutable
@@ -90,67 +92,53 @@ if not os.geteuid() == 0:
 
 
 # Generate csr with openssl for a machine
-def generateMachineCSR(key,csr,machine_name):
-
-  arguments = [ openssl,
-      'eq',
-      '-new',
-      '-batch',
-      '-newkey',
-      'rsa:2048',
-      '-nodes',
-      '-keyout "%s"' % key,
-      'out "%s"' % csr,
-      '-subj "/CN=%s$"' % machine_name,
+def generateMachineCSR(machine_name,key,csr):
+  arguments = [
+    openssl,
+    'req',
+    '-new',
+    '-batch',
+    '-newkey',
+    'rsa:2048',
+    '-nodes',
+    '-keyout',
+    '%s' % key,
+    '-out',
+    '%s' % csr,
+    '-subj',
+    '/CN=%s$' % machine_name ,
   ]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
-
 # Generate csr with openssl for a user
-def generateUserCSR(key,csr,my_tgt_name):
-
-  arguments = [ openssl,
-      'eq',
-      '-new',
-      '-batch',
-      '-newkey',
-      'rsa:2048',
-      '-nodes',
-      '-keyout "%s"' % key,
-      'out "%s"' % csr,
-      '-subj "/CN=%s$"' % my_tgt_name ,
+def generateUserCSR(user_name,key,csr):
+  arguments = [
+    openssl,
+    'req',
+    '-new',
+    '-batch',
+    '-newkey',
+    'rsa:2048',
+    '-nodes',
+    '-keyout',
+    '%s' % key,
+    '-out',
+    '%s' % csr,
+    '-subj',
+    '/CN=%s$' % user_name,
   ]
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
 ## curl the csr up
 def curlCsr(csr,cert_type,ca_url):
-# First we do some really really ugly-looking awk work to url-encode the csr
-# Later versions of curl do this for us... but we don't have that luxury.
-  arguments = [ cat,
-    csr,
-    '|',
-    hexdump,
-    '-v',
-    '-e',
-    '1/1 "%02x\t"',
-    '-e',
-    '1/1',
-    "%_c\n",
-    '|',
-    'LANG=C',
-    awk,
-    '$1 == "20"                   { printf("%s",      "+");   next    } \
-     $2 ~  /^[a-zA-Z0-9.*()\/-]$/ { printf("%s",      $2);    next    } \
-                                  { printf("%%%s",    $1)             }',
-  ]
-
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
-
-  encoded_csr = out
+  # First we do some really really ugly-looking awk work to url-encode the csr
+  # Later versions of curl do this for us... but we don't have that luxury.
+  cert_request = open(csr, 'r').read()
+  encoded_csr  = urllib.quote(cert_request)
 
   arguments = [ curl,
       '--negotiate',
