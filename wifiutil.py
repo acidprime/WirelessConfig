@@ -202,7 +202,7 @@ def curlCert(pem,ca_url,req_id):
     ':',
     "%s/certnew.cer?ReqID=%s&Enc=b64" % (ca_url,req_id) ,
   ]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
 
@@ -292,7 +292,7 @@ def dsclUserCert(pem):
 #    's/URI://',
 #  ]
 #
-#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  execute = Popen(arguments, stdout=PIPE)
 #  out, err = execute.communicate()
 #
 #  ca_url = out
@@ -303,7 +303,7 @@ def dsclUserCert(pem):
 #    ca_url,
 #  ]
 #
-#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  execute = Popen(arguments, stdout=PIPE)
 #  out, err = execute.communicate()
 #
 #  arguments = [ security,
@@ -324,7 +324,7 @@ def dsclUserCert(pem):
 #     'successful',
 #  ]
 #
-#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  execute = Popen(arguments, stdout=PIPE)
 #  out, err = execute.communicate()
 #
 #  # Find out if cert is trusted
@@ -357,7 +357,7 @@ def packAndImport(pem,key,pk12,machine_name,keychain_path):
       'pass:%s' % uuid,
   ]
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
   arguments = [ security,
@@ -374,7 +374,7 @@ def packAndImport(pem,key,pk12,machine_name,keychain_path):
   if secure_import :
     arguments.append('-x',arguments[1])
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
 def createEAPProfile(path,uid,gid,networkDict):
@@ -427,7 +427,7 @@ def getAirportMac():
   arguments = [networksetup,
                "-getmacaddress",
                port]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   parse = out.split()
   return parse[2]
@@ -511,7 +511,7 @@ def addKeychainPassword(arguments):
   # Script Created Entry
   print 'Adding password to keychain'
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   print out
 
@@ -726,13 +726,13 @@ def genLionProfile(networkDict={}):
 
 def networksetupExecute(arguments):
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   print out
 
 def profilesExecute(arguments):
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   print out
 
@@ -1102,7 +1102,7 @@ def lionAddWireless(networkDict={}):
 # Network Setup Sub Routine
 def networksetupExecute(arguments):
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   print out
 
@@ -1162,7 +1162,7 @@ def writePlist(plist,filePath):
   plist.writeToFile_atomically_(filePath,True)
   # Check the plist
   arguments = [plutil,filePath]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   print execute.returncode
 
@@ -1170,7 +1170,7 @@ def writePlist(plist,filePath):
 def getAirportInfo():
   # Pull info from the Airport command
   arguments = [airport,"--getinfo"]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   dict = {}
   for line in out.split('\n'):
@@ -1197,7 +1197,7 @@ def systemReport():
   dataTypes = _dataTypes.keys()
   # run the system_profiler command with data types
   arguments = [system_profiler,"-xml"] + dataTypes
-  getspx = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  getspx = Popen(arguments, stdout=PIPE)
   spxOut, err = getspx.communicate()
   # Someone give me an example of doing read from string via bridge and I will fix this
   #spxNSString = NSString.alloc().initWithString_(spxOut)
@@ -1229,7 +1229,7 @@ def scanAvailableNetworks(networkName):
   directed = "--scan=%s" % networkName
   arguments = [airport,"--xml",directed]
   if(debugEnabled):printCommand(arguments)
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   try:
     avaiable = plistlib.readPlistFromString(out)
@@ -1263,7 +1263,7 @@ def connectToNewNetwork(port,networkDict={}):
       password = ''
     arguments = [airport,wireless,password]
     if(debugEnabled):printCommand(arguments)
-    execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+    execute = Popen(arguments, stdout=PIPE)
     out, err = execute.communicate()
     print out
   if scanAvailableNetworks(networkDict['ssid']):
@@ -1313,7 +1313,7 @@ def getPlatformPortName():
 
 def getConsoleUser():
   arguments = [who]
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   parse = out.split()
   console = re.compile(".*console.*")
@@ -1535,7 +1535,7 @@ def addKeychainPassword(arguments):
   # Script Created Entry
   if(debugEnabled):printCommand(arguments)
   try:
-    execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+    execute = Popen(arguments, stdout=PIPE)
     out, err = execute.communicate()
     print out
   except:
@@ -1546,7 +1546,7 @@ def deleteKeychainPassword(arguments):
   print 'Deleting keychain entries...'
   if(debugEnabled):printCommand(arguments)
   try:
-    execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+    execute = Popen(arguments, stdout=PIPE)
     out, err = execute.communicate()
     print out
   except:
