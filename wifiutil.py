@@ -1114,12 +1114,14 @@ def lionAddWireless(networkDict={}):
     # Removing the temp profile
     os.remove(exportLionProfile)
     # Adding this as System profiles don't seem to do this
-    arguments = [networksetup,
-              "-addpreferredwirelessnetworkatindex",
-              port,
-              networkDict['ssid'],
-              '0',
-              networkDict['tkey']]
+    arguments = [
+      networksetup,
+      "-addpreferredwirelessnetworkatindex",
+      port,
+      networkDict['ssid'],
+      '0',
+      networkDict['tkey']
+    ]
     networksetupExecute(arguments)
     createLionEAPkeychainEntry(networkDict)
   else:
@@ -1320,14 +1322,34 @@ def connectToNewNetwork(port,networkDict={}):
     time.sleep(10)
     if osVersion['minor'] >= SNOW:
       if 'pass' in networkDict.keys():
-        arguments = [networksetup,"-setairportnetwork",port,networkDict['ssid'],networkDict['pass']]
+        arguments = [
+          networksetup,
+          "-setairportnetwork",
+          port,
+          networkDict['ssid'],
+          networkDict['pass']
+        ]
       else:
-        arguments = [networksetup,"-setairportnetwork",port,networkDict['ssid']]
+        arguments = [
+          networksetup,
+          "-setairportnetwork",
+          port,
+          networkDict['ssid']
+        ]
     if osVersion['minor'] == LEOP:
       if 'pass' in networkDict.keys():
-        arguments = [networksetup,"-setairportnetwork",networkDict['ssid'],networkDict['pass']]
+        arguments = [
+          networksetup,
+          "-setairportnetwork",
+          networkDict['ssid'],
+          networkDict['pass']
+        ]
       else:
-        arguments = [networksetup,"-setairportnetwork",networkDict['ssid']]
+        arguments = [
+          networksetup,
+          "-setairportnetwork",
+          networkDict['ssid']
+        ]
     networksetupExecute(arguments)
   else:
     print 'Network %s not found' % networkDict['ssid']
@@ -1381,11 +1403,25 @@ def toggleAirportPower(value):
     port = 'Airport'
 
   if osVersion['minor'] >= SNOW:
-    arguments = [networksetup,"-setairportpower",port,value]
+    arguments = [
+      networksetup,
+      "-setairportpower",
+      port,
+      value
+    ]
   if osVersion['minor'] == LEOP:
-    arguments = [networksetup,"-setairportpower",value]
+    arguments = [
+      networksetup,
+      "-setairportpower",
+      value
+    ]
   else:
-    arguments = [networksetup,"-setairportpower",port,value]
+    arguments = [
+      networksetup,
+      "-setairportpower",
+      port,
+      value
+    ]
 
   networksetupExecute(arguments)
 
