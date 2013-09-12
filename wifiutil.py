@@ -170,9 +170,10 @@ def curlCsr(csr,cert_type,ca_url):
 
 ## Get TGT via kinit - If 2k3, use password method if 2k8
 def getTGTkinit(machine_name):
-  arguments = [ kinit,
-      '-k',
-      '%s$' % machine_name,
+  arguments = [
+    kinit,
+    '-k',
+    '%s$' % machine_name,
   ]
   execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
