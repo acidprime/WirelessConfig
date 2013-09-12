@@ -209,7 +209,8 @@ def curlCert(pem,ca_url,req_id):
 ## Pick up the cert via dscl if it's a 2k8 domain and convert it into PEM format
 # dsclMachineCert('WIN-7PO3B92M2FP','/tmp/userCertificate.pem')
 def dsclMachineCert(machine_name,pem):
-  dscl_args = [ dscl,
+  dscl_args = [
+    dscl,
     '-plist',
     'localhost',
     'read',
@@ -244,7 +245,8 @@ def dsclMachineCert(machine_name,pem):
     print 'This machine does not appear to have a certificate'
 
 def dsclUserCert(pem):
-  dscl_args = [ dscl,
+  dscl_args = [
+    dscl,
     '-plist',
     'localhost',
     'read',
@@ -441,9 +443,11 @@ def createEAPProfile(path,uid,gid,networkDict):
 def getAirportMac():
   # Script Created Entry
   port = getPlatformPortName()
-  arguments = [networksetup,
-               "-getmacaddress",
-               port]
+  arguments = [
+    networksetup,
+    '-getmacaddress',
+    port
+  ]
   execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
   parse = out.split()
@@ -550,29 +554,31 @@ def createLeopEAPkeychainEntry(networkDict):
           print 'Processing keychain: %s' % keychain
           if os.path.exists(keychain):
             if user['name'][0] == getConsoleUser():
-              arguments = [security,
-                   "add-generic-password",
-                   '-a',
-                   networkDict['ssid'],
-                   '-l',
-                   '%s-%s' % (networkDict['ssid'],networkDict['user']),
-                   '-D',
-                   'Internet Connect',
-                   '-s',
-                    networkDict['keyc'],
-                   '-w',
-                   networkDict['pass'],
-                   '-T',
-                   'group://Aiport',
-                   '-T',
-                   '/System/Library/CoreServices/SystemUIServer.app',
-                   '-T',
-                   '/Applications/System Preferences.app',
-                   '-T',
-                   '/usr/libexec/airportd',
-                   '-T',
-                   eapolclient,
-                   keychain]
+              arguments = [
+                security,
+                "add-generic-password",
+                '-a',
+                networkDict['ssid'],
+                '-l',
+                '%s-%s' % (networkDict['ssid'],networkDict['user']),
+                '-D',
+                'Internet Connect',
+                '-s',
+                 networkDict['keyc'],
+                '-w',
+                networkDict['pass'],
+                '-T',
+                'group://Aiport',
+                '-T',
+                '/System/Library/CoreServices/SystemUIServer.app',
+                '-T',
+                '/Applications/System Preferences.app',
+                '-T',
+                '/usr/libexec/airportd',
+                '-T',
+                eapolclient,
+                keychain
+              ]
 
               addKeychainPassword(arguments)
               try:
@@ -602,27 +608,29 @@ def createSnowEAPkeychainEntry(networkDict):
           print 'Processing keychain: %s' % keychain
           if os.path.exists(keychain):
             if user['name'][0] == getConsoleUser():
-              arguments = [security,
-                 "add-generic-password",
-                 '-a',
-                 networkDict['user'],
-                 '-l',
-                 'WPA: %s' % networkDict['ssid'],
-                 '-D',
-                 '802.1X Password',
-                 '-s',
-                  networkDict['keyc'],
-                 '-w',
-                 networkDict['pass'],
+              arguments = [
+                security,
+                "add-generic-password",
+                '-a',
+                networkDict['user'],
+                '-l',
+                'WPA: %s' % networkDict['ssid'],
+                '-D',
+                '802.1X Password',
+                '-s',
+                 networkDict['keyc'],
+                '-w',
+                networkDict['pass'],
                 '-T',
-                 'group://Aiport',
-                 '-T',
-                 '/System/Library/CoreServices/SystemUIServer.app',
-                 '-T',
-                 '/Applications/System Preferences.app',
-                 '-T',
-                 eapolclient,
-                 keychain]
+                'group://Aiport',
+                '-T',
+                '/System/Library/CoreServices/SystemUIServer.app',
+                '-T',
+                '/Applications/System Preferences.app',
+                '-T',
+                eapolclient,
+                keychain
+              ]
               addKeychainPassword(arguments)
               try:
                 os.chown(keychain,uid,gid)
@@ -650,38 +658,42 @@ def createLionEAPkeychainEntry(networkDict):
           if os.path.exists(keychain):
             # Clear old value
             if user['name'][0] == getConsoleUser():
-              arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          '802.1X Password',
-                          '-l',
-                          networkDict['ssid'],
-                          '-a',
-                          networkDict['user'],
-                          keychain]
+              arguments = [
+                security,
+                "delete-generic-password",
+                '-D',
+                '802.1X Password',
+                '-l',
+                networkDict['ssid'],
+                '-a',
+                networkDict['user'],
+                keychain
+              ]
               deleteKeychainPassword(arguments)
               # Add New Value
-              arguments = [security,
-                 "add-generic-password",
-                 '-a',
-                 networkDict['user'],
-                 '-l',
-                 networkDict['ssid'],
-                 '-D',
-                 '802.1X Password',
-                 '-s',
-                  'com.apple.network.eap.user.item.wlan.ssid.%s' % networkDict['ssid'],
-                 '-w',
-                 networkDict['pass'],
-                 '-T',
-                 'group://Aiport',
-                 '-T',
-                 '/System/Library/CoreServices/SystemUIServer.app',
-                 '-T',
-                 '/Applications/System Preferences.app',
-                 '-T',
-                 eapolclient,
-                 keychain]
+              arguments = [
+                security,
+                "add-generic-password",
+                '-a',
+                networkDict['user'],
+                '-l',
+                networkDict['ssid'],
+                '-D',
+                '802.1X Password',
+                '-s',
+                 'com.apple.network.eap.user.item.wlan.ssid.%s' % networkDict['ssid'],
+                '-w',
+                networkDict['pass'],
+                '-T',
+                'group://Aiport',
+                '-T',
+                '/System/Library/CoreServices/SystemUIServer.app',
+                '-T',
+                '/Applications/System Preferences.app',
+                '-T',
+                eapolclient,
+                keychain
+              ]
               addKeychainPassword(arguments)
               try:
                 os.chown(keychain,uid,gid)
@@ -789,10 +801,12 @@ def genSnowProfile(networkDict):
 #-------------------------------------------------------------------------------
 # This is currently not used as writing the keys seemed best for auto connect
 def importSnowProfile(exportFile):
-  arguments = [networksetup,
-              "-import8021xProfiles",
-              "Airport",
-              exportFile]
+  arguments = [
+    networksetup,
+    "-import8021xProfiles",
+    "Airport",
+    exportFile
+  ]
   networksetupExecute(arguments)
 
 def addPreferredNetwork(networkDict):
@@ -905,31 +919,35 @@ def leopardAddWireless(networkDict={}):
               if os.path.exists(keychain):
                 # -U causing segmentation fault, removed sudo
                 if user['name'][0] == getConsoleUser():
-                  arguments = [security,
-                            "add-generic-password",
-                            '-a',
-                            networkDict['ssid'],
-                            '-l',
-                            networkDict['ssid'],
-                            '-D',
-                            'AirPort network password',
-                            '-s',
-                            'AirPort Network',
-                            '-w',
-                            networkDict['pass'],
-                            '-T',
-                            'group://Aiport',
-                            '-T',
-                            '/System/Library/CoreServices/SystemUIServer.app',
-                            '-T',
-                            '/Applications/System Preferences.app',
-                            keychain]
+                  arguments = [
+                    security,
+                    "add-generic-password",
+                    '-a',
+                    networkDict['ssid'],
+                    '-l',
+                    networkDict['ssid'],
+                    '-D',
+                    'AirPort network password',
+                    '-s',
+                    'AirPort Network',
+                    '-w',
+                    networkDict['pass'],
+                    '-T',
+                    'group://Aiport',
+                    '-T',
+                    '/System/Library/CoreServices/SystemUIServer.app',
+                    '-T',
+                    '/Applications/System Preferences.app',
+                    keychain
+                  ]
                   addKeychainPassword(arguments)
-                  arguments = [kcutil,
-                               user['home'][0],
-                               user['name'][0],
-                               networkDict['pass'],
-                               configFile]
+                  arguments = [
+                    kcutil,
+                    user['home'][0],
+                    user['name'][0],
+                    networkDict['pass'],
+                    configFile
+                  ]
                   addKeychainPassword(arguments)
                   try:
                     os.chown(keychain,uid,gid)
@@ -1015,10 +1033,12 @@ def leopardRemoveWireless(networkName):
 # Snow Leopard
 def snowLeopardRemoveWireless(networkName):
   port = 'Airport'
-  arguments = [networksetup,
-              "-removepreferredwirelessnetwork",
-              port,
-              networkName]
+  arguments = [
+    networksetup,
+    "-removepreferredwirelessnetwork",
+    port,
+    networkName
+  ]
   if(debugEnabled):printCommand(arguments)
   networksetupExecute(arguments)
   # Remove from the Known Network list
@@ -1037,18 +1057,24 @@ def snowLeopardAddWireless(networkDict={}):
     addPreferredNetwork(networkDict)
   else:
     if 'pass' in networkDict.keys():
-      arguments = [networksetup,
-                 "-addpreferredwirelessnetworkatindex",
-                  port,
-                  networkDict['ssid'],
-                  '0',networkDict['type'],
-                  networkDict['pass']]
+      arguments = [
+        networksetup,
+        "-addpreferredwirelessnetworkatindex",
+        port,
+        networkDict['ssid'],
+        '0',
+        networkDict['type'],
+        networkDict['pass'],
+      ]
     else:
-      arguments = [networksetup,
-                 "-addpreferredwirelessnetworkatindex",
-                  port,
-                  networkDict['ssid'],
-                  '0',networkDict['type']]
+      arguments = [
+        networksetup,
+        "-addpreferredwirelessnetworkatindex",
+        port,
+        networkDict['ssid'],
+        '0',
+        networkDict['type'],
+        ]
     networksetupExecute(arguments)
     connectToNewNetwork(port,networkDict)
 #-------------------------------------------------------------------------------
@@ -1076,12 +1102,14 @@ def lionAddWireless(networkDict={}):
   if networkDict['type'] == 'WPA2 Enterprise':
     # Generate the profile
     exportLionProfile = genLionProfile(networkDict)
-    arguments = [profiles,
-              "-I",
-              "-v",
-              "-f",
-              '-F',
-              exportLionProfile]
+    arguments = [
+      profiles,
+      "-I",
+      "-v",
+      "-f",
+      '-F',
+      exportLionProfile
+    ]
     profilesExecute(arguments)
     # Removing the temp profile
     os.remove(exportLionProfile)
@@ -1097,21 +1125,25 @@ def lionAddWireless(networkDict={}):
   else:
     # Check for WPA2/OPEN network
     if 'pass' in networkDict.keys():
-      arguments = [networksetup,
-                "-addpreferredwirelessnetworkatindex",
-                port,
-                networkDict['ssid'],
-                '0',
-                networkDict['type'],
-                networkDict['pass']]
+      arguments = [
+        networksetup,
+        "-addpreferredwirelessnetworkatindex",
+        port,
+        networkDict['ssid'],
+        '0',
+        networkDict['type'],
+        networkDict['pass']
+      ]
 
     else:
-      arguments = [networksetup,
-                "-addpreferredwirelessnetworkatindex",
-                port,
-                networkDict['ssid'],
-                '0',
-                networkDict['type']]
+      arguments = [
+        networksetup,
+        "-addpreferredwirelessnetworkatindex",
+        port,
+        networkDict['ssid'],
+        '0',
+        networkDict['type']
+      ]
     networksetupExecute(arguments)
     connectToNewNetwork(port,networkDict)
 
@@ -1316,7 +1348,9 @@ def getPlatformPortName():
   hwmodel = commands.getoutput(sysctl + " hw.model").split(' ')
   if osVersion['minor'] >= LION:
     # Updating this for retina displays and beyond?
+
     arguments = [networksetup,'-listallhardwareports']
+
     execute = Popen(arguments, stdout=PIPE)
     out, err = execute.communicate()
     retina_regex  = re.search(".*(Wi-Fi|AirPort).*\nDevice: (en\d+)*",out)
@@ -1374,65 +1408,77 @@ def deleteUsersKeychainPassword(networkName):
             if os.path.exists(keychain):
               if user['name'][0] == getConsoleUser():
                 # Lion
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          'AirPort network password',
-                          '-s',
-                          'com.apple.network.wlan.ssid.%s' % networkName,
-                          '-l',
-                          networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  'AirPort network password',
+                  '-s',
+                  'com.apple.network.wlan.ssid.%s' % networkName,
+                  '-l',
+                  networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 # Lion generic
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          'AirPort network password',
-                          '-l',
-                          networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  'AirPort network password',
+                  '-l',
+                  networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 # Snow Type 1
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          'AirPort network password',
-                          '-a',
-                          networkName,
-                          '-l',
-                          networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  'AirPort network password',
+                  '-a',
+                  networkName,
+                  '-l',
+                  networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 # Snow Type 2
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          'AirPort network password',
-                          '-a',
-                          'Airport',
-                          '-l',
-                          networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  'AirPort network password',
+                  '-a',
+                  'Airport',
+                  '-l',
+                  networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 # Snow 802.1X type 1
                 # Updated to remove account type as local user name may mismatch
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          '802.1X Password',
-                          '-l',
-                          'WPA: %s' % networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  '802.1X Password',
+                  '-l',
+                  'WPA: %s' % networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 # Lion
-                arguments = [security,
-                          "delete-generic-password",
-                          '-D',
-                          '802.1X Password',
-                          '-l',
-                          networkName,
-                          keychain]
+                arguments = [
+                  security,
+                  "delete-generic-password",
+                  '-D',
+                  '802.1X Password',
+                  '-l',
+                  networkName,
+                  keychain
+                ]
                 deleteKeychainPassword(arguments)
                 try:
                   os.chown(keychain,uid,gid)
@@ -1527,25 +1573,29 @@ def addUsersEAPProfile(networkDict):
 # Handle the system keychain as root
 def deleteSystemKeychainPassword(networkName):
   keychain = '/Library/Keychains/System.keychain'
-  arguments = [security,
-              "delete-generic-password",
-              '-D',
-              'AirPort network password',
-              '-a',
-              'Airport',
-              '-l',
-              networkName,
-              keychain]
+  arguments = [
+    security,
+    "delete-generic-password",
+    '-D',
+    'AirPort network password',
+    '-a',
+    'Airport',
+    '-l',
+    networkName,
+    keychain
+  ]
   deleteKeychainPassword(arguments)
-  arguments = [security,
-              "delete-generic-password",
-              '-D',
-              'AirPort network password',
-              '-a',
-              networkName,
-              '-l',
-              networkName,
-              keychain]
+  arguments = [
+    security,
+    "delete-generic-password",
+    '-D',
+    'AirPort network password',
+    '-a',
+    networkName,
+    '-l',
+    networkName,
+    keychain
+  ]
   deleteKeychainPassword(arguments)
 
 def addKeychainPassword(arguments):
