@@ -135,40 +135,43 @@ def generateUserCSR(user_name,key,csr):
 
 ## curl the csr up
 def curlCsr(csr,cert_type,ca_url):
-  # First we do some really really ugly-looking awk work to url-encode the csr
+  # Someday we might use this instead of curl
+  # http://trac.calendarserver.org/browser/PyKerberos
+  # First we get rid of some really really ugly-looking awk work to url-encode the csr
   # Later versions of curl do this for us... but we don't have that luxury.
   cert_request = open(csr, 'r').read()
-  encoded_csr  = urllib.quote(cert_request)
 
-  arguments = [ curl,
-      '--negotiate',
-      '-A',
-      'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5',
-      '-u',
-      ':',
-      '-d',
-      "CertRequest=%s" % encoded_csr,
-      '-d',
-      'SaveCert=yes',
-      '-d',
-      'Mode=newreq',
-      '-d',
-      "CertAttrib=CertificateTemplate:%s %s/certfnsh.asp" % (cert_type,ca_url),
-      sed,
-      '-e',
-      '/.*location="certnew.cer?ReqID=/ !d',
-      '-e',
-      's/.*ID=//',
-      '-e',
-      's/&.*//',
+  request_dict = { 'CertRequest' : cert_request }
+  encoded_csr = urllib.urlencode(request_dict)
+
+  arguments = [
+    curl,
+    '--negotiate',
+    '-A',
+    'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.5) Gecko/2008120122 Firefox/3.0.5',
+    '-u',
+    ':',
+    '-d',
+    encoded_csr,
+    '-d',
+    'SaveCert=yes',
+    '-d',
+    'Mode=newreq',
+    '-d',
+    "CertAttrib=CertificateTemplate:%s" % cert_type,
+    "%s/certfnsh.asp" % ca_url,
   ]
+
   print 'Attempting to get Request ID...'
 
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+  execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
-  req_id   = out
-  print 'REQ_ID: %s' % req_id
 
+  req_id_regex = re.search(".*location=\"certnew.cer\?ReqID=(\d+).*",out)
+
+  req_id        = req_id_regex.group(1)
+
+  print 'REQ_ID: %s' % req_id
 
 ## Get TGT via kinit - If 2k3, use password method if 2k8
 def getTGTkinit(machine_name):
@@ -176,6 +179,8 @@ def getTGTkinit(machine_name):
       '-k',
       '%s$' % machine_name,
   ]
+  execute = Popen(arguments, stdout=PIPE)
+  out, err = execute.communicate()
 
 def getTGTpassword():
   path  = '/Library/Preferences/DirectoryService/ActiveDirectory.plist'
