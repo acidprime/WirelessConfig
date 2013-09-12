@@ -28,13 +28,10 @@ if not os.path.exists(eapolclient):
   eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Resources/eapolclient'
 
 runDirectory = os.path.dirname(os.path.abspath(__file__))
-awk             = '/usr/bin/awk'
 cat             = '/bin/cat'
 curl            = '/usr/bin/curl'
 dscl            = '/usr/bin/dscl'
-defaults        = '/usr/bin/defaults'
 grep            = '/usr/bin/grep'
-hexdump         = '/usr/bin/hexdump'
 kinit           = '/usr/bin/kinit'
 networksetup    = '/usr/sbin/networksetup'
 openssl         = '/usr/bin/openssl'
@@ -42,7 +39,6 @@ profiles        = '/usr/bin/profiles'
 plutil          = '/usr/bin/plutil'
 sysctl          = '/usr/sbin/sysctl'
 security        = '/usr/bin/security'
-sed             = '/usr/bin/sed'
 sudo            = '/usr/bin/sudo'
 system_profiler = '/usr/sbin/system_profiler'
 uuidgen         = '/usr/bin/uuidgen'
@@ -279,64 +275,64 @@ def dsclUserCert(pem):
     openssl_process = Popen(openssl_args,stdin=PIPE,stdout=PIPE,stderr=STDOUT)
     output = openssl_process.communicate(input=user_certificate)[0]
 
-def curlTrustedCert(pem,ca_cert,keychain_path):
-  arguments = [ openssl,
-    'x509',
-    '-in',
-    pem,
-    '-text',
-    '|',
-    grep,
-    'CA Issuers - URI:http://',
-    '|',
-    awk,
-    '{ print $4 }'
-    '|',
-    sed,
-    's/URI://',
-  ]
-
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
-
-  ca_url = out
-
-  arguments = [ curl,
-    '-o',
-    ca_cert,
-    ca_url,
-  ]
-
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
-
-  arguments = [ security,
-    'add-trusted-cert',
-    '-k',
-    keychain_path,
-    ca_cert,
-  ]
-
-# Not currently Implemented
-def evalCert(pem,keychain_path,ca_crt):
-  arguments = [ security,
-     'verify-cert',
-     '-c',
-     pem,
-     '|',
-     grep,
-     'successful',
-  ]
-
-  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
-  out, err = execute.communicate()
-
-  # Find out if cert is trusted
-  try:
-    exit_code = subprocess.check_call(execute)
-    curlTrustedCert(pem,ca_cert,keychain_path)
-  except subprocess.CalledProcessError as e:
-    print "Certificate verification failed ...", e.returncode
+#def curlTrustedCert(pem,ca_cert,keychain_path):
+#  arguments = [ openssl,
+#    'x509',
+#    '-in',
+#    pem,
+#    '-text',
+#    '|',
+#    grep,
+#    'CA Issuers - URI:http://',
+#    '|',
+#    awk,
+#    '{ print $4 }'
+#    '|',
+#    sed,
+#    's/URI://',
+#  ]
+#
+#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  out, err = execute.communicate()
+#
+#  ca_url = out
+#
+#  arguments = [ curl,
+#    '-o',
+#    ca_cert,
+#    ca_url,
+#  ]
+#
+#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  out, err = execute.communicate()
+#
+#  arguments = [ security,
+#    'add-trusted-cert',
+#    '-k',
+#    keychain_path,
+#    ca_cert,
+#  ]
+#
+## Not currently Implemented
+#def evalCert(pem,keychain_path,ca_crt):
+#  arguments = [ security,
+#     'verify-cert',
+#     '-c',
+#     pem,
+#     '|',
+#     grep,
+#     'successful',
+#  ]
+#
+#  execute = subprocess.Popen(arguments, stdout=subprocess.PIPE)
+#  out, err = execute.communicate()
+#
+#  # Find out if cert is trusted
+#  try:
+#    exit_code = subprocess.check_call(execute)
+#    curlTrustedCert(pem,ca_cert,keychain_path)
+#  except subprocess.CalledProcessError as e:
+#    print "Certificate verification failed ...", e.returncode
 
 
 ## Pack the cert up and import it ito the keychain
