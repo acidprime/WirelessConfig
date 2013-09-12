@@ -334,6 +334,21 @@ def dsclUserCert(pem):
 #  except subprocess.CalledProcessError as e:
 #    print "Certificate verification failed ...", e.returncode
 
+def keychainPath(cert_style):
+  if cert_style == 'USER':
+
+    arguments = [
+      security,
+      'default-keychain',
+    ]
+    execute = Popen(arguments,stdout=PIPE)
+    out, err = execute.communicate()
+
+    keychain_regex  = re.search('.*\"(.*\.keychain)\".*',out)
+    return keychain_regex.group(1)
+
+  else:
+    return '/Library/Keychains/System.keychain'
 
 ## Pack the cert up and import it ito the keychain
 def packAndImport(pem,key,pk12,machine_name,keychain_path):
