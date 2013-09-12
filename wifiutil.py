@@ -357,33 +357,35 @@ def packAndImport(pem,key,pk12,machine_name,keychain_path):
   secure_import  = True
 
   ## Build the cert and private key into a PKCS12
-  arguments = [ openssl,
-      'pkcs12',
-      '-export',
-      '-in',
-      pem,
-      '-inkey',
-      key,
-      '-out',
-      pk12,
-      '-name',
-      machine_name,
-      '-passout',
-      'pass:%s' % uuid,
+  arguments = [
+    openssl,
+    'pkcs12',
+    '-export',
+    '-in',
+    pem,
+    '-inkey',
+    key,
+    '-out',
+    pk12,
+    '-name',
+    machine_name,
+    '-passout',
+    'pass:%s' % uuid,
   ]
 
   execute = Popen(arguments, stdout=PIPE)
   out, err = execute.communicate()
 
-  arguments = [ security,
-      'import',
-      pk12,
-      '-k',
-      keychain_path,
-      '-f',
-      'pkcs12',
-      '-P',
-      uuid,
+  arguments = [
+    security,
+    'import',
+    pk12,
+    '-k',
+    keychain_path,
+    '-f',
+    'pkcs12',
+    '-P',
+    uuid,
   ]
 
   if secure_import :
