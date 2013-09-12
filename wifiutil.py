@@ -28,7 +28,6 @@ if not os.path.exists(eapolclient):
   eapolclient = '/System/Library/SystemConfiguration/EAPOLController.bundle/Resources/eapolclient'
 
 runDirectory = os.path.dirname(os.path.abspath(__file__))
-cat             = '/bin/cat'
 curl            = '/usr/bin/curl'
 dscl            = '/usr/bin/dscl'
 grep            = '/usr/bin/grep'
