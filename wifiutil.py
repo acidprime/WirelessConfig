@@ -804,11 +804,12 @@ def addPreferredNetwork(networkDict):
 
 def getSystemVersion():
   # Our Operating System Constants
-  global LEOP,SNOW,LION,MLIN
+  global LEOP,SNOW,LION,MLION,MAVRK
   LEOP = 5
   SNOW = 6
   LION = 7
-  MLIN = 9
+  MLION = 8
+  MAVRK = 9
   systemVersionPath = '/System/Library/CoreServices/SystemVersion.plist'
   try:
     systemVersion = plistlib.Plist.fromFile(systemVersionPath)
@@ -1296,10 +1297,19 @@ def getPlatformPortName():
   # Hardware test for Air
   airTest = re.compile(".*(a|A)ir.*")
   hwmodel = commands.getoutput(sysctl + " hw.model").split(' ')
-  if airTest.match(hwmodel[-1]):
-    return 'en0'
+  if osVersion['minor'] >= LION:
+    # Updating this for retina displays and beyond?
+    arguments = [networksetup,'-listallhardwareports']
+    execute = Popen(arguments, stdout=PIPE)
+    out, err = execute.communicate()
+    retina_regex  = re.search(".*(Wi-Fi|AirPort).*\nDevice: (en\d+)*",out)
+    bsd_port      = retina_regex.group(2)
+    return bsd_port
   else:
-    return 'en1'
+    if airTest.match(hwmodel[-1]):
+      return 'en0'
+    else:
+      return 'en1'
 
 def getConsoleUser():
   arguments = [who]
@@ -1314,7 +1324,7 @@ def getConsoleUser():
 
 def toggleAirportPower(value):
   # Returns the bsd style name of the port
-  if osVersion['minor'] == LION:
+  if osVersion['minor'] == LION or osVersion['minor'] == MLION:
     port = getPlatformPortName()
   else:
     port = 'Airport'
@@ -1555,6 +1565,10 @@ def removeWireless(osVersion,network):
   # Lion code
   if osVersion['minor'] == LION:
     lionRemoveWireless(network)
+  # MLion Code
+  if osVersion['minor'] == MLION:
+    lionRemoveWireless(network)
+
 
 def addWireless(osVersion,networkDict={}):
   print '-' * 80
@@ -1575,7 +1589,9 @@ def addWireless(osVersion,networkDict={}):
   # Lion code
   if osVersion['minor'] == LION:
     lionAddWireless(networkDict)
-
+  # MLion code
+  if osVersion['minor'] == MLION:
+    lionAddWireless(networkDict)
 #-------------------------------------------------------------------------------
 def main():
   global debugEnabled
