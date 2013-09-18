@@ -1,6 +1,24 @@
 # Wireless Config
 A 802.1x configuration suite for Mac OS X
-Currently This suite is in Beta testing
+Currently This suite is in testing
+
+# Contributing code
+
+### Fork the repository to your github account
+__Click the little fork button in the right hand corner and choose your username__
+
+### Clone your fork of the tool
+`git clone https://yourusername@github.com/yourusername/WirelessConfig.git`
+
+~~~
+Cloning into WirelessConfig...
+Password: 
+remote: Counting objects: 361, done.
+remote: Compressing objects: 100% (188/188), done.
+remote: Total 361 (delta 159), reused 348 (delta 146)
+Receiving objects: 100% (361/361), 5.49 MiB | 861 KiB/s, done.
+Resolving deltas: 100% (159/159), done.
+~~~
 
 `wifiutil.py`
 Is a 10.5,10.6,10.7 Wireless configuration command line tool
