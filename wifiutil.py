@@ -168,6 +168,21 @@ def curlCsr(csr,cert_type,ca_url):
 
   print 'REQ_ID: %s' % req_id
 
+def discoverADfacts():
+  path  = '/Library/Preferences/DirectoryService/ActiveDirectory.plist'
+  plist = NSDictionary.dictionaryWithContentsOfFile_(path)
+  if not os.path.exists(path):
+    print 'Active Directory plist is missing'
+    return False
+
+  return machineIsBound()
+
+def machineIsBound(plist):
+  if not 'AD Bound to Domain' in plist:
+    return False
+  else:
+    return plist['AD Bound to Domain']
+
 ## Get TGT via kinit - If 2k3, use password method if 2k8
 def getTGTkinit(machine_name):
   arguments = [
