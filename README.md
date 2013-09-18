@@ -58,7 +58,7 @@ Resolving deltas: 100% (159/159), done.
 `git rebase origin master`  
 `open http://goo.gl/a7QYUI`  
 
-6. Push the changes in your branch back to your fork
+6. Push the changes in your branch back to your fork  
 `git push origin my_new_feature`  
 
 7. Head over to github and send a pull request
