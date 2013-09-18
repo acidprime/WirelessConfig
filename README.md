@@ -112,7 +112,6 @@ parameters ,including multiple authentication options.
 
 * Figure out why I am having to rely so heavly on bindings and properties for ui changes:
 
-http://stackoverflow.com/questions/9238178/stringvalue-not-working-on-nstextfield-when-linked-via-files-owner-implemented
 
 http://stackoverflow.com/questions/9639370/counting-the-length-of-two-nstextfields-not-working
 
