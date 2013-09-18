@@ -51,7 +51,7 @@ Resolving deltas: 100% (159/159), done.
 `cd WirelessConfig`  
 `git commit wifiutil.py -m  "Now I know how to make commits from the command line"`  
 
-5. Replay any changes made to the upstream fork since you started
+5. Replay any changes made to the upstream fork since you started  
 `git checkout master`  
 `git pull upstream master`  
 `git checkout my_new_feature`  
