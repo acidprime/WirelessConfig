@@ -82,7 +82,7 @@ sudo ./wifiutil.py --username=bob --password=f00b4r --plist='/path/to/wifiutil.s
 This script has support for removal and addtion of WPA2E networks.
 Technically it has support for WPA too but this only works really well on 10.6+
 
-WirelessConfig.bundle:
+##WirelessConfig.bundle:
 A Casper self service plugin, see this document for scoped installation:
 
 https://jamfnation.jamfsoftware.com/article.html?id=177
