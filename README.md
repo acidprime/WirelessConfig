@@ -65,6 +65,8 @@ Resolving deltas: 100% (159/159), done.
 
 [Sending a Pull request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)  
 
+## Usage
+
 `wifiutil.py`
 Is a 10.5,10.6,10.7,10.8 Wireless configuration command line tool
 
