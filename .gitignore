@@ -1,3 +1,5 @@
+pkg_build/*.pkg
+
 .DS_Store
 
 *.swp
