@@ -2,17 +2,19 @@
 A 802.1x configuration suite for Mac OS X
 Currently This suite is in testing
 
-# Contributing code
+## Contributing code
 
-### Fork the repository to your github account
-__Click the little fork button in the right hand corner and choose your username__
+#### Fork the repository to your github account
+[Click the little button in the corner](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository)
 
-### Clone your fork of the tool
+#### Clone your fork of the tool and add remotes
+1. Clone your fork of the repo
 `git clone https://yourusername@github.com/yourusername/WirelessConfig.git`
 
+example output:
 ~~~
 Cloning into WirelessConfig...
-Password: 
+Password:
 remote: Counting objects: 361, done.
 remote: Compressing objects: 100% (188/188), done.
 remote: Total 361 (delta 159), reused 348 (delta 146)
@@ -20,8 +22,51 @@ Receiving objects: 100% (361/361), 5.49 MiB | 861 KiB/s, done.
 Resolving deltas: 100% (159/159), done.
 ~~~
 
+2. Add the upstream remote for the main repo (mine)
+`cd WirelessConfig`
+`git remote add upstream https://github.com/acidprime/WirelessConfig.git`
+
+3. Do not make changes until you create a new branch below
+
+#### Make a new branch with your changes
+
+1. Pull any recent updates to the master branch on the upstream repo.
+`cd WirelessConfig`
+`git pull upstream master`
+
+2. Create a new feature branch
+`cd WirelessConfig`
+`git checkout -b my_new_feature`
+
+3. Make your changes to a file in the repo
+`cd WirelessConfig`
+`vim wifiutil.py`
+`:%s/lookatme/makingchanges/g`
+`:w`
+`:!git commit % -m "Now I know how to make commits inside vim"`
+`:%s/lookatme/makingmorechangessothecommitworksbelow/g`
+`:x`
+
+4. Commit your changes
+`cd WirelessConfig`
+`git commit wifiutil.py -m  "Now I know how to make commits from the command line"`
+
+5. Replay any changes made to the upstream fork since you started
+`git checkout master`
+`git pull upstream master`
+`git checkout my_new_feature`
+`git rebase origin master`
+`open http://goo.gl/a7QYUI`
+
+6. Push the changes in your branch back to your fork
+`git push origin my_new_feature`
+
+7. Head over to github and send a pull request
+
+[Sending a Pull request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)
+
 `wifiutil.py`
-Is a 10.5,10.6,10.7 Wireless configuration command line tool
+Is a 10.5,10.6,10.7,10.8 Wireless configuration command line tool
 
 example usage:
 ```shell
