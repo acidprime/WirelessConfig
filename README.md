@@ -128,6 +128,9 @@ sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
 36afb32f-ee45-46e1-9aa8-8a58d013acad
 sand-bender:~ acid$ uuidgen | tr '[:upper:]' '[:lower:]'
 3ca519d7-98f2-4f50-b0d2-370473b71985
+```
+  
+```shell
 sand-bender:~ acid$ uuidgen
 8A1E81A7-170B-466C-B2B2-BF8209AFF994
 sand-bender:~ acid$ uuidgen
